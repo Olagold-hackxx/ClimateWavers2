@@ -67,6 +67,9 @@ def register(request):
         confirmation = request.POST.get("confirmation")
         profile_picture = request.FILES.get("profile")
         cover_picture = request.FILES.get("cover")
+        profession = request.POST.get("profession")
+        phone_number = request.POST.get("phone")
+        last_location = request.POST.get("location")
 
         # Validate password matching
         if password != confirmation:
@@ -80,13 +83,16 @@ def register(request):
             user.first_name = first_name
             user.last_name = last_name
 
-            # Handle profile picture
+            # Handle profile picture and other new fields
+            user.profession = profession
+            user.phone_number = phone_number
+            user.last_location = last_location
+
             if profile_picture:
                 user.profile_pic = profile_picture
             else:
                 user.profile_pic = "profile_pic/no_pic.png"
 
-            # Handle cover picture
             if cover_picture:
                 user.cover = cover_picture
 

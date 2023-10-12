@@ -45,6 +45,32 @@
                         <strong id="follower__count">{{follower_count | default:0}}</strong>&nbsp;<span class="grey">Followers</span>
                     </a>
                 </div>
+                <!-- New fields for profession, phone number, and last location -->
+                <div>
+                    <strong>Profession:</strong>
+                    {% if username.profession %}
+                        {{username.profession}}
+                    {% else %}
+                        Not specified
+                    {% endif %}
+                </div>
+                <div>
+                    <strong>Phone number:</strong>
+                    {% if username.phone_number %}
+                        {{username.phone_number}}
+                    {% else %}
+                        Not specified
+                    {% endif %}
+                </div>
+                <div>
+                    <strong>Last location:</strong>
+                    {% if username.last_location %}
+                        {{username.last_location}}
+                    {% else %}
+                        Not specified
+                    {% endif %}
+                </div>
+                <!-- End of new fields -->
             </div>
         </div>
     </div>

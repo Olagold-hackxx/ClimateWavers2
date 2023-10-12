@@ -1,18 +1,17 @@
 {% extends "climate_wavers/layout2.html" %}
 
 {% block title %}
-    Sign Up | Climate wavers
+    Sign Up | Climate Wavers
 {% endblock %}
 
 {% block body %}
-
     <h2>Sign Up</h2>
 
     {% if message %}
         <div>{{ message }}</div>
     {% endif %}
 
-    <form action="{% url 'register' %}" method="post">
+    <form action="{% url 'register' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-group">
             <input class="form-control" autofocus type="text" name="username" placeholder="Username">
@@ -30,9 +29,22 @@
             <input type="file" class="custom-file-input" id="customFile" name="filename">
             <label class="custom-file-label" for="customFile">Choose file</label>
         </div>
+
+        <!-- New fields for profession, phone number, and last location -->
+        <div class="form-group">
+            <input class="form-control" type="text" name="profession" placeholder="Profession">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="text" name="phone" placeholder="Phone Number">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="text" name="location" placeholder="Last Location">
+        </div>
+        <!-- End of new fields -->
+
         <input class="btn btn-primary" type="submit" value="Register">
     </form>
 
     Already have an account? <a href="{% url 'login' %}">Log In here.</a>
-
-{% endblock %}
+</body>
+</html>
