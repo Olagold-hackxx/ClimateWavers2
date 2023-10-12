@@ -58,7 +58,7 @@ def logout_view(request):
 
 def register(request):
     if request.method == "POST":
-        # Get user data from the form
+        # Get user data from the form, including the bio
         username = request.POST.get("username")
         email = request.POST.get("email")
         first_name = request.POST.get("firstname")
@@ -70,6 +70,7 @@ def register(request):
         profession = request.POST.get("profession")
         phone_number = request.POST.get("phone")
         last_location = request.POST.get("location")
+        bio = request.POST.get("bio")  # Get the bio field
 
         # Validate password matching
         if password != confirmation:
@@ -82,6 +83,7 @@ def register(request):
             user = User.objects.create_user(username, email, password)
             user.first_name = first_name
             user.last_name = last_name
+            user.bio = bio  # Set the bio field
 
             # Handle profile picture and other new fields
             user.profession = profession
@@ -111,8 +113,6 @@ def register(request):
             })
     else:
         return render(request, "climate_wavers/register.html")
-
-
 
 def profile(request, username):
     user = User.objects.get(username=username)

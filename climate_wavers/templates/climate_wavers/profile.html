@@ -22,6 +22,8 @@
                 <div class="bio">
                     {% if username.bio is not None %}
                         {{username.bio}}
+                    {% else %}
+                        Bio not specified
                     {% endif %}
                 </div>
                 <div class="grey" style="padding: 8px 0px;">
