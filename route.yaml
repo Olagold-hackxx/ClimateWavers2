@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: climatewavers
+    sandbox: olagoldhackxx
+    olagoldhackxx: climatewavers
+  name: climatewavers
+spec:
+  port:
+    targetPort: 8000-tcp
+  to:
+    kind: Service
+    name: climatewavers

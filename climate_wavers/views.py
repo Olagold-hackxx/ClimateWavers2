@@ -100,7 +100,7 @@ def register(request):
 
             user.save()
             Follower.objects.create(user=user)
-            
+
             # Authenticate and log in the user
             user = authenticate(request, username=username, password=password)
             if user is not None:
