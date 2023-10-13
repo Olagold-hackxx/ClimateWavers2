@@ -1,7 +1,7 @@
 -- prepares a MySQL server for the ClimateWavers
 
-CREATE DATABASE IF NOT EXISTS climatwavets_dev_db;
-CREATE USER IF NOT EXISTS 'climatwavets_dev'@'localhost' IDENTIFIED BY 'climatwavets_dev_pwd';
-GRANT ALL PRIVILEGES ON `climatwavets_dev_db`.* TO 'climatwavets_dev'@'localhost';
-GRANT SELECT ON `performance_schema`.* TO 'climatwavets_dev'@'localhost';
+CREATE DATABASE IF NOT EXISTS climatwavers_db;
+CREATE USER IF NOT EXISTS 'climatwavers_dev'@'localhost' IDENTIFIED BY 'climatwavers_dev_pwd';
+GRANT ALL PRIVILEGES ON `climatwavers_db`.* TO 'climatwavers_dev'@'localhost';
+GRANT SELECT ON `performance_schema`.* TO 'climatwavers_dev'@'localhost';
 FLUSH PRIVILEGES
