@@ -8,7 +8,7 @@ server=$SERVER
 #Login to openshift cli
 oc login  -u system:admin --token=$token --server=$server
 # Clone the Django backend, build image and deploy.
-GH_REPO_URL='https://github.com/Olagold-hackxx/Climate_wavers_DjangoBackend_microservice.git'
+GH_REPO_URL='https://github.com/Olagold-hackxx/ClimateWavers2'
 PIPELINE='build-and-deploy'
 WORKSPACE=shared-workspace
 DEPLOY_NAME=ClimateWavers-Django
