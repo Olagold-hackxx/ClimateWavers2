@@ -19,17 +19,16 @@ module.exports = { getUserById };
 const jsonData = require('../data.json'); // Adjust the file path accordingly
 
 function getAllUsers() {
-
-    const users = jsonData.filter((entry) => entry.model === 'climate_wavers.user');
-
-    if (users.length === 0) {
-      throw new Error('No users found in the "climate_wavers.user" model');
+    if (!jsonData || !Array.isArray(jsonData)) {
+        throw new Error('Invalid JSON data or data format');
     }
-  
-    return users.map((user) => ({ pk: user.pk, ...user.fields }));
 
-    
-  }
-  
+    const allUsers = jsonData.map((user) => ({
+        id: user.id,
+        last_location: user.last_location,
+    }));
+  return allUsers;
+
+}
 
 module.exports = { getAllUsers };

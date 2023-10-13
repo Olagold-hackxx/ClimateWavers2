@@ -1,5 +1,6 @@
 const Message = require('../models/messageModel');
-const { getAllUsers } = require('../utility/userDetails'); // Import getAllUsers
+const { getAllUsers } = require('../utility/userDetails');
+const generateOpenAIResponse = require('../utility/AIResponse'); // Import the OpenAI response generator
 
 async function chatBot(req, res) {
   try {
@@ -8,23 +9,52 @@ async function chatBot(req, res) {
     // Retrieve all users
     const allUsers = getAllUsers();
 
-    // Find the user based on userId without using `find`
-    const user = allUsers.filter((user) => user.pk === userId); // Get the first matching user
+    // Log the received userId for debugging
+    console.log(`Received userId: ${userId}`);
 
-    if (user.length > 0) {
+    // Find the user based on userId without using `find`
+    let user = null;
+
+    for (let i = 0; i < allUsers.length; i++) {
+      const userObject = allUsers[i];
+      const keys = Object.keys(userObject);
+      const values = Object.values(userObject);
+
+      for (let j = 0; j < keys.length; j++) {
+        if (values[j] == userId) {
+          user = userObject;
+          break; // Found a match, no need to continue the inner loop
+        }
+      }
+
+      if (user) {
+        break; // Found a match, no need to continue the outer loop
+      }
+    }
+
+    // Log the found user for debugging
+    console.log('Found user:', user);
+
+    if (user) {
       // Get the user's last known location from the user object
       const userLocation = user.last_location;
 
-      // You can now use the userLocation and implement the chatbot logic
-      // Call the OpenAI API or any other logic you need to generate a response
+      // Log the user's last location for debugging
+      console.log(`User location: ${userLocation}`);
 
-      // Create a new message with the user's message, AI response, and location
+      // Generate AI response using OpenAI
+      const aiResponse = await generateOpenAIResponse(userLocation, message);
+
+      // Create a new message with the user's message and AI response
       const newMessage = new Message({
         userId,
         message,
-        response: 'Your AI response goes here', // Replace with the actual response
+        response: aiResponse,
         location: userLocation,
       });
+
+      // Log the new message for debugging
+      console.log('New message:', newMessage);
 
       await newMessage.save();
       res.status(201).json(newMessage);
