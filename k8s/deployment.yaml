@@ -20,7 +20,7 @@ spec:
         - name: quay-registry-secret
       containers:
         - name: climatewavers-chatbot
-          image: quay.io/olagoldhackxx/climatewavers:v1
+          image: quay.io/olagoldhackxx/climatewavers-chatbot:v1
           imagePullPolicy: Always
           ports:
             - containerPort: 80
