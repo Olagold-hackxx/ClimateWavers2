@@ -1,27 +1,27 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: climatewavers
+  name: climatewavers-chatbot
   labels:
-    app: climatewavers
+    app: climatewavers-chatbot
     sandbox: olagoldhackxx
-    sandbox-olagoldhackxx: climatewavers
+    sandbox-olagoldhackxx: climatewavers-chatbot
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: climatewavers
+      app: climatewavers-chatbot
   template:
     metadata:
       labels:
-        app: climatewavers
+        app: climatewavers-chatbot
     spec:
       imagePullSecrets:
         - name: quay-registry-secret
       containers:
-        - name: climatewavers
+        - name: climatewavers-chatbot
           image: quay.io/olagoldhackxx/climatewavers:v1
           imagePullPolicy: Always
           ports:
-            - containerPort: 8000
+            - containerPort: 80
               protocol: TCP
