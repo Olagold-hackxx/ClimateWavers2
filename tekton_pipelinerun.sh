@@ -11,10 +11,10 @@ oc login  -u system:admin --token=$token --server=$server
 GH_REPO_URL='https://github.com/Olagold-hackxx/Climate_wavers_DjangoBackend_microservice.git'
 PIPELINE='build-and-deploy'
 WORKSPACE=shared-work
-DEPLOY_NAME=ClimateWavers-Django
-IMAGE='quay.io/olagolhackxx/climatewavers_django:v1'
+DEPLOY_NAME=climatewavers-backend
+IMAGE='quay.io/olagolhackxx/climatewavers-backend:v1'
 export volumeClaimTemplateFile
-volumeClaimTemplateFile="$(dirname -- "$0")/persistent_volume_claim.yaml"
+volumeClaimTemplateFile="$(dirname -- "$0")/k8s/persistent_volume_claim.yaml"
 echo Start pipeline $PIPELINE:
 echo "Building source code from" $GH_REPO_URL
 echo "To image at location" $IMAGE

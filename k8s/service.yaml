@@ -8,10 +8,10 @@ metadata:
   name: climatewavers
 spec:
   ports:
-  - name: 8000-tcp
-    port: 8000
+  - name: 80-tcp
+    port: 80
     protocol: TCP
-    targetPort: 8000
+    targetPort: 80
   selector:
     app: climatewavers
   sessionAffinity: None
