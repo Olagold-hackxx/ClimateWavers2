@@ -7,16 +7,19 @@ const messageSchema = new mongoose.Schema({
   location: {
     type: {
       type: String,
-      default: "Point", // Set the default type to "Point" if not specified
+      default: "Point",
     },
     coordinates: {
-      type: [Number], // Define coordinates as an array of numbers
-      index: '2dsphere', // Specify an index for 2dsphere coordinates
+      type: [Number],
+      index: '2dsphere',
     },
   },
+  // WebSocket-related fields (if needed)
+  wsUserId: String, // WebSocket user ID
+  wsConnectionId: String, // WebSocket connection ID
 });
-
 
 const Message = mongoose.model('Message', messageSchema);
 
 module.exports = Message;
+

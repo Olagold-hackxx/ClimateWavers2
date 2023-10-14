@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Get User Location</title>
 </head>
-
 <body>
     <label for="messageInput">Message:</label>
     <textarea id="messageInput" rows="4" cols="50"></textarea>
@@ -15,39 +13,45 @@
         const getLocationButton = document.getElementById('getLocationButton');
         const messageInput = document.getElementById('messageInput');
 
+        const handleGeolocationSuccess = (position) => {
+            const { latitude, longitude } = position.coords;
+            const userLocation = { latitude, longitude };
+            const message = messageInput.value; // Get the user's message
+
+            // Send the location data and message to your chatBot route via an HTTP POST request
+            fetch(`/api/1/chatbot`, {  // Replace userId with the actual user ID
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ userLocation, message }), // Include the message
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response from your chatBot route if needed
+                console.log(data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        };
+
+        const handleGeolocationError = (error) => {
+            console.error(error.message);
+            // Handle errors or inform the user as needed.
+        };
+
         getLocationButton.addEventListener('click', () => {
             if ("geolocation" in navigator) {
-                // Use the Geolocation API to get the user's location
-                navigator.geolocation.getCurrentPosition(function (position) {
-                    const { latitude, longitude } = position.coords;
-                    const userLocation = { latitude, longitude };
-                    const message = messageInput.value; // Get the user's message
-
-                    // Send the location data and message to your chatBot route via an HTTP POST request
-                    fetch(`api/1/chatbot`, {  // Replace userId with the actual user ID
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({ userLocation, message }), // Include the message
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        // Handle the response from your chatBot route if needed
-                        console.log(data);
-                    })
-                    .catch(error => {
-                        console.error(error);
-                    });
-                }, function (error) {
-                    console.error(error.message);
-                    // Handle errors or inform the user as needed.
-                });
+                navigator.geolocation.getCurrentPosition(
+                    handleGeolocationSuccess,
+                    handleGeolocationError
+                );
             } else {
                 console.log('Geolocation is not available in this browser.');
             }
         });
     </script>
 </body>
-
 </html>
+

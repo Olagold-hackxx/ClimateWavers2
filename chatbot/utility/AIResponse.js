@@ -6,9 +6,9 @@ async function generateOpenAIResponse(userLocation, message) {
   try {
     const completion = await openai.completions.create({
       model: "gpt-3.5-turbo-instruct",
-      prompt: message, // Use the user's message as the prompt
-      max_tokens: 50, // Adjust the token limit as needed
-      temperature: 0.7, // Adjust temperature for response randomness
+      prompt: message,
+      max_tokens: 50,
+      temperature: 0.7,
     });
 
     // Extract and return the AI's response from the completion
@@ -21,3 +21,4 @@ async function generateOpenAIResponse(userLocation, message) {
 }
 
 module.exports = generateOpenAIResponse;
+
