@@ -7,7 +7,10 @@
         "cover": "https://example.com/covers/user1_cover.jpg",
         "profession": "Profession 1",
         "phone_number": "+12345678901",
-        "last_location": "Location 1",
+        "last_location": {
+            "latitude": 40.7128,
+            "longitude": -74.0060
+        },
         "first_name": "John",
         "last_name": "Doe"
     },
@@ -19,7 +22,10 @@
         "cover": "https://example.com/covers/user2_cover.jpg",
         "profession": "Profession 2",
         "phone_number": "+12345678902",
-        "last_location": "Location 2",
+        "last_location": {
+            "latitude": 34.0522,
+            "longitude": -118.2437
+        },
         "first_name": "Jane",
         "last_name": "Smith"
     },
@@ -31,7 +37,10 @@
         "cover": "https://example.com/covers/user3_cover.jpg",
         "profession": "Profession 3",
         "phone_number": "+12345678903",
-        "last_location": "Location 3",
+        "last_location": {
+            "latitude": 51.5074,
+            "longitude": -0.1278
+        },
         "first_name": "Mike",
         "last_name": "Johnson"
     },
@@ -43,7 +52,10 @@
         "cover": "https://example.com/covers/user4_cover.jpg",
         "profession": "Profession 4",
         "phone_number": "+12345678904",
-        "last_location": "Location 4",
+        "last_location": {
+            "latitude": 52.5200,
+            "longitude": 13.4050
+        },
         "first_name": "Anna",
         "last_name": "Brown"
     },
@@ -55,7 +67,10 @@
         "cover": "https://example.com/covers/user5_cover.jpg",
         "profession": "Profession 5",
         "phone_number": "+12345678905",
-        "last_location": "Location 5",
+        "last_location": {
+            "latitude": 41.8781,
+            "longitude": -87.6298
+        },
         "first_name": "David",
         "last_name": "Wilson"
     },
@@ -67,7 +82,10 @@
         "cover": "https://example.com/covers/user6_cover.jpg",
         "profession": "Profession 6",
         "phone_number": "+12345678906",
-        "last_location": "Location 6",
+        "last_location": {
+            "latitude": 34.0522,
+            "longitude": -118.2437
+        },
         "first_name": "Linda",
         "last_name": "Miller"
     },
@@ -79,7 +97,10 @@
         "cover": "https://example.com/covers/user7_cover.jpg",
         "profession": "Profession 7",
         "phone_number": "+12345678907",
-        "last_location": "Location 7",
+        "last_location": {
+            "latitude": 51.5074,
+            "longitude": -0.1278
+        },
         "first_name": "Robert",
         "last_name": "Jones"
     },
@@ -91,7 +112,10 @@
         "cover": "https://example.com/covers/user8_cover.jpg",
         "profession": "Profession 8",
         "phone_number": "+12345678908",
-        "last_location": "Location 8",
+        "last_location": {
+            "latitude": 52.5200,
+            "longitude": 13.4050
+        },
         "first_name": "Sarah",
         "last_name": "White"
     },
@@ -103,7 +127,10 @@
         "cover": "https://example.com/covers/user9_cover.jpg",
         "profession": "Profession 9",
         "phone_number": "+12345678909",
-        "last_location": "Location 9",
+        "last_location": {
+            "latitude": 41.8781,
+            "longitude": -87.6298
+        },
         "first_name": "Michael",
         "last_name": "Davis"
     },
@@ -115,7 +142,10 @@
         "cover": "https://example.com/covers/user10_cover.jpg",
         "profession": "Profession 10",
         "phone_number": "+12345678910",
-        "last_location": "Location 10",
+        "last_location": {
+            "latitude": 40.7128,
+            "longitude": -74.0060
+        },
         "first_name": "Jennifer",
         "last_name": "Lee"
     },
@@ -127,7 +157,10 @@
         "cover": "https://example.com/covers/user11_cover.jpg",
         "profession": "Profession 11",
         "phone_number": "+12345678911",
-        "last_location": "Location 11",
+        "last_location": {
+            "latitude": 34.0522,
+            "longitude": -118.2437
+        },
         "first_name": "Kevin",
         "last_name": "Anderson"
     },
@@ -139,7 +172,10 @@
         "cover": "https://example.com/covers/user12_cover.jpg",
         "profession": "Profession 12",
         "phone_number": "+12345678912",
-        "last_location": "Location 12",
+        "last_location": {
+            "latitude": 51.5074,
+            "longitude": -0.1278
+        },
         "first_name": "Emily",
         "last_name": "Moore"
     },
@@ -151,7 +187,10 @@
         "cover": "https://example.com/covers/user13_cover.jpg",
         "profession": "Profession 13",
         "phone_number": "+12345678913",
-        "last_location": "Location 13",
+        "last_location": {
+            "latitude": 52.5200,
+            "longitude": 13.4050
+        },
         "first_name": "Christopher",
         "last_name": "Hall"
     },
@@ -163,7 +202,10 @@
         "cover": "https://example.com/covers/user14_cover.jpg",
         "profession": "Profession 14",
         "phone_number": "+12345678914",
-        "last_location": "Location 14",
+        "last_location": {
+            "latitude": 41.8781,
+            "longitude": -87.6298
+        },
         "first_name": "Melissa",
         "last_name": "Wilson"
     },
@@ -175,7 +217,10 @@
         "cover": "https://example.com/covers/user15_cover.jpg",
         "profession": "Profession 15",
         "phone_number": "+12345678915",
-        "last_location": "Location 15",
+        "last_location": {
+            "latitude": 40.7128,
+            "longitude": -74.0060
+        },
         "first_name": "Daniel",
         "last_name": "Taylor"
     },
@@ -187,7 +232,10 @@
         "cover": "https://example.com/covers/user16_cover.jpg",
         "profession": "Profession 16",
         "phone_number": "+12345678916",
-        "last_location": "Location 16",
+        "last_location": {
+            "latitude": 34.0522,
+            "longitude": -118.2437
+        },
         "first_name": "Amanda",
         "last_name": "Martin"
     },
@@ -199,7 +247,10 @@
         "cover": "https://example.com/covers/user17_cover.jpg",
         "profession": "Profession 17",
         "phone_number": "+12345678917",
-        "last_location": "Location 17",
+        "last_location": {
+            "latitude": 51.5074,
+            "longitude": -0.1278
+        },
         "first_name": "Thomas",
         "last_name": "Lewis"
     },
@@ -211,7 +262,10 @@
         "cover": "https://example.com/covers/user18_cover.jpg",
         "profession": "Profession 18",
         "phone_number": "+12345678918",
-        "last_location": "Location 18",
+        "last_location": {
+            "latitude": 52.5200,
+            "longitude": 13.4050
+        },
         "first_name": "Elizabeth",
         "last_name": "Harris"
     },
@@ -223,7 +277,10 @@
         "cover": "https://example.com/covers/user19_cover.jpg",
         "profession": "Profession 19",
         "phone_number": "+12345678919",
-        "last_location": "Location 19",
+        "last_location": {
+            "latitude": 41.8781,
+            "longitude": -87.6298
+        },
         "first_name": "William",
         "last_name": "Young"
     },
@@ -235,7 +292,10 @@
         "cover": "https://example.com/covers/user20_cover.jpg",
         "profession": "Profession 20",
         "phone_number": "+12345678920",
-        "last_location": "Location 20",
+        "last_location": {
+            "latitude": 40.7128,
+            "longitude": -74.0060
+        },
         "first_name": "Laura",
         "last_name": "Jackson"
     }

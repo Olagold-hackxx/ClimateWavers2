@@ -4,7 +4,8 @@ const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 //const messageRoutes = require('./routes/messageRoutes'); // Import the message routes
 const chatBotRoutes = require('./routes/chatBotRoutes'); // Import the chatbot routes
-
+const cors = require('cors');
+const path = require('path');
 
 
 
@@ -61,7 +62,8 @@ app.use(express.urlencoded({ extended: true }));
 //}));
 //app.use('/api', messageRoutes);
 app.use('/api', chatBotRoutes); // You can specify the base path (e.g., '/api') as needed
-
+app.use(cors());
+app.use(express.static(path.join(__dirname, 'views')));
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
