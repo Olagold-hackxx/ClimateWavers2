@@ -1,4 +1,5 @@
 import pandas as pd
+""" Group disasters into there groups"""
 
 reader = pd.read_csv('dataset/historical-disasters.csv')
 disaster_types = ["Storm", "Flood", "Epidemic", "Earthquake", "Drought", "Volcanic activity", "Wildfire"]
