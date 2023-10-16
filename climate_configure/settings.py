@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'climate_configure.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'climatewavers_db',
+        'USER': 'climatewavers',
+        'PASSWORD': 'waverx',
+        'HOST': 'localhost',
+        'PORT': '8000',
     }
 }
 
