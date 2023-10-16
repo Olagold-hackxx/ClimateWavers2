@@ -70,7 +70,7 @@ async def fetch_disasters_climate_data() -> bool:
             data_list.append(filtered_df)
         # Write the DataFrame to a CSV file
         disaster_data = pd.concat(data_list, ignore_index=True)
-        disaster_data.to_csv(disaster + "_climate_data.csv", index=False)
+        disaster_data.to_csv("dataset/climate_dataser" + disaster + "_climate_data.csv", index=False)
 
     return True
 
