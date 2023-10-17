@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Accountcard from './Accountcard'
 import { AiOutlineHeart, AiOutlineRetweet } from 'react-icons/ai'
 import { HiOutlineChatBubbleOvalLeft } from 'react-icons/hi2'
@@ -6,6 +6,8 @@ import { PiBookmarkSimple } from 'react-icons/pi'
 import { TbLineDashed } from 'react-icons/tb'
 
 const Postcomponent = () => {
+
+
   return (
     <div className=' py-3 border-b-2'>
         <Accountcard />
