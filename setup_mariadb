@@ -1,4 +1,4 @@
--- prepares a MySQL server for the ClimateWavers
+-- prepares a Mariadb server for the ClimateWavers
 
 CREATE DATABASE IF NOT EXISTS 'climatewavers_db';
 CREATE USER IF NOT EXISTS 'climatewavers'@'localhost' IDENTIFIED BY 'waverx';
