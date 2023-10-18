@@ -11,6 +11,8 @@ ENV PYTHONUNBUFFERED=1
 
 # Install pip requirements
 COPY requirements.txt .
+RUN apt-get update -y
+RUN apt-get install -y python3-dev default-libmysqlclient-dev build-essential pkg-config
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 WORKDIR /app
