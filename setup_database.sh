@@ -1,0 +1,1 @@
+cat /tmp/setup_mariadb.sql | sudo mysql --user=root --password=waverx

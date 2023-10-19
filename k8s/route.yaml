@@ -2,13 +2,13 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   labels:
-    app: climatewavers-backend
+    app: climatewavers-djangobackend
     sandbox: olagoldhackxx
-    olagoldhackxx: climatewavers-backend
-  name: climatewavers-backend
+    olagoldhackxx: climatewavers-djangobackend
+  name: climatewavers-djangobackend
 spec:
   port:
-    targetPort: 80-tcp
+    targetPort: 8000-tcp
   to:
     kind: Service
-    name: climatewavers-backend
+    name: climatewavers-djangobackend

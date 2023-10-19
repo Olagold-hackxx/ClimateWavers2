@@ -25,7 +25,7 @@ SECRET_KEY = '13kl@xtukpwe&xj2xoysxe9_6=tf@f8ewxer5n&ifnd46+6$%8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -81,8 +81,8 @@ DATABASES = {
         'NAME': 'climatewavers_db',
         'USER': 'climatewavers',
         'PASSWORD': 'waverx',
-        'HOST': 'localhost',
-        'PORT': '8000',
+        'HOST': os.environ['DB_SERVICE_NAME'],
+        'PORT': '3306',
     }
 }
 
