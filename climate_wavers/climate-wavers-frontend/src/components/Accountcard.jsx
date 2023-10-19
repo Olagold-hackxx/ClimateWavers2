@@ -29,7 +29,7 @@ const Accountcard = () => {
         <button
         onClick={() => setIsFollow(!isFollow)}
         // style={followStyle}
-        className={`bg-black text-xs text-white font-semibold py-2 px-3 ml-2  rounded-xl ${isFollow && "bg-stone-100 outline outline-3 outline-stone-900 text-stone-900 before:hover:content-['']  hover:bg-red-100 hover:outline hover:outline-3 hover:outline-red-500 hover:text-red-500 "} `}
+        className={`bg-black text-xs text-white font-semibold py-2 px-3 ml-2  rounded-xl ${isFollow && "bg-stone-100 outline outline-3 outline-stone-900 text-slate-700 before:hover:content-['']  hover:bg-red-100 hover:outline hover:outline-3 hover:outline-red-500 hover:text-red-500 "} `}
         >
             {
                 isFollow === true ? "Following" : "Follow"
