@@ -1,7 +1,7 @@
 #!/bin/bash
 #Setup on database on openshift
 
-PODNAME=$(a=$(kubectl get pods | grep 'mysql' | grep 'Running' | awk '{print $1}') && set - "$a" && echo "$1")
+PODNAME=$(a=$(kubectl get pods | grep 'mariadb' | grep 'Running' | awk '{print $1}') && set - "$a" && echo "$1")
 
 echo "Setting up MySQL at" $PODNAME "cluster"
 # Copy setup sql files to database cluster
@@ -11,5 +11,5 @@ echo "Copied setup sql file to $PODNAME:/tmp/setup_mariadb.sql on openshift clus
 kubectl cp ./setup_database.sh olagoldhackxx-dev/"$PODNAME":/tmp/setup_database.sh
 echo "Copied setup script file to $PODNAME:/tmp/setup_database.sh on openshift cluster"
 # Run script to setup database on cluster
-kubectl exec deploy/climatewavers-mysql -- /bin/bash /tmp/setup_database.sh
-echo "Execute script on cluster"
+kubectl exec pod/$PODNAME -- /bin/bash /tmp/setup_database.sh
+echo "Executed script in cluster"

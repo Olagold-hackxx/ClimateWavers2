@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'climate_configure.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'climatewavers_db',
-        'USER': 'climatewavers',
-        'PASSWORD': 'waverx',
-        'HOST': os.environ['DB_SERVICE_NAME'],
-        'PORT': '3306',
+        'NAME': os.environ['MARIADB_DB_NAME'],
+        'USER': os.environ['MARIADB_USER'],
+        'PASSWORD': os.environ['MARIADB_PASSWORD'],
+        'HOST': os.environ['MARIADB_SERVER'],
+        'PORT': os.environ['MARIADB_PORT'],
     }
 }
 

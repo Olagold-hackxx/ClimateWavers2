@@ -7,7 +7,7 @@ class User(AbstractUser):
     profile_pic = models.ImageField(upload_to='profile_pic/')  # Profile picture of the user
     bio = models.TextField(max_length=160, blank=True, null=True)  # User's bio or short description
     cover = models.ImageField(upload_to='covers/', blank=True)  # Cover image for the user's profile
-    
+
     # Additional fields for profession, phone number, and last location
     profession = models.CharField(max_length=100, blank=True, null=True)  # User's profession
     phone_number = models.CharField(max_length=15, blank=True, null=True)  # User's phone number
@@ -42,9 +42,6 @@ class Post(models.Model):
     def img_url(self):
         # Method to get the URL of the post's content image
         return self.content_image.url
-
-    def append(self, name, value):
-        # Method that doesn't seem to have a clear purpose, may need additional documentation
 
     def like_post(self, user):
         # Method to record that a user liked the post

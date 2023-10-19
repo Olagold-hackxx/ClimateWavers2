@@ -1,1 +1,1 @@
-cat /tmp/setup_mariadb.sql | sudo mysql --user=root --password=waverx
+cat /tmp/setup_mariadb.sql | mysql --user=root

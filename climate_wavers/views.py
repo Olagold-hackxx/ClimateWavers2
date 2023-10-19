@@ -98,7 +98,7 @@ def profile(request, username):
     suggestions = []
     follower = False
 
-    if request.user.is authenticated:
+    if request.user.is_authenticated:
         followings = Follower.objects.filter(followers=request.user).values_list('user', flat=True)
         suggestions = User.objects.exclude(pk__in(followings).exclude(username=request.user.username).order_by("?")[:6])
 
@@ -110,7 +110,7 @@ def profile(request, username):
 
     # Serialize the posts using the PostSerializer
     serializer = PostSerializer(posts, many=True)
-    
+
     return Response({
         "username": user,
         "posts": serializer.data,
