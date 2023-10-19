@@ -17,6 +17,7 @@ import json
 from .models import *
 from .serializers import PostSerializer  # Assuming you have a PostSerializer in a serializers.py file
 
+# View for displaying the homepage with posts and suggestions for logged-in users.
 @api_view(['GET'])
 def index(request):
     all_posts = Post.objects.all().order_by('-date_created')
@@ -30,8 +31,8 @@ def index(request):
     if request.user.is_authenticated:
         followings = Follower.objects.filter(followers=request.user).values_list('user', flat=True)
         suggestions = User.objects.exclude(
-    Q(pk__in=followings) | Q(username=request.user.username)
-).order_by("?")[:6]
+            Q(pk__in=followings) | Q(username=request.user.username)
+        ).order_by("?")[:6]
     # Serialize the posts using the PostSerializer
     serializer = PostSerializer(posts, many=True)
     return Response({
@@ -40,6 +41,8 @@ def index(request):
         "page": "all_posts",
         'profile': False
     })
+
+# View for user registration.
 @api_view(['POST'])
 def register(request):
     if request.method == "POST":
@@ -64,7 +67,7 @@ def register(request):
 
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
-
+# View for user login.
 @api_view(['POST'])
 def login_view(request):
     if request.method == "POST":
@@ -76,11 +79,13 @@ def login_view(request):
             return Response(status=status.HTTP_200_OK)
         return Response({"message": "Invalid username and/or password."}, status=status.HTTP_401_UNAUTHORIZED)
 
+# View for user logout.
 @api_view(['POST'])
 def logout_view(request):
     logout(request)
     return Response(status=status.HTTP_200_OK)
 
+# View for displaying a user's profile.
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def profile(request, username):
@@ -93,7 +98,7 @@ def profile(request, username):
     suggestions = []
     follower = False
 
-    if request.user.is_authenticated:
+    if request.user.is authenticated:
         followings = Follower.objects.filter(followers=request.user).values_list('user', flat=True)
         suggestions = User.objects.exclude(pk__in(followings).exclude(username=request.user.username).order_by("?")[:6])
 
@@ -117,6 +122,7 @@ def profile(request, username):
         "following_count": following_count
     })
 
+# View for displaying posts from users the current user is following.
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def following(request):
@@ -137,6 +143,7 @@ def following(request):
         "page": "following"
     })
 
+# View for displaying posts saved by the current user.
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def saved(request):
@@ -156,7 +163,9 @@ def saved(request):
         "page": "saved"
     })
 
+# View for creating a new post.
 @api_view(['POST'])
+@csrf_exempt
 @permission_classes([IsAuthenticated])
 def create_post(request):
     if request.method == 'POST':
@@ -168,6 +177,7 @@ def create_post(request):
         except Exception as e:
             return Response({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
+# View for editing an existing post.
 @api_view(['POST'])
 @csrf_exempt
 @permission_classes([IsAuthenticated])
@@ -204,6 +214,7 @@ def edit_post(request, post_id):
                 "message": str(e)
             })
 
+# View for liking a post.
 @api_view(['PUT'])
 @csrf_exempt
 @permission_classes([IsAuthenticated])
@@ -219,6 +230,7 @@ def like_post(request, id):
     else:
         return Response({"message": "Method must be 'PUT'"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
+# View for unliking a post.
 @api_view(['PUT'])
 @csrf_exempt
 @permission_classes([IsAuthenticated])
@@ -234,6 +246,7 @@ def unlike_post(request, id):
     else:
         return Response({"message": "Method must be 'PUT'"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
+# View for saving a post.
 @api_view(['PUT'])
 @csrf_exempt
 @permission_classes([IsAuthenticated])
@@ -249,6 +262,7 @@ def save_post(request, id):
     else:
         return Response({"message": "Method must be 'PUT'"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
+# View for unsaving a post.
 @api_view(['PUT'])
 @csrf_exempt
 @permission_classes([IsAuthenticated])
@@ -264,6 +278,7 @@ def unsave_post(request, id):
     else:
         return Response({"message": "Method must be 'PUT'"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
+# View for following a user.
 @api_view(['PUT'])
 @csrf_exempt
 @permission_classes([IsAuthenticated])
@@ -280,6 +295,7 @@ def follow(request, username):
     else:
         return Response({"message": "Method must be 'PUT'"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
+# View for unfollowing a user.
 @api_view(['PUT'])
 @csrf_exempt
 @permission_classes([IsAuthenticated])
@@ -296,6 +312,7 @@ def unfollow(request, username):
     else:
         return Response({"message": "Method must be 'PUT'"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
+# View for posting and retrieving comments on a post.
 @api_view(['POST', 'GET'])
 @csrf_exempt
 @permission_classes([IsAuthenticated])
@@ -322,6 +339,7 @@ def comment(request, post_id):
 
         return Response(serializer.data)
 
+# View for deleting a post.
 @api_view(['PUT'])
 @csrf_exempt
 @permission_classes([IsAuthenticated])
