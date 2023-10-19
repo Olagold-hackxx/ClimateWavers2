@@ -40,7 +40,7 @@ spec:
 
         env:
 
-        - name: mariadb_ROOT_PASSWORD
+        - name: MARIADB_ROOT_PASSWORD
           value: waverx
 
         image: mariadb
