@@ -21,7 +21,7 @@ The Climate Change and Disaster Response Platform aims to monitor climate change
 
 ## Features
 
-- **User Authentication:** Secure user registration, login, and profile management.
+- **CustomUser Authentication:** Secure user registration, login, and profile management.
 - **Data Management:** Store and manage user data, community information, and datasets.
 - **Real-time Data Processing:** Process incoming data streams for analysis and visualization.
 - **Collaborative Communities:** Enable users to form communities, share observations, and collaborate.
@@ -63,7 +63,7 @@ The Climate Change and Disaster Response Platform aims to monitor climate change
 
 ## API Endpoints
 
-- **User Management:**
+- **CustomUser Management:**
   - `/api/users/register/`: POST endpoint for user registration.
   - `/api/users/login/`: POST endpoint for user login.
   - `/api/users/profile/`: GET endpoint to retrieve user profile information.

@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from climate_wavers.views import obtain_auth_token  # Update the import
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("climate_wavers.urls")),
+    path("api-token-auth/", obtain_auth_token),
 ]

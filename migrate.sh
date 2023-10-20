@@ -1,0 +1,1 @@
+MARIADB_PASSWORD='waverx' MARIADB_USER='climatewavers' MARIADB_DB_NAME='climatewavers_db' MARIADB_PORT=3306 MARIADB_SERVER=127.0.0.1 python3 manage.py migrate

@@ -39,7 +39,29 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
+
 ]
+
+AUTH_USER_MODEL = "climate_wavers.User"
+
+# Authentication backends
+AUTHENTICATION_CLASSES = (
+    'rest_framework.authentication.TokenAuthentication',  # Add Token Authentication
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+# ...
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -86,7 +108,7 @@ DATABASES = {
     }
 }
 
-AUTH_USER_MODEL = "climate_wavers.User"
+AUTH_USER_MODEL = "climate_wavers.CustomUser"
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
