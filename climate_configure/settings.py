@@ -39,7 +39,28 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
+    
 ]
+
+AUTH_USER_MODEL = "climate_wavers.User"
+
+# Authentication backends
+AUTHENTICATION_CLASSES = (
+    'rest_framework.authentication.TokenAuthentication',  # Add Token Authentication
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+# ...
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -77,14 +98,15 @@ WSGI_APPLICATION = 'climate_configure.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ['MARIADB_DB_NAME'],
-        'USER': os.environ['MARIADB_USER'],
-        'PASSWORD': os.environ['MARIADB_PASSWORD'],
-        'HOST': os.environ['MARIADB_SERVER'],
-        'PORT': os.environ['MARIADB_PORT'],
+        'ENGINE': 'django.db.backends.mysql',  # Change this to the appropriate database engine
+        'NAME': 'climatewavers_db',
+        'USER': 'climatewavers',
+        'PASSWORD': 'waverx',
+        'HOST': 'localhost',
+        'PORT': '',  # If your MySQL server is running on a non-default port
     }
 }
+
 
 AUTH_USER_MODEL = "climate_wavers.User"
 

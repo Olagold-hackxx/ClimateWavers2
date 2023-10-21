@@ -7,15 +7,16 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator
+from rest_framework.authtoken.models import Token
+from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.permissions import IsAuthenticated
 from django.db.models import Q
 import json
-
 from .models import *
-from .serializers import PostSerializer  # Assuming you have a PostSerializer in a serializers.py file
+from .serializers import PostSerializer, CommentSerializer  # Assuming you have PostSerializer and CommentSerializer in a serializers.py file
 
 # View for displaying the homepage with posts and suggestions for logged-in users.
 @api_view(['GET'])
@@ -44,6 +45,7 @@ def index(request):
 
 # View for user registration.
 @api_view(['POST'])
+@permission_classes([])  # No authentication required
 def register(request):
     if request.method == "POST":
         # Get user data from the request data
@@ -69,6 +71,7 @@ def register(request):
 
 # View for user login.
 @api_view(['POST'])
+@permission_classes([]) 
 def login_view(request):
     if request.method == "POST":
         username = request.data.get("username")
@@ -356,3 +359,19 @@ def delete_post(request, post_id):
             return Response({"message": "You don't have permission to delete this post."}, status=status.HTTP_403_FORBIDDEN)
     else:
         return Response({"message": "Method must be 'PUT'"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+# This view is for obtaining an authentication token.
+@api_view(['POST'])
+@permission_classes([])  # No authentication needed
+def obtain_auth_token(request):
+    if request.method == "POST":
+        username = request.data.get("username")
+        password = request.data.get("password")
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            token, _ = Token.objects.get_or_create(user=user)
+            return Response({"token": token.key}, status=status.HTTP_200_OK)
+        return Response({"message": "Invalid username and/or password."}, status=status.HTTP_401_UNAUTHORIZED)
+    else:
+        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
