@@ -1,0 +1,1 @@
+cat /tmp/setup_postgresql.sql | psql -U root

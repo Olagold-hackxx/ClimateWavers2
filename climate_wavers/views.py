@@ -16,32 +16,22 @@ from rest_framework import status
 from django.db.models import Q
 import json
 from .models import *
+<<<<<<< HEAD
 from .serializers import PostSerializer, CommentSerializer  # Assuming you have PostSerializer and CommentSerializer in a serializers.py file
+=======
+from .serializers import CustomUserSerializer, PostSerializer, CommentSerializer  # Assuming you have PostSerializer and CommentSerializer in a serializers.py file
+>>>>>>> 8e5d89bccb4fd3e6ff7600c7e38be16047bb36c2
 
 # View for displaying the homepage with posts and suggestions for logged-in users.
 @api_view(['GET'])
+@permission_classes([])
 def index(request):
-    all_posts = Post.objects.all().order_by('-date_created')
-    paginator = Paginator(all_posts, 10)
-    page_number = request.GET.get('page')
-    if page_number is None:
-        page_number = 1
-    posts = paginator.get_page(page_number)
-    followings = []
-    suggestions = []
-    if request.user.is_authenticated:
-        followings = Follower.objects.filter(followers=request.user).values_list('user', flat=True)
-        suggestions = User.objects.exclude(
-            Q(pk__in=followings) | Q(username=request.user.username)
-        ).order_by("?")[:6]
+    all_users = CustomUser.objects.all().order_by('date_joined')
+
     # Serialize the posts using the PostSerializer
-    serializer = PostSerializer(posts, many=True)
-    return Response({
-        "posts": serializer.data,
-        "suggestions": suggestions,
-        "page": "all_posts",
-        'profile': False
-    })
+    serializer = CustomUserSerializer(all_users, many=True)
+    print(serializer.data)
+    return Response(serializer.data)
 
 # View for user registration.
 @api_view(['POST'])
@@ -71,7 +61,11 @@ def register(request):
 
 # View for user login.
 @api_view(['POST'])
+<<<<<<< HEAD
 @permission_classes([]) 
+=======
+@permission_classes([])
+>>>>>>> 8e5d89bccb4fd3e6ff7600c7e38be16047bb36c2
 def login_view(request):
     if request.method == "POST":
         username = request.data.get("username")
@@ -374,4 +368,8 @@ def obtain_auth_token(request):
             return Response({"token": token.key}, status=status.HTTP_200_OK)
         return Response({"message": "Invalid username and/or password."}, status=status.HTTP_401_UNAUTHORIZED)
     else:
+<<<<<<< HEAD
         return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+=======
+        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+>>>>>>> 8e5d89bccb4fd3e6ff7600c7e38be16047bb36c2

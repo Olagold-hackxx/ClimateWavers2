@@ -21,5 +21,9 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("climate_wavers.urls")),
     path("api-token-auth/", obtain_auth_token),
+<<<<<<< HEAD
 ]
 
+=======
+]
+>>>>>>> 8e5d89bccb4fd3e6ff7600c7e38be16047bb36c2

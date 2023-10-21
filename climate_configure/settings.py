@@ -40,7 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 8e5d89bccb4fd3e6ff7600c7e38be16047bb36c2
 ]
 
 AUTH_USER_MODEL = "climate_wavers.User"
@@ -62,6 +66,10 @@ REST_FRAMEWORK = {
     ),
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8e5d89bccb4fd3e6ff7600c7e38be16047bb36c2
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -107,8 +115,12 @@ DATABASES = {
     }
 }
 
+<<<<<<< HEAD
 
 AUTH_USER_MODEL = "climate_wavers.User"
+=======
+AUTH_USER_MODEL = "climate_wavers.CustomUser"
+>>>>>>> 8e5d89bccb4fd3e6ff7600c7e38be16047bb36c2
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
