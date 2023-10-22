@@ -1,4 +1,6 @@
 from django.contrib.auth.models import AbstractUser
+from django.db.models.signals import m2m_changed
+from django.dispatch import receiver
 from django.db import models
 from django.utils import timezone
 
@@ -152,3 +154,12 @@ class Follower(models.Model):
 
     def __str__(self):
         return f"CustomUser: {self.user}"
+
+@receiver(m2m_changed, sender=Post.likers.through)
+def update_likers(sender, instance, **kwargs):
+    if kwargs['action'] == 'post_add':
+        # Get the user that was added to the likers
+        user = kwargs['pk_set'].pop()
+        # Add the user to the likers
+        instance.likers.add(user)
+

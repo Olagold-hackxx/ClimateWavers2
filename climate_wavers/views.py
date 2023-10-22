@@ -1,36 +1,33 @@
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.models import User
-from django.db import IntegrityError
-from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-from django.shortcuts import render
+from .models import CustomUser
+from django.core.mail import send_mail
+from django.utils.http import urlsafe_base64_encode
+from django.utils.encoding import force_bytes, force_text
+from django.contrib.auth.tokens import default_token_generator
+from django.contrib.sites.shortcuts import get_current_site
 from django.urls import reverse
-from django.contrib.auth.decorators import login_required
+from rest_framework.authtoken.models import Token
+from django.db.utils import IntegrityError
+from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator
-from rest_framework.authtoken.models import Token
-from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
-from django.db.models import Q
-import json
-from .models import *
-<<<<<<< HEAD
-from .serializers import PostSerializer, CommentSerializer  # Assuming you have PostSerializer and CommentSerializer in a serializers.py file
-=======
-from .serializers import CustomUserSerializer, PostSerializer, CommentSerializer  # Assuming you have PostSerializer and CommentSerializer in a serializers.py file
->>>>>>> 8e5d89bccb4fd3e6ff7600c7e38be16047bb36c2
+from .models import CustomUser, Post, Comment, Follower
+from .serializers import CustomUserSerializer, PostSerializer, CommentSerializer
 
 # View for displaying the homepage with posts and suggestions for logged-in users.
 @api_view(['GET'])
 @permission_classes([])
 def index(request):
+    # Retrieve all users ordered by date joined
     all_users = CustomUser.objects.all().order_by('date_joined')
 
-    # Serialize the posts using the PostSerializer
+    # Serialize the users using the CustomUserSerializer
     serializer = CustomUserSerializer(all_users, many=True)
-    print(serializer.data)
+
     return Response(serializer.data)
 
 # View for user registration.
@@ -42,18 +39,53 @@ def register(request):
         username = request.data.get("username")
         email = request.data.get("email")
         password = request.data.get("password")
+        profession = request.data.get("profession")
+        phone_number = request.data.get("phone_number")
+        last_location = request.data.get("last_location")
+        profile_pic = request.FILES.get("profile_pic")
+        bio = request.data.get("bio")
+        cover = request.FILES.get("cover")
+        # Add other fields as needed
 
+        # Check if required fields are provided
         if not username or not email or not password:
             return Response({"message": "All fields are required."}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
-            user = User.objects.create_user(username, email, password)
-            # You can add additional fields to the user model if needed
+            # Create a CustomUser with the provided data
+            user = CustomUser.objects.create_user(
+                username=username,
+                email=email,
+                password=password,
+                profession=profession,
+                phone_number=phone_number,
+                last_location=last_location,
+                profile_pic=profile_pic,
+                bio=bio,
+                cover=cover,
+                is_active=False  # User is not active until confirmed
+                # Add other fields here
+            )
 
-            # Automatically log in the user after registration
-            login(request, user)
+            # Generate a confirmation token for the user
+            token = default_token_generator.make_token(user)
+            uid = urlsafe_base64_encode(force_bytes(user.pk))
 
-            return Response(status=status.HTTP_201_CREATED)
+            # Build the confirmation URL
+            current_site = get_current_site(request)
+            confirmation_url = reverse('confirm-registration',
+                kwargs={'uidb64': uid, 'token': token})
+            confirmation_url = f'http://{current_site.domain}{confirmation_url}'
+
+            # Send a confirmation email
+            subject = 'Confirm Your Registration'
+            message = f'Please click the following link to confirm your registration: {confirmation_url}'
+            from_email = 'your_email@gmail.com'  # Replace with your email
+            recipient_list = [user.email]
+
+            send_mail(subject, message, from_email, recipient_list)
+
+            return Response({'message': 'User registered. Confirmation email sent.'}, status=status.HTTP_201_CREATED)
         except IntegrityError:
             return Response({"message": "Username or email already taken."}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -61,11 +93,7 @@ def register(request):
 
 # View for user login.
 @api_view(['POST'])
-<<<<<<< HEAD
-@permission_classes([]) 
-=======
 @permission_classes([])
->>>>>>> 8e5d89bccb4fd3e6ff7600c7e38be16047bb36c2
 def login_view(request):
     if request.method == "POST":
         username = request.data.get("username")
@@ -86,7 +114,7 @@ def logout_view(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def profile(request, username):
-    user = User.objects.get(username=username)
+    user = CustomUser.objects.get(username=username)
     all_posts = Post.objects.filter(creater=user).order_by('-date_created')
     paginator = Paginator(all_posts, 10)
     page_number = request.GET.get('page', 1)
@@ -96,8 +124,10 @@ def profile(request, username):
     follower = False
 
     if request.user.is_authenticated:
+        # Get users following the current user
         followings = Follower.objects.filter(followers=request.user).values_list('user', flat=True)
-        suggestions = User.objects.exclude(pk__in(followings).exclude(username=request.user.username).order_by("?")[:6])
+        # Get user suggestions
+        suggestions = CustomUser.objects.exclude(pk__in(followings).exclude(username=request.user.username).order_by("?")[:6])
 
         if request.user in Follower.objects.get(user=user).followers.all():
             follower = True
@@ -129,7 +159,7 @@ def following(request):
     page_number = request.GET.get('page', 1)
     posts = paginator.get_page(page_number)
     followings = Follower.objects.filter(followers=request.user).values_list('user', flat=True)
-    suggestions = User.objects.exclude(pk__in(followings).exclude(username=request.user.username).order_by("?")[:6])
+    suggestions = CustomUser.objects.exclude(pk__in(followings).exclude(username=request.user.username).order_by("?")[:6])
 
     # Serialize the posts using the PostSerializer
     serializer = PostSerializer(posts, many=True)
@@ -149,7 +179,7 @@ def saved(request):
     page_number = request.GET.get('page', 1)
     posts = paginator.get_page(page_number)
     followings = Follower.objects.filter(followers=request.user).values_list('user', flat=True)
-    suggestions = User.objects.exclude(pk__in(followings).exclude(username=request.user.username).order_by("?")[:6])
+    suggestions = CustomUser.objects.exclude(pk__in(followings).exclude(username=request.user.username).order_by("?")[:6])
 
     # Serialize the posts using the PostSerializer
     serializer = PostSerializer(posts, many=True)
@@ -281,7 +311,7 @@ def unsave_post(request, id):
 @permission_classes([IsAuthenticated])
 def follow(request, username):
     if request.method == 'PUT':
-        user = User.objects.get(username=username)
+        user = CustomUser.objects.get(username=username)
         try:
             (follower, create) = Follower.objects.get_or_create(user=user)
             follower.followers.add(request.user)
@@ -298,7 +328,7 @@ def follow(request, username):
 @permission_classes([IsAuthenticated])
 def unfollow(request, username):
     if request.method == 'PUT':
-        user = User.objects.get(username=username)
+        user = CustomUser.objects.get(username=username)
         try:
             follower = Follower.objects.get(user=user)
             follower.followers.remove(request.user)
@@ -367,9 +397,18 @@ def obtain_auth_token(request):
             token, _ = Token.objects.get_or_create(user=user)
             return Response({"token": token.key}, status=status.HTTP_200_OK)
         return Response({"message": "Invalid username and/or password."}, status=status.HTTP_401_UNAUTHORIZED)
-    else:
-<<<<<<< HEAD
-        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
-=======
-        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
->>>>>>> 8e5d89bccb4fd3e6ff7600c7e38be16047bb36c2
+
+
+def confirm_registration(request, uidb64, token):
+    try:
+        uid = force_text(urlsafe_base64_decode(uidb64))
+        user = CustomUser.objects.get(pk=uid)
+
+        if default_token_generator.check_token(user, token):
+            user.is_active = True
+            user.save()
+            return HttpResponse("Your registration has been confirmed.")
+        else:
+            return HttpResponse("Confirmation link is invalid.")
+    except (TypeError, ValueError, OverflowError, CustomUser.DoesNotExist):
+        return HttpResponse("Confirmation link is invalid.")

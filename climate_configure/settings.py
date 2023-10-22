@@ -40,11 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 8e5d89bccb4fd3e6ff7600c7e38be16047bb36c2
 ]
 
 AUTH_USER_MODEL = "climate_wavers.User"
@@ -66,10 +62,7 @@ REST_FRAMEWORK = {
     ),
 }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 8e5d89bccb4fd3e6ff7600c7e38be16047bb36c2
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -106,21 +99,25 @@ WSGI_APPLICATION = 'climate_configure.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',  # Change this to the appropriate database engine
-        'NAME': 'climatewavers_db',
-        'USER': 'climatewavers',
-        'PASSWORD': 'waverx',
-        'HOST': 'localhost',
-        'PORT': '',  # If your MySQL server is running on a non-default port
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ['MARIADB_DB_NAME'],
+        'USER': os.environ['MARIADB_USER'],
+        'PASSWORD': os.environ['MARIADB_PASSWORD'],
+        'HOST': os.environ['MARIADB_SERVER'],
+        'PORT': os.environ['MARIADB_PORT'],
     }
 }
 
-<<<<<<< HEAD
-
-AUTH_USER_MODEL = "climate_wavers.User"
-=======
 AUTH_USER_MODEL = "climate_wavers.CustomUser"
->>>>>>> 8e5d89bccb4fd3e6ff7600c7e38be16047bb36c2
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Replace with your email provider's SMTP server
+EMAIL_PORT = 587  # Replace with the appropriate port
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'your_email@gmail.com'  # Your email address
+EMAIL_HOST_PASSWORD = 'your_email_password'  # Your email password
+DEFAULT_FROM_EMAIL = 'your_email@gmail.com'  # Sender email
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
