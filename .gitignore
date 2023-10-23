@@ -13,5 +13,4 @@ __pycache__/
 **/*/migrations/
 **/*/static/
 **/*/templates/
-**/dataset/
-node_modules/
+node_modules
