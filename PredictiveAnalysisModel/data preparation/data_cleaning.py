@@ -20,11 +20,13 @@ def clean_csv(input_file, output_file):
 # Example usage
 if __name__ == "__main__":
     # Provide input and output file paths
-    base_dir = 'PredictiveAnalysisModel/dataset/disaster types/'
+    base_dir = 'PredictiveAnalysisModel/dataset/'
     disaster_types = ["Storm", "Flood", "Epidemic",
                       "Earthquake", "Drought", "Volcanic activity", "Wildfire"]
+    disaster_dataset = f"{base_dir}/historical-disasters.csv"
+    clean_csv(disaster_dataset, disaster_dataset)
     for disaster in disaster_types:
-        disaster_dataset = f"{base_dir}{disaster}.csv"
+        disaster_dataset = f"{base_dir}disaster types/{disaster}.csv"
 
         # Clean the CSV file
         clean_csv(disaster_dataset, disaster_dataset)
