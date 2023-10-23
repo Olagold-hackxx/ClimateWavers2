@@ -109,15 +109,7 @@ DATABASES = {
 }
 
 AUTH_USER_MODEL = "climate_wavers.CustomUser"
-
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'  # Replace with your email provider's SMTP server
-EMAIL_PORT = 587  # Replace with the appropriate port
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'your_email@gmail.com'  # Your email address
-EMAIL_HOST_PASSWORD = 'your_email_password'  # Your email password
-DEFAULT_FROM_EMAIL = 'your_email@gmail.com'  # Sender email
+  # Sender email
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -158,3 +150,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'climate_wavers/media')
 MEDIA_URL = '/media/'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Replace with your email provider's SMTP server
+EMAIL_PORT = 587  # Replace with the appropriate port
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'climatewaver@gmail.com'  # Your email address
+EMAIL_HOST_PASSWORD = 'bujs ubnf nsui teht'  # Your email password
+DEFAULT_FROM_EMAIL = 'climatewaver@gmail.com'
+

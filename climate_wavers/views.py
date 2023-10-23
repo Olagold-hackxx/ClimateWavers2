@@ -1,6 +1,6 @@
 from .models import CustomUser
 from django.core.mail import send_mail
-from django.utils.http import urlsafe_base64_encode
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode  # Import urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_text
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.sites.shortcuts import get_current_site
@@ -70,6 +70,7 @@ def register(request):
             # Generate a confirmation token for the user
             token = default_token_generator.make_token(user)
             uid = urlsafe_base64_encode(force_bytes(user.pk))
+           
 
             # Build the confirmation URL
             current_site = get_current_site(request)
@@ -80,7 +81,7 @@ def register(request):
             # Send a confirmation email
             subject = 'Confirm Your Registration'
             message = f'Please click the following link to confirm your registration: {confirmation_url}'
-            from_email = 'your_email@gmail.com'  # Replace with your email
+            from_email = 'climatewaver@gmail.com'  # Replace with your email
             recipient_list = [user.email]
 
             send_mail(subject, message, from_email, recipient_list)
@@ -106,6 +107,7 @@ def login_view(request):
 
 # View for user logout.
 @api_view(['POST'])
+@permission_classes([])
 def logout_view(request):
     logout(request)
     return Response(status=status.HTTP_200_OK)
