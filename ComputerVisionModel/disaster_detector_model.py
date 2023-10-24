@@ -33,9 +33,9 @@ ap.add_argument("-p", "--plot", type=str, default="plot.png",
 args = vars(ap.parse_args())
 # Total number of image paths in training, validation,
 # and testing directories
-totalTrain = len(list(paths.list_images(config.TRAIN_PATH)))
-totalVal = len(list(paths.list_images(config.VAL_PATH)))
-totalTest = len(list(paths.list_images(config.TEST_PATH)))
+total_train = len(list(paths.list_images(config.TRAIN_PATH)))
+total_val = len(list(paths.list_images(config.VAL_PATH)))
+total_test = len(list(paths.list_images(config.TEST_PATH)))
 
 
 def freeze_layer(model, base_model):
@@ -48,33 +48,33 @@ def freeze_layer(model, base_model):
 
 
 
-def new_layer(baseModel):
+def new_layer(base_model):
     # construct the new layer of the model that will be placed on top of the
     # the base model
-    topModel = baseModel.output
-    topModel = AveragePooling2D(pool_size=(7, 7))(topModel)
-    topModel = Flatten(name="flatten")(topModel)
-    topModel = Dense(256, activation="relu")(topModel)
-    topModel = Dropout(0.5)(topModel)
-    topModel = Dense(len(config.CLASSES), activation="softmax")(topModel)
-    model = Model(inputs=baseModel.input, outputs=topModel)
+    top_model = base_model.output
+    top_model = AveragePooling2D(pool_size=(7, 7))(top_model)
+    top_model = Flatten(name="flatten")(top_model)
+    top_model = Dense(256, activation="relu")(top_model)
+    top_model = Dropout(0.5)(top_model)
+    top_model = Dense(len(config.CLASSES), activation="softmax")(top_model)
+    model = Model(inputs=base_model.input, outputs=top_model)
     return model
 
 
-print("Total training data === {}".format(totalTrain))
-print("Total validating data === {}".format(totalVal))
-print("Total testing data === {}".format(totalTest))
+print("Total training data === {}".format(total_train))
+print("Total validating data === {}".format(total_val))
+print("Total testing data === {}".format(total_test))
 
 
 def train_model(model):
     # train the model
     print("[INFO] training model...")
     H = model.fit(
-        trainGen,
-        steps_per_epoch=totalTrain // config.BS,
-        validation_data=valGen,
-        validation_steps=totalVal // config.BS,
-        epochs=config.NUM_EPOCHS)
+        train_gen,
+        steps_per_epoch=total_train // config.BS,
+        validation_data=val_gen,
+        validation_steps=total_val // config.BS,
+        epochs=0)
 
     return H
 
@@ -100,7 +100,7 @@ valAug.mean = mean
 
 
 # initialize the training generator
-trainGen = trainAug.flow_from_directory(
+train_gen = trainAug.flow_from_directory(
     config.TRAIN_PATH,
     class_mode="categorical",
     target_size=(224, 224),
@@ -108,7 +108,7 @@ trainGen = trainAug.flow_from_directory(
     shuffle=True,
     batch_size=config.BS)
 # initialize the validation generator
-valGen = valAug.flow_from_directory(
+val_gen = valAug.flow_from_directory(
     config.VAL_PATH,
     class_mode="categorical",
     target_size=(224, 224),
@@ -116,7 +116,7 @@ valGen = valAug.flow_from_directory(
     shuffle=False,
     batch_size=config.BS)
 # initialize the testing generator
-testGen = valAug.flow_from_directory(
+test_gen = valAug.flow_from_directory(
     config.TEST_PATH,
     class_mode="categorical",
     target_size=(224, 224),
@@ -127,31 +127,31 @@ testGen = valAug.flow_from_directory(
 
 # off
 print("[INFO] preparing model...")
-baseModel = ResNet50(weights="imagenet", include_top=False,
+base_model = ResNet50(weights="imagenet", include_top=False,
                      input_tensor=Input(shape=(224, 224, 3)))
 
 # place the top FC model on top of the base model (this will become
 # the actual model we will train)
-model = new_layer(baseModel)
-freeze_layer(model, baseModel)
+model = new_layer(base_model)
+freeze_layer(model, base_model)
 
 
 H = train_model(model)
 # reset the testing generator and then use our trained model to
 # make predictions on the data
 print("[INFO] evaluating network...")
-testGen.reset()
-predIdxs = model.predict_generator(testGen,
-                                   steps=(totalTest // config.BS) + 1)
+test_gen.reset()
+predIdxs = model.predict(test_gen,
+                                   steps=(total_test // config.BS) + 1)
 # for each image in the testing set we need to find the index of the
 # label with corresponding largest predicted probability
 predIdxs = np.argmax(predIdxs, axis=1)
 # show a nicely formatted classification report
-print(classification_report(testGen.classes, predIdxs,
-                            target_names=testGen.class_indices.keys()))
+print(classification_report(test_gen.classes, predIdxs,
+                            target_names=test_gen.class_indices.keys()))
 # serialize the model to disk
 print("[INFO] saving model...")
-model.save(config.MODEL_PATH, save_format="h5")
+model.save(config.MODEL_PATH)
 
 N = config.NUM_EPOCHS
 plt.style.use("ggplot")
@@ -164,4 +164,4 @@ plt.title("Training Loss and Accuracy on Dataset")
 plt.xlabel("Epoch #")
 plt.ylabel("Loss/Accuracy")
 plt.legend(loc="lower left")
-plt.savefig(args["plots"])
+plt.savefig(args["plot"])

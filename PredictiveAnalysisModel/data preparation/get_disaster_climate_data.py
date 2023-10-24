@@ -19,9 +19,15 @@ async def fetch_disasters_climate_data() -> bool:
     disaster_data = f'{base_dir}historical-disasters.csv'
     climate_dataset_df = pd.DataFrame(["Minimum Temperature", "Maximum Temperature", "Dew Point", "Temperature", "Wind Speed Min", "Wind Speed Max",
                                       "Wind Speed Mean", "Wind Direction", "Relative Humidity Min", "Relative Humidity Max", "Relative Humidity Mean", "Weather Type", "Precipitation", "Cloud Cover", "Sea Level Pressure", "Precipitation Cover"])
-    df = pd.read_csv(disaster_data)
+    # Specify the index from which you want to start reading
+    start_index = 1
+
+    # Read the CSV file and skip the rows before the start_index
+    df = pd.read_csv('your_file.csv', skiprows=range(1, start_index))
     # Iterate through the DataFrame using iterrows()
     climate_dataset_df.to_csv(base_dir + "climate_data.csv", index=False)
+
+
 
     for index, row in df.iterrows():
         # Access columns using column names
@@ -55,7 +61,7 @@ async def fetch_disasters_climate_data() -> bool:
         climate_data_req = requests.get(API_URL, params=params)
         if climate_data_req.status_code != 200:
             continue
-        climate_data_req = climate_data_req.text
+        climate_data_req = climate_data_req.text()
         climate_data_csv = StringIO(climate_data_req)
         data_df = pd.read_csv(climate_data_csv)
         print(data_df)
