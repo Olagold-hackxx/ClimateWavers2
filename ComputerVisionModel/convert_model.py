@@ -1,10 +1,12 @@
 from pathlib import Path
 from openvino import convert_model
+import openvino
 import tensorflow as tf
 
-loaded_model = tf.saved_model.load("model/disaster_detector")
+loaded_model =  tf.keras.models.load_model('model/disaster_detector.h5')
 
 # The paths of the source and converted models
 
-ov_model = convert_model(input_model=loaded_model,
-                         input=[1,224,224,3])
+ov_model = convert_model(loaded_model)
+# save model to OpenVINO IR for later use
+openvino.save_model(ov_model, 'model/model.xml')
