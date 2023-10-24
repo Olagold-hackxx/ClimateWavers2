@@ -28,4 +28,4 @@ INIT_LR = 1e-4
 BS = 32
 NUM_EPOCHS = 1
 # define the path to the serialized output model after training
-MODEL_PATH = "model/v1/disaster_detector"
+MODEL_PATH = "model"
