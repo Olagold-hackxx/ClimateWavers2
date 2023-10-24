@@ -31,6 +31,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("-p", "--plot", type=str, default="plot.png",
                 help="path to output loss/accuracy plot")
 args = vars(ap.parse_args())
+print(args)
 # Total number of image paths in training, validation,
 # and testing directories
 totalTrain = len(list(paths.list_images(config.TRAIN_PATH)))
@@ -151,7 +152,7 @@ print(classification_report(testGen.classes, predIdxs,
                             target_names=testGen.class_indices.keys()))
 # serialize the model to disk
 print("[INFO] saving model...")
-model.save(config.MODEL_PATH, save_format="h5")
+model.save(config.MODEL_PATH)
 
 N = config.NUM_EPOCHS
 plt.style.use("ggplot")
@@ -164,4 +165,4 @@ plt.title("Training Loss and Accuracy on Dataset")
 plt.xlabel("Epoch #")
 plt.ylabel("Loss/Accuracy")
 plt.legend(loc="lower left")
-plt.savefig(args["plots"])
+plt.savefig(args["plot"])
