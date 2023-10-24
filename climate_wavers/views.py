@@ -1,6 +1,6 @@
-from .models import CustomUser
+# Import necessary modules and libraries
 from django.core.mail import send_mail
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode  # Import urlsafe_base64_decode
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_text
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.sites.shortcuts import get_current_site
@@ -70,7 +70,6 @@ def register(request):
             # Generate a confirmation token for the user
             token = default_token_generator.make_token(user)
             uid = urlsafe_base64_encode(force_bytes(user.pk))
-           
 
             # Build the confirmation URL
             current_site = get_current_site(request)
@@ -200,8 +199,9 @@ def create_post(request):
     if request.method == 'POST':
         text = request.data.get('text')
         pic = request.FILES.get('picture')
+        category = request.data.get('category')  # Added category
         try:
-            post = Post.objects.create(creater=request.user, content_text=text, content_image=pic)
+            post = Post.objects.create(creater=request.user, content_text=text, content_image=pic, category=category)
             return Response(status=status.HTTP_201_CREATED)
         except Exception as e:
             return Response({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
@@ -400,7 +400,7 @@ def obtain_auth_token(request):
             return Response({"token": token.key}, status=status.HTTP_200_OK)
         return Response({"message": "Invalid username and/or password."}, status=status.HTTP_401_UNAUTHORIZED)
 
-
+# View for confirming user registration.
 def confirm_registration(request, uidb64, token):
     try:
         uid = force_text(urlsafe_base64_decode(uidb64))

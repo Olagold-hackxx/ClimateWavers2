@@ -4,47 +4,74 @@ from django.dispatch import receiver
 from django.db import models
 from django.utils import timezone
 
-
+# CustomUser model extending the AbstractUser class
 class CustomUser(AbstractUser):
     # CustomUser profile information
 
+    # User's username (unique)
     username = models.CharField(
         max_length=150,
         unique=True,
-        null=True,
+        null=True,  # Nullable field
         help_text=(
             'Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.'),
         error_messages={
             'unique': ("A user with that username already exists.")
         },
     )
+    
+    # User's profile picture (optional)
     profile_pic = models.ImageField(
-        upload_to='profile_pic/', blank=True, null=True)  # Profile picture of the user
-    # CustomUser's bio or short description
+        upload_to='profile_pic/', blank=True, null=True)
+    
+    # User's bio or short description (optional)
     bio = models.TextField(max_length=160, blank=True, null=True)
-    # Cover image for the user's profile
+    
+    # Cover image for the user's profile (optional)
     cover = models.ImageField(upload_to='covers/', blank=True, null=True)
+    
+    # User's password (optional, for future reference)
     password = models.CharField(max_length=255, blank=True, null=True)
+    
+    # User's email (unique)
     email = models.EmailField(unique=True)
+    
+    # User's role (can be superuser)
     is_superuser = models.BooleanField(default=False, null=True)
-    # Additional fields for profession, phone number, and last location
+    
+    # User's profession (optional)
     profession = models.CharField(
-        max_length=100, blank=True, null=True)  # CustomUser's profession
+        max_length=100, blank=True, null=True)
+    
+    # User's phone number (optional)
     phone_number = models.CharField(
-        max_length=15, blank=True, null=True)  # CustomUser's phone number
-    # CustomUser's last known location
+        max_length=15, blank=True, null=True)  # Fixed 'blank' syntax error
+    
+    # User's last known location (optional)
     last_location = models.CharField(max_length=255, blank=True, null=True)
-    # CustomUser's google authentication method
+    
+    # Google authentication method
     is_google_user = models.BooleanField(default=False, null=True)
-    # CustomUser's redhat authentication method
+    
+    # Redhat authentication method
     is_redhat_user = models.BooleanField(default=False, null=True)
-    is_verified = models.BooleanField(default=False)  # verification status
-    # CustomUser's with twitter authentication method
+    
+    # User verification status
+    is_verified = models.BooleanField(default=False)
+    
+    # Twitter authentication method (optional)
     is_twitter_user = models.BooleanField(default=False, null=True)
-    # CustomUser's with facebook authentication method
+    
+    # Facebook authentication method (optional)
     is_facebook_user = models.BooleanField(default=False, null=True)
+    
+    # User staff status
     is_staff = models.BooleanField(default=False, null=True)
+    
+    # User's activity status (active by default)
     is_active = models.BooleanField(default=True, null=True)
+    
+    # User registration date
     date_joined = models.DateTimeField(default=timezone.now, null=True)
 
     class Meta:
@@ -63,33 +90,36 @@ class CustomUser(AbstractUser):
             "last_name": self.last_name
         }
 
-
+# Post model for user-generated posts
 class Post(models.Model):
-    # CustomUser-generated posts
-    # CustomUser who created the post
-    creater = models.ForeignKey(
-        CustomUser, on_delete=models.CASCADE, related_name='posts')
-    date_created = models.DateTimeField(
-        default=timezone.now)  # Date and time of post creation
-    content_text = models.TextField(
-        max_length=140, blank=True)  # Text content of the post
-    content_image = models.ImageField(
-        upload_to='posts/', blank=True)  # Image content of the post
-    # CustomUsers who liked the post
-    likers = models.ManyToManyField(
-        CustomUser, blank=True, related_name='likes')
-    # CustomUsers who saved the post
-    savers = models.ManyToManyField(
-        CustomUser, blank=True, related_name='saved')
-    comment_count = models.IntegerField(
-        default=0)  # Count of comments on the post
+    # User who created the post
+    creater = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    
+    # Date and time of post creation
+    date_created = models.DateTimeField(auto_now_add=True)
+    
+    # Text content of the post (optional)
+    content_text = models.TextField(blank=True, null=True)
+    
+    # Image content of the post (optional)
+    content_image = models.ImageField(upload_to='posts/', blank=True, null=True)
+    
+    # Users who liked the post
+    likers = models.ManyToManyField(CustomUser, related_name='liked_posts', blank=True)
+    
+    # Users who saved the post
+    savers = models.ManyToManyField(CustomUser, related_name='saved_posts', blank=True)
+    
+    # Count of comments on the post
+    comment_count = models.PositiveIntegerField(default=0)
+    
+    # Post category with choices: 'community', 'education', 'reports' (default: 'community')
+    category = models.CharField(max_length=20, choices=[('community', 'Community'), ('education', 'Education'), ('reports', 'Reports')], default='community')
 
-    def __str__(self):
-        return f"Post ID: {self.id} (creater: {self.creater})"
-
+    # Method to get the image URL
     def img_url(self):
-        # Method to get the URL of the post's content image
-        return self.content_image.url
+        if self.content_image and hasattr(self.content_image, 'url'):
+            return self.content_image.url
 
     class Meta:
         db_table = 'post'
@@ -110,17 +140,19 @@ class Post(models.Model):
         # Method to record that a user unsaved the post
         self.savers.remove(user)
 
-
+# Comment model for comments on user posts
 class Comment(models.Model):
-    # Comments on user posts
     # Post to which the comment belongs
     post = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name='comments')
-    # CustomUser who made the comment
+    
+    # User who made the comment
     commenter = models.ForeignKey(
         CustomUser, on_delete=models.CASCADE, related_name='commenters')
-    comment_content = models.TextField(
-        max_length=90)  # Text content of the comment
+    
+    # Text content of the comment (limited to 90 characters)
+    comment_content = models.TextField(max_length=90)
+    
     # Date and time of comment creation
     comment_time = models.DateTimeField(default=timezone.now)
 
@@ -139,13 +171,13 @@ class Comment(models.Model):
     class Meta:
         db_table = 'comment'
 
-
+# Follower model to manage user followers and following relationships
 class Follower(models.Model):
-    # CustomUser followers and following relationships
-    # CustomUser being followed by others
+    # User being followed by others
     user = models.ForeignKey(
         CustomUser, on_delete=models.CASCADE, related_name='followers')
-    # CustomUsers following the specified user
+    
+    # Users following the specified user
     followers = models.ManyToManyField(
         CustomUser, blank=True, related_name='following')
 
@@ -155,6 +187,7 @@ class Follower(models.Model):
     def __str__(self):
         return f"CustomUser: {self.user}"
 
+# Signal receiver to update likers for a post
 @receiver(m2m_changed, sender=Post.likers.through)
 def update_likers(sender, instance, **kwargs):
     if kwargs['action'] == 'post_add':
@@ -162,4 +195,3 @@ def update_likers(sender, instance, **kwargs):
         user = kwargs['pk_set'].pop()
         # Add the user to the likers
         instance.likers.add(user)
-
