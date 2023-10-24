@@ -31,6 +31,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("-p", "--plot", type=str, default="plot.png",
                 help="path to output loss/accuracy plot")
 args = vars(ap.parse_args())
+print(args)
 # Total number of image paths in training, validation,
 # and testing directories
 total_train = len(list(paths.list_images(config.TRAIN_PATH)))
