@@ -20,6 +20,8 @@ CLASSES = ["Earthquake", "Drought",
            "Damaged Infrastructure", "Human Damage", "Human", "Land Slide", "Non Damage Buildings and  Street", "Non Damage Wildlife Forest",
            "Sea", "Urban Fire", "Wild Fire", "Water Disaster"]
 
+CLASSES.sort()
+
 
 
 # initialize the initial learning rate, batch size, and number of

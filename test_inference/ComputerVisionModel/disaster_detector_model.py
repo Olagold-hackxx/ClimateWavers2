@@ -17,7 +17,7 @@ output_key = list(exec_net.outputs.keys())[0]
 network_input_shape = exec_net.input_info[input_key].tensor_desc.dim
 
 #The MobileNet network expects images in RGB format
-image = cv2.cvtColor(cv2.imread(filename="data/coco.jpg"), code=cv2.COLOR_BGR2RGB)
+image = cv2.cvtColor(cv2.imread(filename="test_dataset/coco.jpg"), code=cv2.COLOR_BGR2RGB)
 
 # Resize image to network input image shape
 resized_image = cv2.resize(src=image, dsize=(224, 224))
@@ -25,7 +25,7 @@ resized_image = cv2.resize(src=image, dsize=(224, 224))
 # Transpose image to network input shape
 input_image = np.reshape(resized_image, network_input_shape) / 255
 input_image = np.expand_dims(np.transpose(resized_image, (2, 0, 1)), 0)
-plt.imshow(image);
+plt.imshow(image)
 
 result = exec_net.infer(inputs={input_key: input_image})[output_key]
 result_index = np.argmax(result)
