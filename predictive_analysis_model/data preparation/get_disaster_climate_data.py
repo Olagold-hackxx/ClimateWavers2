@@ -10,7 +10,7 @@ to use as our training dataset
 
 # NOAA Climate Data API URL
 API_URL = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/weatherdata/history/'
-API_KEY = 'R9M7HHCH4EDADEUBCU3ZENKXN'  # API key
+API_KEY = 'KP88LFUEU2KK59Y853C68AB5D'  # API key
 
 
 async def fetch_disasters_climate_data() -> bool:
@@ -22,7 +22,7 @@ async def fetch_disasters_climate_data() -> bool:
         climate_dataset_df = pd.DataFrame([["Disaster Type", "Magnitude", "Magnitude Scale", "Minimum Temperature", "Maximum Temperature", "Dew Point", "Temperature", "Wind Speed Min", "Wind Speed Max",
                                       "Wind Speed Mean", "Wind Direction", "Relative Humidity Min", "Relative Humidity Max", "Relative Humidity Mean", "Weather Type", "Precipitation", "Cloud Cover", "Sea Level Pressure", "Precipitation Cover"]])
     # Specify the index from which you want to start reading
-    start_index = 429
+    start_index = 778
 
     # Read the CSV file and skip the rows before the start_index
     df = pd.read_csv(f'{base_dir}/dataset/historical-disasters.csv', skiprows=range(1, start_index))
