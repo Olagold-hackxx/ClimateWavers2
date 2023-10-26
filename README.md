@@ -83,6 +83,7 @@ If you haven't already, you need to install MariaDB on your server or local deve
            'PORT': '3306',  # Default MariaDB port
        }
    }
+	```
 
 ## Starting MariaDB
 
