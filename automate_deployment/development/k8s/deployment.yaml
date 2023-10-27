@@ -1,27 +1,27 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: climatewavers
+  name: waverX-Analysis
   labels:
-    app: climatewavers
+    app: waverX-Analysis
     sandbox: olagoldhackxx
-    sandbox-olagoldhackxx: climatewavers
+    sandbox-olagoldhackxx: waverX-Analysis
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: climatewavers
+      app: waverX-Analysis
   template:
     metadata:
       labels:
-        app: climatewavers
+        app: waverX-Analysis
     spec:
       imagePullSecrets:
         - name: quay-registry-secret
       containers:
-        - name: climatewavers
-          image: quay.io/olagoldhackxx/climatewavers:v1
+        - name: waverX-Analysis
+          image: quay.io/olagoldhackxx/climatewavers-waverX-Analysis:v1:v1
           imagePullPolicy: Always
           ports:
-            - containerPort: 8000
+            - containerPort: 8400
               protocol: TCP

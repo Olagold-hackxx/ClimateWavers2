@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Make sure you have oc and tkn installed
-#Get ENV variable
+#Get TOKEN and SERVER from ENV variable
 source .env
 token=$TOKEN
 server=$SERVER
