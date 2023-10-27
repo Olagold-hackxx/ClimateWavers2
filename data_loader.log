@@ -1,0 +1,447 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.7.126:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.7.126:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.7.126:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.7.126:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [27/Oct/2023 16:52:52] "GET /api/v1/model/waverx-nlp/status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Oct/2023 16:54:42] "[31m[1mPOST /api/v1/model/waverx-nlp/status HTTP/1.1[0m" 405 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:__main__:Exception on /api/v1/model/waverx-nlp [POST]
+Traceback (most recent call last):
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/tmp/ipykernel_1180/3517950905.py", line 18, in model_inference
+    return jsonify(predict(body))
+  File "/opt/app-root/src/waverX-NLP/prediction.py", line 25, in predict
+    tokenized_input = tokenizer(input_text, return_tensors="pt")
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2790, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2848, in _call_one
+    raise ValueError(
+ValueError: text input must of type `str` (single example), `List[str]` (batch or single pretokenized example) or `List[List[str]]` (batch of pretokenized examples).
+INFO:werkzeug:127.0.0.1 - - [27/Oct/2023 16:57:13] "[35m[1mPOST /api/v1/model/waverx-nlp HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:__main__:Exception on /api/v1/model/waverx-nlp [POST]
+Traceback (most recent call last):
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/tmp/ipykernel_1180/3517950905.py", line 18, in model_inference
+    return jsonify(predict(body))
+  File "/opt/app-root/src/waverX-NLP/prediction.py", line 25, in predict
+    tokenized_input = tokenizer(input_text, return_tensors="pt")
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2790, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2848, in _call_one
+    raise ValueError(
+ValueError: text input must of type `str` (single example), `List[str]` (batch or single pretokenized example) or `List[List[str]]` (batch of pretokenized examples).
+INFO:werkzeug:127.0.0.1 - - [27/Oct/2023 16:57:59] "[35m[1mPOST /api/v1/model/waverx-nlp HTTP/1.1[0m" 500 -
+ERROR:__main__:Exception on /api/v1/model/waverx-nlp [POST]
+Traceback (most recent call last):
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/tmp/ipykernel_1180/3517950905.py", line 18, in model_inference
+    return jsonify(predict(body))
+  File "/opt/app-root/src/waverX-NLP/prediction.py", line 25, in predict
+    tokenized_input = tokenizer(input_text, return_tensors="pt")
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2790, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2848, in _call_one
+    raise ValueError(
+ValueError: text input must of type `str` (single example), `List[str]` (batch or single pretokenized example) or `List[List[str]]` (batch of pretokenized examples).
+INFO:werkzeug:127.0.0.1 - - [27/Oct/2023 16:58:57] "[35m[1mPOST /api/v1/model/waverx-nlp HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:__main__:Exception on /api/v1/model/waverx-nlp [POST]
+Traceback (most recent call last):
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/tmp/ipykernel_1180/774740377.py", line 19, in model_inference
+    return jsonify(predict(body))
+  File "/opt/app-root/src/waverX-NLP/prediction.py", line 25, in predict
+    tokenized_input = tokenizer(input_text, return_tensors="pt")
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2790, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2848, in _call_one
+    raise ValueError(
+ValueError: text input must of type `str` (single example), `List[str]` (batch or single pretokenized example) or `List[List[str]]` (batch of pretokenized examples).
+INFO:werkzeug:127.0.0.1 - - [27/Oct/2023 17:00:27] "[35m[1mPOST /api/v1/model/waverx-nlp HTTP/1.1[0m" 500 -
+ERROR:__main__:Exception on /api/v1/model/waverx-nlp [POST]
+Traceback (most recent call last):
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/tmp/ipykernel_1180/774740377.py", line 19, in model_inference
+    return jsonify(predict(body))
+  File "/opt/app-root/src/waverX-NLP/prediction.py", line 25, in predict
+    tokenized_input = tokenizer(input_text, return_tensors="pt")
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2790, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2848, in _call_one
+    raise ValueError(
+ValueError: text input must of type `str` (single example), `List[str]` (batch or single pretokenized example) or `List[List[str]]` (batch of pretokenized examples).
+INFO:werkzeug:127.0.0.1 - - [27/Oct/2023 17:00:46] "[35m[1mPOST /api/v1/model/waverx-nlp HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:__main__:Exception on /api/v1/model/waverx-nlp [POST]
+Traceback (most recent call last):
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/tmp/ipykernel_1180/2846228096.py", line 19, in model_inference
+    return jsonify(predict(body))
+  File "/opt/app-root/src/waverX-NLP/prediction.py", line 25, in predict
+    tokenized_input = tokenizer(input_text, return_tensors="pt")
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2790, in __call__
+    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2848, in _call_one
+    raise ValueError(
+ValueError: text input must of type `str` (single example), `List[str]` (batch or single pretokenized example) or `List[List[str]]` (batch of pretokenized examples).
+INFO:werkzeug:127.0.0.1 - - [27/Oct/2023 17:01:12] "[35m[1mPOST /api/v1/model/waverx-nlp HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:__main__:Exception on /api/v1/model/waverx-nlp [POST]
+Traceback (most recent call last):
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/tmp/ipykernel_1180/2107473292.py", line 17, in model_inference
+    body = json.loads(text)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+INFO:werkzeug:127.0.0.1 - - [27/Oct/2023 17:01:34] "[35m[1mPOST /api/v1/model/waverx-nlp HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:__main__:Exception on /api/v1/model/waverx-nlp [POST]
+Traceback (most recent call last):
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/tmp/ipykernel_1180/2107473292.py", line 17, in model_inference
+    body = json.loads(text)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+INFO:werkzeug:127.0.0.1 - - [27/Oct/2023 17:01:58] "[35m[1mPOST /api/v1/model/waverx-nlp HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:__main__:Exception on /api/v1/model/waverx-nlp [POST]
+Traceback (most recent call last):
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/tmp/ipykernel_1180/2011327159.py", line 17, in model_inference
+    body = json.loads(text)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+INFO:werkzeug:127.0.0.1 - - [27/Oct/2023 17:02:30] "[35m[1mPOST /api/v1/model/waverx-nlp HTTP/1.1[0m" 500 -
+ERROR:__main__:Exception on /api/v1/model/waverx-nlp [POST]
+Traceback (most recent call last):
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/tmp/ipykernel_1180/2011327159.py", line 17, in model_inference
+    body = json.loads(text)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+INFO:werkzeug:127.0.0.1 - - [27/Oct/2023 17:02:54] "[35m[1mPOST /api/v1/model/waverx-nlp HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:__main__:Exception on /api/v1/model/waverx-nlp [POST]
+Traceback (most recent call last):
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/tmp/ipykernel_1180/2011327159.py", line 17, in model_inference
+    body = json.loads(text)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+INFO:werkzeug:127.0.0.1 - - [27/Oct/2023 17:03:18] "[35m[1mPOST /api/v1/model/waverx-nlp HTTP/1.1[0m" 500 -
+ERROR:__main__:Exception on /api/v1/model/waverx-nlp [POST]
+Traceback (most recent call last):
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/tmp/ipykernel_1180/2011327159.py", line 17, in model_inference
+    body = json.loads(text)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+INFO:werkzeug:127.0.0.1 - - [27/Oct/2023 17:03:54] "[35m[1mPOST /api/v1/model/waverx-nlp HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [27/Oct/2023 17:04:22] "GET /api/v1/model/waverx-nlp/status HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:__main__:Exception on /api/v1/model/waverx-nlp [POST]
+Traceback (most recent call last):
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/tmp/ipykernel_1180/4190178759.py", line 18, in model_inference
+    body = json.loads(text)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+INFO:werkzeug:127.0.0.1 - - [27/Oct/2023 17:04:57] "[35m[1mPOST /api/v1/model/waverx-nlp HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [27/Oct/2023 17:06:15] "[31m[1mPOST /api/v1/model/waverx-nlp HTTP/1.1[0m" 400 -
+ERROR:__main__:Exception on /api/v1/model/waverx-nlp [POST]
+Traceback (most recent call last):
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/opt/app-root/miniconda3/envs/oneAPI-AIKit-DLPackage-with-PyTorch/lib/python3.9/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/tmp/ipykernel_1180/2003278877.py", line 19, in model_inference
+    return jsonify(predict(body))
+NameError: name 'body' is not defined
+INFO:werkzeug:127.0.0.1 - - [27/Oct/2023 17:06:24] "[35m[1mPOST /api/v1/model/waverx-nlp HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.128.6.192:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [27/Oct/2023 17:06:50] "POST /api/v1/model/waverx-nlp HTTP/1.1" 200 -

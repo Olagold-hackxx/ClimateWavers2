@@ -16,9 +16,9 @@ TRAIN_SPLIT = 0.75
 # *training* data
 VAL_SPLIT = 0.1
 # define the names of the classes
-CLASSES = ["Earthquake", "Drought",
-           "Damaged Infrastructure", "Human Damage", "Human", "Land Slide", "Non Damage Buildings and  Street", "Non Damage Wildlife Forest",
-           "Sea", "Urban Fire", "Wild Fire", "Water Disaster"]
+CLASSES = ["Damaged Infrastructure", "Drought", "Earthquake",
+           , "Human Damage", "Human", "Land Slide", "Non Damage Buildings and  Street", "Non Damage Wildlife Forest",
+           "Sea", "Urban Fire", "Water Disaster", "Wild Fire"]
 
 CLASSES.sort()
 

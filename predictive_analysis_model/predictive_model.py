@@ -7,25 +7,13 @@ from sklearn.metrics import accuracy_score
 import requests
 from dotenv import load_dotenv
 
-# Load your Climacell API key from the environment variable
-load_dotenv()
-climacell_api_key = os.getenv("CLIMACELL_API_KEY")
+# Load climate datasets
 
-# Load  disaster type datasets (Storm, Drought, Earthquake, Epidemic, Flood, Volcanic activity, Wildfire)
-storm_data = pd.read_csv("dataset/disaster types/Storm.csv")
-drought_data = pd.read_csv("dataset/disaster types/Drought.csv")
-earthquake_data = pd.read_csv("dataset/disaster types/Earthquake.csv")
-epidemic_data = pd.read_csv("dataset/disaster types/Epidemic.csv")
-flood_data = pd.read_csv("dataset/disaster types/Flood.csv")
-volcanic_activity_data = pd.read_csv("dataset/disaster types/Volcanic activity.csv")
-wildfire_data = pd.read_csv("dataset/disaster types/Wildfire.csv")
-
-# Combine all datasets into one
-combined_data = pd.concat([storm_data, drought_data, earthquake_data, epidemic_data, flood_data, volcanic_activity_data, wildfire_data], ignore_index=True)
+climate_data = pd.read_csv("dataset/climate_data.csv", ignore_index=True)
 
 # Prepare features and labels
-X = combined_data.drop(columns=["Disaster Type"])
-y = combined_data["Disaster Type"]
+X = climate_data.drop(columns=["Magnitude", "Magnitude Scale"])
+y = climate_data["Magnitude", "Magnitude Scale"]
 
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
