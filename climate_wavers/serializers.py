@@ -24,3 +24,14 @@ class FollowerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Follower
         fields = '__all__'  # Serialize all fields of the Follower model
+
+# Serializer for changing the user's password
+class ChangePasswordSerializer(serializers.Serializer):
+    # Serializer to change the user's password
+    old_password = serializers.CharField(required=True)  # Old password field
+    new_password = serializers.CharField(required=True)  # New password field
+
+# Serializer for sending a password reset email
+class ResetPasswordEmailSerializer(serializers.Serializer):
+    # Serializer to send a password reset email
+    email = serializers.EmailField(required=True)  # Email field for password reset request

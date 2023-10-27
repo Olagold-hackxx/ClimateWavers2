@@ -12,11 +12,13 @@ from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
 from .models import CustomUser, Post, Comment, Follower
-from .serializers import CustomUserSerializer, PostSerializer, CommentSerializer
+from django.contrib.auth import update_session_auth_hash
+from .serializers import CustomUserSerializer, PostSerializer, CommentSerializer, FollowerSerializer, ChangePasswordSerializer
 
 # View for displaying the homepage with posts and suggestions for logged-in users.
 @api_view(['GET'])
@@ -69,8 +71,14 @@ def register(request):
 
             # Generate a confirmation token for the user
             token = default_token_generator.make_token(user)
-            uid = urlsafe_base64_encode(force_bytes(user.pk))
-
+            uid = urlsafe_base64_encode(force_bytes(user.pk)) 
+            
+            token, _ = Token.objects.get_or_create(user=user)
+            
+            # Save the token in the user's profile or wherever you want
+            user.confirmation_token = token
+            user.save()
+             
             # Build the confirmation URL
             current_site = get_current_site(request)
             confirmation_url = reverse('confirm-registration',
@@ -414,3 +422,90 @@ def confirm_registration(request, uidb64, token):
             return HttpResponse("Confirmation link is invalid.")
     except (TypeError, ValueError, OverflowError, CustomUser.DoesNotExist):
         return HttpResponse("Confirmation link is invalid.")
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def change_password(request):
+    if request.method == 'POST':
+        serializer = ChangePasswordSerializer(data=request.data)
+        if serializer.is_valid():
+            user = request.user
+            if user.check_password(serializer.data.get('old_password')):
+                user.set_password(serializer.data.get('new_password'))
+                user.save()
+                update_session_auth_hash(request, user)  # To update session after password change
+                return Response({'message': 'Password changed successfully.'}, status=status.HTTP_200_OK)
+            return Response({'error': 'Incorrect old password.'}, status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['POST'])
+@permission_classes([AllowAny])  # No authentication required
+def password_reset_request(request):
+    if request.method == "POST":
+        email = request.data.get("email")
+
+        # Check if the email is provided
+        if not email:
+            return Response({"message": "Email is required."}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Find the user with the provided email
+        try:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
+            user = None
+
+        if user is not None:
+            # Generate a reset token for the user
+            token = default_token_generator.make_token(user)
+            uid = urlsafe_base64_encode(force_bytes(user.pk))
+
+            # Build the reset password URL
+            reset_url = reverse('password_reset_confirm',
+                kwargs={'uidb64': uid, 'token': token})
+            reset_url = request.build_absolute_uri(reset_url)
+
+            # Send a reset password email
+            subject = 'Password Reset Request'
+            message = f'Please click the following link to reset your password: {reset_url}'
+            from_email = 'climatewaver@gmail.com'  # Replace with your email
+            recipient_list = [user.email]
+
+            send_mail(subject, message, from_email, recipient_list)
+
+            return Response({'status': 'OK'}, status=status.HTTP_200_OK)
+
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+# View for editing a user's profile.
+@api_view(['PUT'])
+@csrf_exempt
+@permission_classes([IsAuthenticated])
+def edit_profile(request):
+    if request.method == 'PUT':
+        user = request.user
+        data = request.data
+
+        # You can update the fields that you want to allow users to edit
+        user.username = data.get('username', user.username)
+        user.email = data.get('email', user.email)
+        user.profession = data.get('profession', user.profession)
+        user.phone_number = data.get('phone_number', user.phone_number)
+        user.last_location = data.get('last_location', user.last_location)
+        user.bio = data.get('bio', user.bio)
+
+        # Handle profile picture and cover image updates
+        if 'profile_pic' in request.FILES:
+            user.profile_pic = request.FILES['profile_pic']
+        if 'cover' in request.FILES:
+            user.cover = request.FILES['cover']
+
+        try:
+            user.save()
+            serializer = CustomUserSerializer(user)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+    else:
+        return Response({"message": "Method must be 'PUT'"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)

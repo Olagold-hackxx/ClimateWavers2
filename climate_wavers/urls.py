@@ -1,7 +1,11 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from .views import confirm_registration
+from .views import change_password, edit_profile
+from django.contrib import admin
+from django.urls import path, include
 from django.urls import path
+
 from . import views
 
 urlpatterns = [
@@ -22,6 +26,10 @@ urlpatterns = [
 
     # CustomUser profile page
     path("<str:username>", views.profile, name="profile"),
+    
+    
+    # Add the URL pattern for the edit_profile view
+    path('edit-profile/', edit_profile, name='edit-profile'),
 
     # Following page
     path("n/following", views.following, name="following"),
@@ -64,6 +72,13 @@ urlpatterns = [
 
     # Unfollow a user
     path("<str:username>/unfollow", views.unfollow, name="unfollowuser"),
+
+    # Change Password
+    path('change_password/', change_password, name='change_password'),
+    
+    # Reset Password
+    path('api/password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),    
+     
 ]
 
 # Serve media files during development
