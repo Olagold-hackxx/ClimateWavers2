@@ -4,6 +4,8 @@ from .views import confirm_registration
 from .views import change_password, edit_profile
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.authtoken import views as auth_views
+from rest_framework.authtoken.views import obtain_auth_token
 from django.urls import path
 
 from . import views
@@ -23,6 +25,7 @@ urlpatterns = [
 
     # Confirm registration
     path('confirm/<str:uidb64>/<str:token>/', confirm_registration, name='confirm-registration'),
+
 
     # CustomUser profile page
     path("<str:username>", views.profile, name="profile"),
@@ -77,7 +80,10 @@ urlpatterns = [
     path('change_password/', change_password, name='change_password'),
     
     # Reset Password
-    path('api/password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),    
+    path('api/password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),  
+    
+    
+    path("api-token-auth/", obtain_auth_token, name="obtain_auth_token"),  
      
 ]
 

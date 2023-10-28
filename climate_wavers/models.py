@@ -76,6 +76,9 @@ class CustomUser(AbstractUser):
     
     # User registration date
     date_joined = models.DateTimeField(default=timezone.now, null=True)
+    
+    # Field to store confirmation token key
+    confirmation_token = models.CharField(max_length=100, blank=True, null=True)
 
     class Meta:
         db_table = 'user'

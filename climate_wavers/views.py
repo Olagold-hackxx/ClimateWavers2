@@ -18,6 +18,7 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from .models import CustomUser, Post, Comment, Follower
 from django.contrib.auth import update_session_auth_hash
+import logging
 from .serializers import CustomUserSerializer, PostSerializer, CommentSerializer, FollowerSerializer, ChangePasswordSerializer
 
 # View for displaying the homepage with posts and suggestions for logged-in users.
@@ -73,7 +74,6 @@ def register(request):
             token = default_token_generator.make_token(user)
             uid = urlsafe_base64_encode(force_bytes(user.pk)) 
             
-            token, _ = Token.objects.get_or_create(user=user)
             
             # Save the token in the user's profile or wherever you want
             user.confirmation_token = token
@@ -408,21 +408,31 @@ def obtain_auth_token(request):
             return Response({"token": token.key}, status=status.HTTP_200_OK)
         return Response({"message": "Invalid username and/or password."}, status=status.HTTP_401_UNAUTHORIZED)
 
+# Configure the logger
+logger = logging.getLogger(__name__)
+
+
 # View for confirming user registration.
+@api_view(['GET'])
+@permission_classes([])
 def confirm_registration(request, uidb64, token):
     try:
         uid = force_text(urlsafe_base64_decode(uidb64))
         user = CustomUser.objects.get(pk=uid)
 
+        logger.info(f"User ID: {user.id}, Token: {token}")
+
         if default_token_generator.check_token(user, token):
+            logger.info("Token is valid.")
             user.is_active = True
             user.save()
             return HttpResponse("Your registration has been confirmed.")
         else:
+            logger.warning("Confirmation link is invalid.")
             return HttpResponse("Confirmation link is invalid.")
-    except (TypeError, ValueError, OverflowError, CustomUser.DoesNotExist):
+    except (TypeError, ValueError, OverflowError, CustomUser.DoesNotExist) as e:
+        logger.error(f"Error: {e}")
         return HttpResponse("Confirmation link is invalid.")
-
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
