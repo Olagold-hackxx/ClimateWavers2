@@ -7,8 +7,9 @@ from django.urls import path, include
 from rest_framework.authtoken import views as auth_views
 from rest_framework.authtoken.views import obtain_auth_token
 from django.urls import path
-
+from .views import obtain_jwt_token
 from . import views
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
     # Homepage
@@ -82,8 +83,15 @@ urlpatterns = [
     # Reset Password
     path('api/password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),  
     
-    
+    # Obtain auth token
     path("api-token-auth/", obtain_auth_token, name="obtain_auth_token"),  
+    
+    # Include the token refresh view
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    
+    # Obtain access token
+    path('api/token/', obtain_jwt_token, name='token_obtain_pair'),
+    
      
 ]
 

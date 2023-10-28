@@ -20,6 +20,10 @@ from .models import CustomUser, Post, Comment, Follower
 from django.contrib.auth import update_session_auth_hash
 import logging
 from .serializers import CustomUserSerializer, PostSerializer, CommentSerializer, FollowerSerializer, ChangePasswordSerializer
+from rest_framework_simplejwt.views import TokenObtainPairView
+
+# This view is for obtaining an access token.
+obtain_jwt_token = TokenObtainPairView.as_view()
 
 # View for displaying the homepage with posts and suggestions for logged-in users.
 @api_view(['GET'])
