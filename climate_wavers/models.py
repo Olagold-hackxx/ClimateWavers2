@@ -1,7 +1,10 @@
+from django_rest_passwordreset.signals import reset_password_token_created
 from django.contrib.auth.models import AbstractUser
 from django.db.models.signals import m2m_changed
 from django.dispatch import receiver
 from django.db import models
+from django.urls import reverse
+from django.core.mail import send_mail
 from django.utils import timezone
 
 # CustomUser model extending the AbstractUser class
@@ -73,6 +76,9 @@ class CustomUser(AbstractUser):
     
     # User registration date
     date_joined = models.DateTimeField(default=timezone.now, null=True)
+    
+    # Field to store confirmation token key
+    confirmation_token = models.CharField(max_length=100, blank=True, null=True)
 
     class Meta:
         db_table = 'user'
@@ -195,3 +201,28 @@ def update_likers(sender, instance, **kwargs):
         user = kwargs['pk_set'].pop()
         # Add the user to the likers
         instance.likers.add(user)
+        
+@receiver(reset_password_token_created)
+def password_reset_token_created(sender, instance, reset_password_token, *args, **kwargs):
+    """
+    This signal receiver is triggered when a password reset token is created.
+    It sends a password reset email to the user.
+    """
+
+    # Construct the password reset link with the token
+    email_plaintext_message = "{}?token={}".format(reverse('password_reset:reset-password-request'), reset_password_token.key)
+    
+    # Send the password reset email
+    send_mail(
+        # Email title:
+        "Password Reset for {title}".format(title="Climate Wavers"),
+        # Email message:
+        email_plaintext_message,
+        # Email sender:
+        "climatewaver@gmail.com",
+        # Email recipient:
+        [reset_password_token.user.email]
+    )
+
+    
+    
