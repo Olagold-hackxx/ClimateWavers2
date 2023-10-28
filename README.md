@@ -31,30 +31,37 @@ The Climate Change and Disaster Response Platform aims to monitor climate change
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/ClimateWavers/climatewaver_Django_back-end.git
-   cd climatewavers_Django_back-end
+   git clone https://github.com/IsmaelKiprop/ClimateWavers.git
+   cd ClimateWavers
    ```
-
-2. **Install Dependencies:**
+2. **Create virtual environment:**
+  ```bash
+  python3 -m venv myenv -- "Name of the virtual environment"
+  ```
+  - Activate virtual environment:
+  ```bash
+  source myenv/bin/activate
+  ```
+3. **Install Dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Database Setup:**
+4. **Database Setup:**
    - Configure the database settings in `settings.py`.
    - Run migrations:
      ```bash
      python manage.py migrate
      ```
 
-4. **Static and Media Files:**
+5. **Static and Media Files:**
    - Collect static files:
      ```bash
      python manage.py collectstatic
      ```
    - Configure media file settings in `settings.py`.
 
-5. **Run the Django Development Server:**
+6. **Run the Django Development Server:**
    ```bash
    python manage.py runserver
    ```
