@@ -13,12 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.urls import include, path
-from climate_wavers.views import obtain_auth_token  # Import the `obtain_auth_token` view
 
 urlpatterns = [
-    path("admin/", admin.site.urls),  # URL path for the admin site
-    path("", include("climate_wavers.urls")),  # Include URLs from the "climate_wavers" app
-    path("api-token-auth/", obtain_auth_token),  # URL path for token authentication
+    path("api/v1/backend/", include("climate_wavers.urls")),  # Include URLs from the "climate_wavers" app
 ]

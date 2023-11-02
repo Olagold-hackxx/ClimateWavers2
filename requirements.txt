@@ -9,3 +9,5 @@ Pillow==10.0.1
 pytz==2022.1
 sqlparse==0.4.2
 channels==3.0.4
+itsdangerous
+django-cors-headers

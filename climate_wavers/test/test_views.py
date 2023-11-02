@@ -3,11 +3,11 @@ from django.urls import reverse
 from django.core import mail
 from rest_framework.test import APIClient
 from rest_framework.authtoken.models import Token
-from .models import CustomUser, Post, Comment, Follower
+from .models import User, Post, Comment, Follower
 
-class CustomUserViewsTestCase(TestCase):
+class UserViewsTestCase(TestCase):
     def setUp(self):
-        self.user = CustomUser.objects.create_user(
+        self.user = User.objects.create_user(
             username="testuser",
             email="test@example.com",
             password="testpassword"
@@ -25,7 +25,7 @@ class CustomUserViewsTestCase(TestCase):
         })
 
         self.assertEqual(response.status_code, 201)  # Created
-        self.assertEqual(CustomUser.objects.count(), 2)
+        self.assertEqual(User.objects.count(), 2)
         self.assertEqual(len(mail.outbox), 1)  # Confirm email sent
 
     def test_user_registration_missing_fields(self):

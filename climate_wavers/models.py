@@ -6,10 +6,12 @@ from django.db import models
 from django.urls import reverse
 from django.core.mail import send_mail
 from django.utils import timezone
+import bcrypt
+import uuid
 
-# CustomUser model extending the AbstractUser class
-class CustomUser(AbstractUser):
-    # CustomUser profile information
+# User model extending the AbstractUser class
+class User(models.Model):
+    # User profile information
 
     # User's username (unique)
     username = models.CharField(
@@ -22,63 +24,70 @@ class CustomUser(AbstractUser):
             'unique': ("A user with that username already exists.")
         },
     )
-    
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+
     # User's profile picture (optional)
     profile_pic = models.ImageField(
         upload_to='profile_pic/', blank=True, null=True)
-    
+
     # User's bio or short description (optional)
     bio = models.TextField(max_length=160, blank=True, null=True)
-    
+
     # Cover image for the user's profile (optional)
     cover = models.ImageField(upload_to='covers/', blank=True, null=True)
-    
-    # User's password (optional, for future reference)
-    password = models.CharField(max_length=255, blank=True, null=True)
-    
+
+    # User's password (optional, in case of third party auth)
+    password = models.BinaryField(max_length=255, null=True)
+
+    def set_password(self, raw_password):
+        # Hash the raw password using bcrypt and save it to the password field
+        self.password = bcrypt.hashpw(raw_password.encode('utf-8'), bcrypt.gensalt())
+
+    def check_password(self, raw_password):
+        # Check if the raw password matches the stored bcrypt hash
+        return bcrypt.checkpw(raw_password.encode('utf-8'), self.password)
+
     # User's email (unique)
     email = models.EmailField(unique=True)
-    
+
     # User's role (can be superuser)
     is_superuser = models.BooleanField(default=False, null=True)
-    
+
     # User's profession (optional)
     profession = models.CharField(
         max_length=100, blank=True, null=True)
-    
+
     # User's phone number (optional)
     phone_number = models.CharField(
         max_length=15, blank=True, null=True)  # Fixed 'blank' syntax error
-    
+
     # User's last known location (optional)
     last_location = models.CharField(max_length=255, blank=True, null=True)
-    
+
     # Google authentication method
     is_google_user = models.BooleanField(default=False, null=True)
-    
+
     # Redhat authentication method
     is_redhat_user = models.BooleanField(default=False, null=True)
-    
+
     # User verification status
     is_verified = models.BooleanField(default=False)
-    
+
     # Twitter authentication method (optional)
     is_twitter_user = models.BooleanField(default=False, null=True)
-    
+
     # Facebook authentication method (optional)
     is_facebook_user = models.BooleanField(default=False, null=True)
-    
+
     # User staff status
     is_staff = models.BooleanField(default=False, null=True)
-    
+
     # User's activity status (active by default)
     is_active = models.BooleanField(default=True, null=True)
-    
+
     # User registration date
     date_joined = models.DateTimeField(default=timezone.now, null=True)
-    
-    # Field to store confirmation token key
-    confirmation_token = models.CharField(max_length=100, blank=True, null=True)
 
     class Meta:
         db_table = 'user'
@@ -99,26 +108,28 @@ class CustomUser(AbstractUser):
 # Post model for user-generated posts
 class Post(models.Model):
     # User who created the post
-    creater = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+
     # Date and time of post creation
     date_created = models.DateTimeField(auto_now_add=True)
-    
+
     # Text content of the post (optional)
     content_text = models.TextField(blank=True, null=True)
-    
+
     # Image content of the post (optional)
     content_image = models.ImageField(upload_to='posts/', blank=True, null=True)
-    
+
     # Users who liked the post
-    likers = models.ManyToManyField(CustomUser, related_name='liked_posts', blank=True)
-    
+    likers = models.ManyToManyField(User, related_name='liked_posts', blank=True)
+
     # Users who saved the post
-    savers = models.ManyToManyField(CustomUser, related_name='saved_posts', blank=True)
-    
+    savers = models.ManyToManyField(User, related_name='saved_posts', blank=True)
+
     # Count of comments on the post
     comment_count = models.PositiveIntegerField(default=0)
-    
+
     # Post category with choices: 'community', 'education', 'reports' (default: 'community')
     category = models.CharField(max_length=20, choices=[('community', 'Community'), ('education', 'Education'), ('reports', 'Reports')], default='community')
 
@@ -148,17 +159,24 @@ class Post(models.Model):
 
 # Comment model for comments on user posts
 class Comment(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+
     # Post to which the comment belongs
     post = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name='comments')
-    
+    # Sub comments
+    parent_comment = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE, related_name='subcomments')
+
     # User who made the comment
     commenter = models.ForeignKey(
-        CustomUser, on_delete=models.CASCADE, related_name='commenters')
-    
+        User, on_delete=models.CASCADE, related_name='commenters')
+
+    # Image content of the comment (optional)
+    content_image = models.ImageField(upload_to='comment/', blank=True, null=True)
+
     # Text content of the comment (limited to 90 characters)
     comment_content = models.TextField(max_length=90)
-    
+
     # Date and time of comment creation
     comment_time = models.DateTimeField(default=timezone.now)
 
@@ -179,50 +197,27 @@ class Comment(models.Model):
 
 # Follower model to manage user followers and following relationships
 class Follower(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     # User being followed by others
     user = models.ForeignKey(
-        CustomUser, on_delete=models.CASCADE, related_name='followers')
-    
+        User, on_delete=models.CASCADE, related_name='followers')
+
     # Users following the specified user
     followers = models.ManyToManyField(
-        CustomUser, blank=True, related_name='following')
+        User, blank=True, related_name='following')
 
     class Meta:
         db_table = 'follower'
 
     def __str__(self):
-        return f"CustomUser: {self.user}"
+        return f"Follower: {self.user}"
 
-# Signal receiver to update likers for a post
-@receiver(m2m_changed, sender=Post.likers.through)
-def update_likers(sender, instance, **kwargs):
-    if kwargs['action'] == 'post_add':
-        # Get the user that was added to the likers
-        user = kwargs['pk_set'].pop()
-        # Add the user to the likers
-        instance.likers.add(user)
-        
-@receiver(reset_password_token_created)
-def password_reset_token_created(sender, instance, reset_password_token, *args, **kwargs):
-    """
-    This signal receiver is triggered when a password reset token is created.
-    It sends a password reset email to the user.
-    """
 
-    # Construct the password reset link with the token
-    email_plaintext_message = "{}?token={}".format(reverse('password_reset:reset-password-request'), reset_password_token.key)
-    
-    # Send the password reset email
-    send_mail(
-        # Email title:
-        "Password Reset for {title}".format(title="Climate Wavers"),
-        # Email message:
-        email_plaintext_message,
-        # Email sender:
-        "climatewaver@gmail.com",
-        # Email recipient:
-        [reset_password_token.user.email]
-    )
-
-    
-    
+class CustomToken(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='token')
+    is_valid = models.BooleanField(default=False)
+    refresh_token = models.CharField(max_length=2048)
+    created_at = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        db_table = 'token'
