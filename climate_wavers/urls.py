@@ -51,11 +51,10 @@ urlpatterns = [
     path("posts/<str:post_id>/comments", views.comment, name="view_comments"),
     # Write a comment on a post (use the 'comment' view)
     path("posts/<str:post_id>/comment", views.comment, name="write_comment"),
-    # WRite subcomments
+    # Write subcomments
     path("comments/<str:comment_id>/subcomment", views.subcomment, name="write_subcomment"),
     # View all subcomments
     path("comments/<str:comment_id>/subcomments", views.subcomment, name="subcomments"),
-
     # Edit comment
     path("comments/<str:comment_id>/edit", views.edit_comment, name="edit_comment"),
     # Delete a post

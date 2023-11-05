@@ -2309,3 +2309,15 @@ AttributeError: 'NoneType' object has no attribute 'encode'
 2023-11-02 10:33:30,800 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/views.py changed, reloading.
 2023-11-02 10:35:10,530 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/views.py changed, reloading.
 2023-11-02 10:36:02,856 - WARNING - django.request - Unauthorized: /api/v1/backend/login
+2023-11-05 12:34:11,095 - WARNING - django.request - Unauthorized: /api/v1/backend/login
+2023-11-05 12:37:26,165 - WARNING - django.request - Method Not Allowed: /api/v1/backend/
+2023-11-05 12:43:15,608 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/models.py changed, reloading.
+2023-11-05 12:43:59,043 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/models.py changed, reloading.
+2023-11-05 12:47:44,516 - WARNING - django.request - Method Not Allowed: /api/v1/backend/
+2023-11-05 12:49:08,156 - WARNING - django.request - Method Not Allowed: /api/v1/backend/posts/d9963631-1ab2-4b97-a415-6d77fbd9fdff/like
+2023-11-05 12:49:13,941 - WARNING - django.request - Method Not Allowed: /api/v1/backend/posts/d9963631-1ab2-4b97-a415-6d77fbd9fdff/like
+2023-11-05 12:49:48,640 - WARNING - django.request - Not Found: /api/v1/backend/posts/happening
+2023-11-05 12:50:21,046 - WARNING - django.request - Method Not Allowed: /api/v1/backend/posts/d9963631-1ab2-4b97-a415-6d77fbd9fdff/save
+2023-11-05 12:53:00,769 - WARNING - django.request - Method Not Allowed: /api/v1/backend/posts/d9963631-1ab2-4b97-a415-6d77fbd9fdff/comment
+2023-11-05 12:53:42,345 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/urls.py changed, reloading.
+2023-11-05 12:57:44,466 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/views.py changed, reloading.

@@ -42,8 +42,6 @@ INSTALLED_APPS = [
     'django_rest_passwordreset',
     'rest_framework_simplejwt',
     'django.contrib.contenttypes',
-
-
 ]
 
 

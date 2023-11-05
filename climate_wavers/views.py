@@ -23,7 +23,7 @@ serializer = URLSafeTimedSerializer(SECRET_KEY)
 
 @api_view(['GET'])
 def index(request):
-    # Retrieve all users ordered by date joined
+    # Retrieve all posts ordered by date joined
     all_posts = Post.objects.all().order_by('date_created')
 
     # Serialize the post data
@@ -409,6 +409,11 @@ def saved(request):
         serializer = PostSerializer(all_posts, many=True)
 
         print(serializer.data)
+        if request.access_token:
+            return JsonResponse({
+            "posts": serializer.data,
+            "access_token": request.access_token
+        })
         return JsonResponse({
             "posts": serializer.data,
         })
