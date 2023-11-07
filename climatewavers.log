@@ -2321,3 +2321,106 @@ AttributeError: 'NoneType' object has no attribute 'encode'
 2023-11-05 12:53:00,769 - WARNING - django.request - Method Not Allowed: /api/v1/backend/posts/d9963631-1ab2-4b97-a415-6d77fbd9fdff/comment
 2023-11-05 12:53:42,345 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/urls.py changed, reloading.
 2023-11-05 12:57:44,466 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/views.py changed, reloading.
+2023-11-06 18:47:24,789 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/views.py changed, reloading.
+2023-11-06 18:54:13,143 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/models.py changed, reloading.
+2023-11-06 18:55:35,765 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/models.py changed, reloading.
+2023-11-06 18:55:39,004 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/models.py changed, reloading.
+2023-11-06 18:59:47,269 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/views.py changed, reloading.
+2023-11-06 18:59:51,319 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/views.py changed, reloading.
+2023-11-06 19:13:41,250 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/models.py changed, reloading.
+2023-11-06 19:15:21,287 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/models.py changed, reloading.
+2023-11-06 19:15:31,772 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/models.py changed, reloading.
+2023-11-06 19:16:50,895 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/models.py changed, reloading.
+2023-11-06 19:17:06,417 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/models.py changed, reloading.
+2023-11-06 19:18:58,767 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/models.py changed, reloading.
+2023-11-06 19:39:39,966 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/models.py changed, reloading.
+2023-11-06 19:55:43,752 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/views.py changed, reloading.
+2023-11-07 07:09:32,522 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:13:47,662 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:15:27,806 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:16:39,864 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:16:54,594 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:17:38,946 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:17:44,668 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:18:12,139 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:18:15,893 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:18:46,828 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:18:50,672 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:20:46,356 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:20:54,454 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:21:03,638 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:21:08,318 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:21:52,583 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:21:58,988 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:22:24,384 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:22:28,034 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:22:41,712 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:22:47,262 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:30:35,039 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:32:48,914 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:32:54,373 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:33:21,539 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:33:26,355 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:34:31,233 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:34:37,412 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:34:48,810 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:34:52,644 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:35:00,976 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:35:39,218 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:35:44,564 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:35:51,909 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:35:56,884 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:36:15,129 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:36:19,658 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:36:46,236 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:36:49,712 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 07:39:28,801 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 07:39:35,646 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:08:45,218 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:12:35,988 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:12:57,318 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:13:02,525 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:13:25,060 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:13:29,081 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:14:43,730 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:15:33,609 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:16:08,272 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:16:53,300 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:17:47,035 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:17:53,719 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:19:07,066 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:21:34,068 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:23:08,990 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:24:47,376 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:26:27,844 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:26:40,978 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:26:45,780 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:27:13,718 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:27:24,890 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:27:27,081 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:28:14,355 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:28:21,948 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:29:26,575 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:29:35,810 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:30:32,882 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:31:32,582 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:32:34,865 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:38:03,889 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:38:27,959 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:39:30,745 - WARNING - django.request - Method Not Allowed: /api/v1/backend/
+2023-11-07 12:39:37,981 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:41:58,213 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:43:31,139 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:44:30,743 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:44:44,408 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:45:37,265 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:46:14,474 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:47:06,271 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:47:50,438 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:47:56,538 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:48:41,698 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 12:48:46,078 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-07 12:55:16,784 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/middlewares.py changed, reloading.
+2023-11-07 13:06:48,087 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/views.py changed, reloading.
+2023-11-07 13:07:31,411 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/views.py changed, reloading.
+2023-11-07 13:08:08,517 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/views.py changed, reloading.

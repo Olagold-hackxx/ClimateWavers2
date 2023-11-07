@@ -30,15 +30,27 @@ class TokenVerificationMiddleware:
                     if refresh_token:
                         token = CustomToken.objects.get(refresh_token=refresh_token)
                     #if access token is not provided but refresh token is available
-                    if access_token is None and refresh_token == token.refresh_token:
-                        decoded_refresh_token = RefreshToken(token.refresh_token)
-                        # Verify refresh token
-                        decoded_refresh_token.verify()
-                        new_access_token = decoded_refresh_token.access_token
-                        # Save access token to request to send back to client
-                        request.access_token = new_access_token
-                        access_token = new_access_token
-                    # Verify access token, if availabe
+                    if verify_access_token(access_token) is None and refresh_token == token.refresh_token:
+                        try:
+                            decoded_refresh_token = RefreshToken(token.refresh_token)
+                            # Verify refresh token
+                            decoded_refresh_token.verify()
+                            new_access_token = decoded_refresh_token.access_token
+                            # Save access token to request to send back to client
+                            request.access_token = str(new_access_token)
+                            access_token = str(new_access_token)
+                        except Exception:
+                            # If user token can't be verified because user is logged in with oauth
+                            # Provide new access token for user access to this microservice
+                            user = User.objects.get(id=token.user_id)
+                            new_refresh_token = RefreshToken.for_user(user)
+                            token.refresh_token = str(new_refresh_token)
+                            new_access_token = new_refresh_token.access_token
+                            # Save access token to request to send back to client
+                            request.access_token = str(new_access_token)
+                            access_token = str(new_access_token)
+
+                    # Verify access token, if available
                     elif verify_access_token(access_token) is None:
                         return JsonResponse({'detail': 'Invalid tokens'}, status=401)
                     # If refresh and access token has been refreshed, verify and store refrwsh token
@@ -55,8 +67,11 @@ class TokenVerificationMiddleware:
                     request.user = User.objects.get(id=user_id)
                     request.user.is_authenticated = True
                     request.user.permissions = [IsAuthenticated]  # Attach IsAuthenticated permission
+                    if (not hasattr(request, 'access_token')) or request.access_token is None:
+                        request.access_token = access_token
 
-                except Exception:
+                except Exception as e:
+                    print(e)
                     return JsonResponse({'detail': 'Invalid tokens'}, status=401)
             else:
                 return JsonResponse({'detail': 'Tokens are missing'}, status=401)

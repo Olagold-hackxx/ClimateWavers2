@@ -1,10 +1,6 @@
 from django_rest_passwordreset.signals import reset_password_token_created
-from django.contrib.auth.models import AbstractUser
 from django.db.models.signals import m2m_changed
-from django.dispatch import receiver
 from django.db import models
-from django.urls import reverse
-from django.core.mail import send_mail
 from django.utils import timezone
 import bcrypt
 import uuid
@@ -25,17 +21,20 @@ class User(models.Model):
         },
     )
 
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id = models.CharField(primary_key=True, default=uuid.uuid4, editable=False, max_length=150)
 
     # User's profile picture (optional)
     profile_pic = models.ImageField(
-        upload_to='profile_pic/', blank=True, null=True)
+        upload_to='profile_pic/', blank=True, null=True, max_length=300)
+
+    first_name =  models.CharField(max_length=150)
+    last_name =  models.CharField(max_length=150)
 
     # User's bio or short description (optional)
     bio = models.TextField(max_length=160, blank=True, null=True)
 
     # Cover image for the user's profile (optional)
-    cover = models.ImageField(upload_to='covers/', blank=True, null=True)
+    cover = models.ImageField(upload_to='covers/', blank=True, null=True, max_length=300)
 
     # User's password (optional, in case of third party auth)
     password = models.BinaryField(max_length=255, null=True)
@@ -50,10 +49,6 @@ class User(models.Model):
 
     # User's email (unique)
     email = models.EmailField(unique=True)
-
-    # User's role (can be superuser)
-    is_superuser = models.BooleanField(default=False, null=True)
-
     # User's profession (optional)
     profession = models.CharField(
         max_length=100, blank=True, null=True)
@@ -67,10 +62,12 @@ class User(models.Model):
 
     # Google authentication method
     is_google_user = models.BooleanField(default=False, null=True)
-
+    # LinkedIn authentication method
+    is_linkedin_user = models.BooleanField(default=False, null=True)
+    # Github authentication method
+    is_github_user = models.BooleanField(default=False, null=True)
     # Redhat authentication method
     is_redhat_user = models.BooleanField(default=False, null=True)
-
     # User verification status
     is_verified = models.BooleanField(default=False)
 
@@ -80,14 +77,11 @@ class User(models.Model):
     # Facebook authentication method (optional)
     is_facebook_user = models.BooleanField(default=False, null=True)
 
-    # User staff status
-    is_staff = models.BooleanField(default=False, null=True)
-
     # User's activity status (active by default)
     is_active = models.BooleanField(default=True, null=True)
-
-    # User registration date
-    date_joined = models.DateTimeField(default=timezone.now, null=True)
+    # Timestamp fields
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         db_table = 'user'
@@ -110,7 +104,7 @@ class Post(models.Model):
     # User who created the post
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id = models.CharField(primary_key=True, default=uuid.uuid4, editable=False, max_length=150)
 
     # Date and time of post creation
     date_created = models.DateTimeField(auto_now_add=True)
@@ -159,7 +153,7 @@ class Post(models.Model):
 
 # Comment model for comments on user posts
 class Comment(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id = models.CharField(primary_key=True, default=uuid.uuid4, editable=False, max_length=150)
 
     # Post to which the comment belongs
     post = models.ForeignKey(
@@ -197,7 +191,7 @@ class Comment(models.Model):
 
 # Follower model to manage user followers and following relationships
 class Follower(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id = models.CharField(primary_key=True, default=uuid.uuid4, editable=False, max_length=150)
     # User being followed by others
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='followers')
@@ -214,10 +208,13 @@ class Follower(models.Model):
 
 
 class CustomToken(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id = models.CharField(primary_key=True, default=uuid.uuid4, editable=False, max_length=150)
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='token')
     is_valid = models.BooleanField(default=False)
     refresh_token = models.CharField(max_length=2048)
+    # Timestamp fields
     created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
     class Meta:
         db_table = 'token'

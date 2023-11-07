@@ -29,7 +29,7 @@ def index(request):
     # Serialize the post data
     serializer = PostSerializer(all_posts, many=True)
 
-    return JsonResponse({"all_posts": serializer.data})
+    return JsonResponse({"all_posts": serializer.data, "access_token": request.access_token})
 
 @api_view(['GET'])
 def happening(request):
@@ -39,7 +39,7 @@ def happening(request):
     # Serialize the post data
     serializer = PostSerializer(happening_posts, many=True)
 
-    return JsonResponse({"happening_posts": serializer.data})
+    return JsonResponse({"happening_posts": serializer.data, "access_token": request.access_token})
 
 @api_view(['GET'])
 def education(request):
@@ -48,7 +48,7 @@ def education(request):
 
     # Serialize the post data
     serializer = PostSerializer(education_posts, many=True)
-    return JsonResponse({"education_posts": serializer.data})
+    return JsonResponse({"education_posts": serializer.data, "access_token": request.access_token})
 
 @api_view(['GET'])
 def community(request):
@@ -58,7 +58,7 @@ def community(request):
     # Serialize the post data
     serializer = PostSerializer(community_posts, many=True)
 
-    return JsonResponse({"community_posts": serializer.data})
+    return JsonResponse({"community_posts": serializer.data, "access_token": request.access_token})
 
 
 # View for displaying all users.
@@ -70,7 +70,7 @@ def users(request):
     # Serialize the users using the UserSerializer
     serializer = UserSerializer(all_users, many=True)
 
-    return JsonResponse({"all_users": serializer.data})
+    return JsonResponse({"all_users": serializer.data, "access_token": request.access_token})
 
 
 # View for user registration.
@@ -80,6 +80,8 @@ def register(request):
         # Get user data from the request data
         username = request.data.get("username")
         email = request.data.get("email")
+        first_name = request.data.get("first_name")
+        last_name = request.data.get("last_name")
         password = request.data.get("password")
         profession = request.data.get("profession")
         phone_number = request.data.get("phone_number")
@@ -92,12 +94,18 @@ def register(request):
         # Check if required fields are provided
         if not username or not email or not password:
             return JsonResponse({"message": "All fields are required."}, status=status.HTTP_400_BAD_REQUEST)
+        if profile_pic:
+            profile_pic = f'{os.getenv("BACKEND")}/{profile_pic}'
+        if cover:
+            cover = f'{os.getenv("BACKEND")}/{cover}'
 
         try:
             # Create a User with the provided data
             user = User.objects.create(
                 username=username,
                 email=email,
+                first_name=first_name,
+                last_name=last_name,
                 profession=profession,
                 phone_number=phone_number,
                 last_location=last_location,
@@ -123,16 +131,17 @@ def register(request):
             confirmation_url = reverse('confirm-registration',
                 kwargs={'uidb64': uid, 'token': token})
             confirmation_url = f'{domain}{confirmation_url}'
+            confirmation_page = os.getenv("CONFIRMATION_PAGE")
 
             # Send a confirmation email
             subject = 'Confirm Your Registration'
-            message = f'{os.getenv("VERIFICATION_MAIL")} {confirmation_url}'
+            message = f'{os.getenv("VERIFICATION_MAIL")} {confirmation_page}/{token}'
             from_email = os.getenv("APP_EMAIL")  # Replace with your email
             recipient_list = [user.email]
 
             send_mail(subject, message, from_email, recipient_list)
 
-            return JsonResponse({'message': 'User registered. Confirmation email sent.', "id": user.id}, status=status.HTTP_201_CREATED)
+            return JsonResponse({'message': 'User registered. Confirmation email sent.', "id": user.id, "confirmation_url": confirmation_url, "token": token, "access_token": request.access_token}, status=status.HTTP_201_CREATED)
         except Exception as e:
             logger.error(e)
             return JsonResponse({"message": "Username or email already taken."}, status=status.HTTP_400_BAD_REQUEST)
@@ -177,7 +186,7 @@ def verification_status(request, user_id_param):
         return JsonResponse({"status": user.is_verified})
     except Exception as e:
         logger.error(e)
-
+        return JsonResponse({"error": e})
 
 
 # View for user login.
@@ -230,7 +239,7 @@ def logout_view(request):
         return JsonResponse({"Logout successfully"}, status=status.HTTP_200_OK)
     except Exception as e:
         logger.error(e)
-        return JsonResponse({"error": "Invalid token"}, status=status.HTTP_401_UNAUTHORIZED)
+        return JsonResponse({"error": "Invalid token", "access_token": request.access_token}, status=status.HTTP_401_UNAUTHORIZED)
 
 # View for displaying a user's profile.
 @api_view(['GET'])
@@ -268,7 +277,8 @@ def profile(request, username):
         "posts_count": posts_count,
         "is_follower": follower,
         "follower_count": follower_count,
-        "following_count": following_count
+        "following_count": following_count,
+        "access_token": request.access_token
     })
 
 # View for editing a user's profile.
@@ -300,7 +310,7 @@ def edit_profile(request):
             logger.error(e)
             return JsonResponse({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
     else:
-        return JsonResponse({"message": "Method must be 'PUT'"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+        return JsonResponse({"message": "Method must be 'PUT'", "access_token": request.access_token}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 # Get a user's followers
 @api_view(['GET'])
@@ -310,16 +320,19 @@ def followers(request, username):
         followers = Follower.objects.get(user_id=user.id)
         followers = FollowerSerializer(followers)
         return JsonResponse({
-            "followers": followers.data
+            "followers": followers.data,
+            "access_token": request.access_token
         })
     except Follower.DoesNotExist:
         return JsonResponse({
-            "followers": []
+            "followers": [],
+            "access_token": request.access_token
         })
     except Exception as e:
         logger.error(e)
         return JsonResponse({
-			"error": str(e)
+			"error": str(e),
+            "access_token": request.access_token
 		})
 
 # Get current user's following
@@ -330,16 +343,19 @@ def followings(request, username):
         following = Follower.objects.filter(followers__username__contains=user)
         following = FollowerSerializer(following, many=True)
         return JsonResponse({
-            "followings": following.data
+            "followings": following.data,
+            "access_token": request.access_token
         })
     except Follower.DoesNotExist:
         return JsonResponse({
-            "followings": []
+            "followings": [],
+            "access_token": request.access_token
         })
     except Exception as e:
         logger.error(e)
         return JsonResponse({
-			"error": str(e)
+			"error": str(e),
+            "access_token": request.access_token
 		})
 
 # Get a user's following
@@ -350,16 +366,19 @@ def my_followings(request):
         following = Follower.objects.filter(followers__username__contains=user)
         following = FollowerSerializer(following, many=True)
         return JsonResponse({
-            "followings": following.data
+            "followings": following.data,
+            "access_token": request.access_token
         })
     except Follower.DoesNotExist:
         return JsonResponse({
-            "followings": []
+            "followings": [],
+            "access_token": request.access_token
         })
     except Exception as e:
         logger.error(e)
         return JsonResponse({
-			"error": str(e)
+			"error": str(e),
+            "access_token": request.access_token
 		})
 
 # Get current user's followers
@@ -371,16 +390,19 @@ def my_followers(request):
         followers = Follower.objects.get(user=user)
         followers = FollowerSerializer(followers)
         return JsonResponse({
-            "followers": followers.data
+            "followers": followers.data,
+            "access_token": request.access_token
         })
     except Follower.DoesNotExist:
         return JsonResponse({
-            "followers": []
+            "followers": [],
+            "access_token": request.access_token
         })
     except Exception as e:
         logger.error(e)
         return JsonResponse({
-			"error": str(e)
+			"error": str(e),
+            "access_token": request.access_token
 		})
 
 
@@ -396,6 +418,7 @@ def following_posts(request):
 
     return JsonResponse({
         "posts": serializer.data,
+        "access_token": request.access_token
     })
 
 
@@ -416,10 +439,11 @@ def saved(request):
         })
         return JsonResponse({
             "posts": serializer.data,
+            "access_token": request.access_token
         })
     except Exception as e:
         logger.error(e)
-        return JsonResponse({"error": str(e)})
+        return JsonResponse({"error": str(e), "access_token": request.access_token})
 
 # View for creating a new post.
 @api_view(['POST'])
@@ -431,10 +455,10 @@ def create_post(request):
         try:
             post = Post.objects.create(user=request.user, content_text=text, content_image=pic, category=category)
             posts = PostSerializer(post)
-            return JsonResponse({"posts": posts.data}, status=status.HTTP_201_CREATED)
+            return JsonResponse({"posts": posts.data, "access_token": request.access_token}, status=status.HTTP_201_CREATED)
         except Exception as e:
             logger.error(e)
-            return JsonResponse({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse({"message": str(e), "access_token": request.access_token}, status=status.HTTP_400_BAD_REQUEST)
 
 
 # View for editing an existing post.
@@ -463,13 +487,15 @@ def edit_post(request, post_id):
             return JsonResponse({
                 "success": True,
                 "text": post_text,
-                "picture": post_image
+                "picture": post_image,
+                "access_token": request.access_token
             })
         except Exception as e:
             logger.error(e)
             return JsonResponse({
                 "success": False,
-                "message": str(e)
+                "message": str(e),
+                "access_token": request.access_token
             })
 
 # View for liking a post.
@@ -480,12 +506,12 @@ def like_post(request, post_id):
         try:
             post.likers.add(request.user)
             post.save()
-            return JsonResponse({"message": f"Liked post by {post.user}"}, status=status.HTTP_204_NO_CONTENT)
+            return JsonResponse({"message": f"Liked post by {post.user}", "access_token": request.access_token}, status=status.HTTP_204_NO_CONTENT)
         except Exception as e:
             logger.error(e)
-            return JsonResponse({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse({"message": str(e), "access_token": request.access_token}, status=status.HTTP_400_BAD_REQUEST)
     else:
-        return JsonResponse({"message": "Method must be 'PUT'"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+        return JsonResponse({"message": "Method must be 'PUT'", "access_token": request.access_token}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 # View for unliking a post.
 @api_view(['PUT'])
@@ -495,12 +521,12 @@ def unlike_post(request, post_id):
         try:
             post.likers.remove(request.user)
             post.save()
-            return JsonResponse({"message": f"Unliked post by {post.user}"}, status=status.HTTP_204_NO_CONTENT)
+            return JsonResponse({"message": f"Unliked post by {post.user}", "access_token": request.access_token}, status=status.HTTP_204_NO_CONTENT)
         except Exception as e:
             logger.error(e)
-            return JsonResponse({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse({"message": str(e), "access_token": request.access_token}, status=status.HTTP_400_BAD_REQUEST)
     else:
-        return JsonResponse({"message": "Method must be 'PUT'"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+        return JsonResponse({"message": "Method must be 'PUT'", "access_token": request.access_token}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 # View for saving a post.
 @api_view(['PUT'])
@@ -516,7 +542,7 @@ def save_post(request, post_id):
             logger.error(e)
             return JsonResponse({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
     else:
-        return JsonResponse({"message": "Method must be 'PUT'"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+        return JsonResponse({"message": "Method must be 'PUT'", "access_token": request.access_token}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 # View for unsaving a post.
 @api_view(['PUT'])
@@ -526,12 +552,12 @@ def unsave_post(request, post_id):
         try:
             post.savers.remove(request.user)
             post.save()
-            return JsonResponse({"message": "Post unsaved"}, status=200)
+            return JsonResponse({"message": "Post unsaved", "access_token": request.access_token}, status=200)
         except Exception as e:
             logger.error(e)
-            return JsonResponse({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse({"message": str(e), "access_token": request.access_token}, status=status.HTTP_400_BAD_REQUEST)
     else:
-        return JsonResponse({"message": "Method must be 'PUT'"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+        return JsonResponse({"message": "Method must be 'PUT'", "access_token": request.access_token}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 # View for following a user.
 @api_view(['PUT'])
@@ -545,9 +571,9 @@ def follow(request, username):
             return JsonResponse({"message": f"Followed {following.username}"}, status=status.HTTP_204_NO_CONTENT)
         except Exception as e:
             logger.error(e)
-            return JsonResponse({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse({"message": str(e), "access_token": request.access_token}, status=status.HTTP_400_BAD_REQUEST)
     else:
-        return JsonResponse({"message": "Method must be 'PUT'"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+        return JsonResponse({"message": "Method must be 'PUT'", "access_token": request.access_token}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 # View for unfollowing a user.
 @api_view(['PUT'])
@@ -558,12 +584,12 @@ def unfollow(request, username):
             follower, _ = Follower.objects.get_or_create(user=following)
             follower.followers.remove(request.user)
             follower.save()
-            return JsonResponse({"message": f"Unfollowed {following.username}"}, status=status.HTTP_204_NO_CONTENT)
+            return JsonResponse({"message": f"Unfollowed {following.username}", "access_token": request.access_token}, status=status.HTTP_204_NO_CONTENT)
         except Exception as e:
             logger.error(e)
-            return JsonResponse({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse({"message": str(e), "access_token": request.access_token}, status=status.HTTP_400_BAD_REQUEST)
     else:
-        return JsonResponse({"message": "Method must be 'PUT'"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+        return JsonResponse({"message": "Method must be 'PUT'", "access_token": request.access_token}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 # View for posting and retrieving comments on a post.
 @api_view(['POST', 'GET'])
@@ -571,15 +597,16 @@ def comment(request, post_id):
     if request.method == 'POST':
         data = request.data
         comment = data.get('comment')
+        pic = request.FILES.get('picture')
         post = Post.objects.get(id=post_id)
         try:
-            new_comment = Comment.objects.create(post=post, commenter=request.user, comment_content=comment)
+            new_comment = Comment.objects.create(post=post, commenter=request.user, content_image=pic, comment_content=comment)
             post.comment_count += 1
             post.save()
             return JsonResponse(CommentSerializer(new_comment).data, status=status.HTTP_201_CREATED)
         except Exception as e:
             logger.error(e)
-            return JsonResponse({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse({"message": str(e), "access_token": request.access_token}, status=status.HTTP_400_BAD_REQUEST)
 
     if request.method == 'GET':
         post = Post.objects.get(id=post_id)
@@ -591,7 +618,7 @@ def comment(request, post_id):
         # Serialize the comments using the CommentSerializer
         serializer = CommentSerializer(comments, many=True)
 
-        return JsonResponse({"comments": serializer.data, "count": subcomment_count}, status=200)
+        return JsonResponse({"comments": serializer.data, "count": subcomment_count, "access_token": request.access_token}, status=200)
 
 @api_view(['PUT'])
 def edit_comment(request, comment_id):
@@ -605,13 +632,15 @@ def edit_comment(request, comment_id):
             comment.save()
             edited_comment = CommentSerializer(comment)
             return JsonResponse({
-                "edited_comment": edited_comment.data
+                "edited_comment": edited_comment.data,
+                "access_token": request.access_token
             }, status=200)
         except Exception as e:
             logger.error(e)
             return JsonResponse({
                 "success": False,
-                "message": str(e)
+                "message": str(e),
+                "access_token": request.access_token
             }, status=400)
 
 # View for posting and retrieving comments on a post.
@@ -620,16 +649,17 @@ def subcomment(request, comment_id):
     if request.method == 'POST':
         data = request.data
         subcomment = data.get('comment')
+        pic = request.FILES.get('picture')
         comment = Comment.objects.get(id=comment_id)
         post = Post.objects.get(id=comment.post_id)
         try:
-            new_subcomment = Comment.objects.create(post=post, parent_comment = comment, commenter=request.user, comment_content=subcomment)
+            new_subcomment = Comment.objects.create(post=post, parent_comment = comment, content_image=pic, commenter=request.user, comment_content=subcomment)
             post.comment_count += 1
             new_subcomment.save()
-            return JsonResponse({"subcomment": CommentSerializer(new_subcomment).data}, status=status.HTTP_201_CREATED)
+            return JsonResponse({"subcomment": CommentSerializer(new_subcomment).data, "access_token": request.access_token}, status=status.HTTP_201_CREATED)
         except Exception as e:
             logger.error(e)
-            return JsonResponse({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse({"message": str(e), "access_token": request.access_token}, status=status.HTTP_400_BAD_REQUEST)
 
     if request.method == 'GET':
         parent_comment = Comment.objects.get(id=comment_id)
@@ -639,7 +669,7 @@ def subcomment(request, comment_id):
         # Serialize the comments using the CommentSerializer
         serializer = CommentSerializer(comments, many=True)
 
-        return JsonResponse({"comments": serializer.data}, status=200)
+        return JsonResponse({"comments": serializer.data, "access_token": request.access_token}, status=200)
 
 # View for deleting a post.
 @api_view(['PUT'])
@@ -652,11 +682,11 @@ def delete_post(request, post_id):
                 return JsonResponse(status=status.HTTP_204_NO_CONTENT)
             except Exception as e:
                 logger.error(e)
-                return JsonResponse({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+                return JsonResponse({"message": str(e), "access_token": request.access_token}, status=status.HTTP_400_BAD_REQUEST)
         else:
-            return JsonResponse({"message": "You don't have permission to delete this post."}, status=status.HTTP_403_FORBIDDEN)
+            return JsonResponse({"message": "You don't have permission to delete this post.", "access_token": request.access_token}, status=status.HTTP_403_FORBIDDEN)
     else:
-        return JsonResponse({"message": "Method must be 'PUT'"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+        return JsonResponse({"message": "Method must be 'PUT'", "access_token": request.access_token}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 
 # View for confirming user registration.
@@ -692,8 +722,8 @@ def change_password(request):
             if user.check_password(serializer.data.get('old_password')):
                 user.set_password(serializer.data.get('new_password'))
                 user.save()
-                return JsonResponse({'message': 'Password changed successfully.'}, status=status.HTTP_200_OK)
-            return JsonResponse({'error': 'Incorrect old password.'}, status=status.HTTP_400_BAD_REQUEST)
+                return JsonResponse({'message': 'Password changed successfully.', "access_token": request.access_token}, status=status.HTTP_200_OK)
+            return JsonResponse({'error': 'Incorrect old password.', "access_token": request.access_token}, status=status.HTTP_400_BAD_REQUEST)
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -704,14 +734,14 @@ def reset_password(request):
         new_password = request.data.get('new_password')
         confirm_password = request.data.get('confirm_password')
         if not (new_password or confirm_password):
-            return JsonResponse({"error": "Password field missing"}, status=400)
+            return JsonResponse({"error": "Password field missing", "access_token": request.access_token}, status=400)
 
         if new_password and new_password == confirm_password:
             user.set_password(new_password)
             user.save()
         else:
-            return JsonResponse({"error": "Password  confirmation don't match"}, status=400)
-    return JsonResponse({"message": "Password reset successfully"}, status=200)
+            return JsonResponse({"error": "Password  confirmation don't match", "access_token": request.access_token}, status=400)
+    return JsonResponse({"message": "Password reset successfully", "access_token": request.access_token}, status=200)
 
 
 @api_view(['POST'])
@@ -722,7 +752,7 @@ def password_reset(request):
 
         # Check if the email or username is provided
         if not (username or  email):
-            return JsonResponse({"message": "Email or username is required."}, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse({"message": "Email or username is required.", "access_token": request.access_token}, status=status.HTTP_400_BAD_REQUEST)
 
         # Find the user with the provided email
         try:
@@ -741,16 +771,17 @@ def password_reset(request):
             reset_url = reverse('reset_password',
                 kwargs={'uidb64': uid, 'token': token})
             reset_url = request.build_absolute_uri(reset_url)
+            reset_page = os.getenv("RESET_PAGE")
 
             # Send a reset password email
             subject = 'Password Reset Request'
-            message = f'Please click the following link to reset your password: {reset_url}'
+            message = f'Please click the following link to reset your password: {reset_page}/{token}'
             from_email = 'climatewaver@gmail.com'  # Replace with your email
             recipient_list = [user.email]
             send_mail(subject, message, from_email, recipient_list)
-            return JsonResponse({'status': 'OK', 'message': 'Passord reset token sent'}, status=status.HTTP_200_OK)
+            return JsonResponse({'message': 'Passord reset token sent', 'token': token, "reset_url": reset_url, "access_token": request.access_token}, status=status.HTTP_200_OK)
 
-    return JsonResponse({"error": "Password request failed"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+    return JsonResponse({"error": "Password request failed", "access_token": request.access_token}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 @api_view(['POST'])
 def refresh_token(request):
