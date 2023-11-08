@@ -1,5 +1,7 @@
 # Climate Wavers - Django Server
 
+<img width="556" alt="image" src="https://github.com/Olagold-hackxx/ClimateWavers2/assets/133222922/bd3a5667-d3cd-48d9-b6d6-c8ac673dd49f">
+
 The Django Server component of the Climate Change and Disaster Response Platform is responsible for handling core functionalities, user management, and data processing tasks. Built on the Django web framework, this server provides a robust and secure backend for the application.
 
 ## Table of Contents
