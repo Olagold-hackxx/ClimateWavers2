@@ -130,305 +130,80 @@ exit
 ```
 ## API Endpoints
 
-**API Documentation: ClimateWavers**
+# Climate Wavers API Documentation
 
-ClimateWavers API is designed to provide access to various features of the ClimateWavers platform, allowing developers to build applications and services around its functionality.
+This documentation outlines the API endpoints for the Climate Wavers application. Climate Wavers is a social platform where users can share posts, interact with other users, and follow their favorite content creators. The API provides various features, including user management, post creation, likes, comments, and more.
 
-**Base URL**: `https://climatewavers.com/api/v1/`
+## Authentication
 
-### Endpoints
+Before using the Climate Wavers API, users must register and log in to obtain an access token. The access token should be included in the headers of all API requests for authentication. In addition, some endpoints require user verification and authorization.
 
-#### 1. Register a New User
+## Base URL
 
-- **URL**: `/n/register`
-- **Method**: `POST`
-- **Description**: Register a new user on the platform.
-- **Request Body**:
-    - `username`: User's username
-    - `email`: User's email
-    - `password`: User's password
-    - `profession`: User's profession (optional)
-    - `phone_number`: User's phone number (optional)
-    - `last_location`: User's last location (optional)
-    - `profile_pic`: User's profile picture (optional)
-    - `bio`: User's bio (optional)
-    - `cover`: User's cover image (optional)
+`https://backend-olagoldhackxx-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/api/v1/backend/`
 
-- **Example Request**:
 
-```json
-{
-    "username": "john_doe",
-    "email": "john@example.com",
-    "password": "password123"
-}
-```
+All endpoints are relative to this base URL.
 
-- **Response**:
+## API Endpoints
 
-```json
-{
-    "message": "User registered. Confirmation email sent."
-}
-```
+### User Management
 
-#### 2. Confirm Registration
+- `POST /register`: Register a new user.
+- `GET /confirm/<str:uidb64>/<str:token>`: Confirm user registration.
+- `POST /login`: Log in as an existing user.
+- `GET /logout`: Log out the current user.
+- `GET /users`: List all users.
+- `GET /<str:username>/profile`: View a user's profile.
+- `PUT /edit-profile`: Edit the current user's profile.
+- `GET /<str:user_id>/verify`: Verify a user.
+- `GET /<str:user_id>/status`: Check the verification status of a user.
+- `POST /reset_password`: Initiate a password reset process.
+- `POST /password_reset`: Send a password reset email.
 
-- **URL**: `/confirm/<str:uidb64>/<str:token>/`
-- **Method**: `GET`
-- **Description**: Confirm user registration after clicking on the confirmation link sent via email.
+### Posts
 
-- **Response**:
+- `GET /`: Display all posts on the homepage.
+- `GET /education`: Display posts in the "Education" category.
+- `GET /happening`: Display posts in the "Happening Now" category.
+- `GET /community`: Display posts in the "Community" category.
+- `POST /posts/create`: Create a new post.
+- `PUT /posts/<str:post_id>/edit`: Edit an existing post.
+- `PUT /posts/<str:post_id>/like`: Like a post.
+- `PUT /posts/<str:post_id>/unlike`: Unlike a post.
+- `PUT /posts/<str:post_id>/save`: Save a post.
+- `PUT /posts/<str:post_id>/unsave`: Unsave a post.
+- `GET /following/posts`: Display posts from users the current user is following.
+- `GET /posts/saved`: Display posts saved by the current user.
+- `PUT /posts/<str:post_id>/delete`: Delete a post.
+- `GET /posts/<str:post_id>/comments`: View comments on a post.
+- `POST /posts/<str:post_id>/comment`: Write a comment on a post.
+- `GET /comments/<str:comment_id>/subcomments`: View all subcomments on a comment.
+- `POST /comments/<str:comment_id>/subcomment`: Write subcomments on a comment.
+- `PUT /comments/<str:comment_id>/edit`: Edit a comment.
 
-```
-Your registration has been confirmed.
-```
+### Followers and Followings
 
-#### 3. User Login
+- `PUT /<str:username>/follow`: Follow a user.
+- `PUT /<str:username>/unfollow`: Unfollow a user.
+- `GET /<str:username>/followers`: List a user's followers.
+- `GET /<str:username>/followings`: List a user's followings.
+- `GET /followers`: List the current user's followers.
+- `GET /followings`: List the current user's followings.
 
-- **URL**: `/n/login`
-- **Method**: `POST`
-- **Description**: Log in a registered user.
+### Password Management
 
-- **Request Body**:
-    - `username`: User's username
-    - `password`: User's password
+- `POST /change_password`: Change the user's password.
+- `POST /access_token/refresh`: Obtain a new access token.
 
-- **Example Request**:
+Error Handling
 
-```json
-{
-    "username": "john_doe",
-    "password": "password123"
-}
-```
+The API returns appropriate HTTP status codes and error messages in the response body. Please refer to the API documentation for specific error codes and messages.
 
-- **Response**:
+Please note that this documentation provides an overview of the available API endpoints and their purposes. Additional details, request and response formats, and required parameters should be included in your API documentation for comprehensive usage instructions.
 
-```
-User logged in successfully.
-```
+Make sure to replace `https://backend-olagoldhackxx-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/api/v1/backend/` with the correct base URL that you intend to use for your API.
 
-#### 4. User Logout
-
-- **URL**: `/n/logout`
-- **Method**: `POST`
-- **Description**: Log out the currently logged-in user.
-
-- **Response**:
-
-```
-User logged out successfully.
-```
-
-#### 5. User Profile
-
-- **URL**: `/<str:username>`
-- **Method**: `GET`
-- **Description**: Retrieve a user's profile including their posts, followers, and following count.
-
-- **Response**:
-
-```json
-{
-    "username": "john_doe",
-    "posts": [...],  // Array of user's posts
-    "posts_count": 10,
-    "is_follower": false,
-    "follower_count": 100,
-    "following_count": 50
-}
-```
-
-#### 6. Create a New Post
-
-- **URL**: `/n/createpost`
-- **Method**: `POST`
-- **Description**: Create a new post.
-
-- **Request Body**:
-    - `text`: Post content
-    - `picture`: Post image (optional)
-    - `category`: Post category (optional)
-
-- **Example Request**:
-
-```json
-{
-    "text": "Hello, world!",
-    "category": "General"
-}
-```
-
-- **Response**:
-
-```
-Post created successfully.
-```
-
-#### 7. Edit an Existing Post
-
-- **URL**: `/n/community/<int:post_id>/edit`
-- **Method**: `POST`
-- **Description**: Edit an existing post.
-
-- **Request Body**:
-    - `text`: Updated post content
-    - `picture`: Updated post image (optional)
-    - `img_change`: Indicator if the image is changed (boolean)
-    - `id`: Post ID
-
-- **Example Request**:
-
-```json
-{
-    "text": "Updated content",
-    "picture": "new_image.jpg",
-    "img_change": true,
-    "id": 123
-}
-```
-
-- **Response**:
-
-```json
-{
-    "success": true,
-    "text": "Updated content",
-    "picture": "new_image.jpg"
-}
-```
-
-#### 8. Like a Post
-
-- **URL**: `/n/community/<int:id>/like`
-- **Method**: `PUT`
-- **Description**: Like a specific post.
-
-- **Response**:
-
-```
-Post liked successfully.
-```
-
-#### 9. Unlike a Post
-
-- **URL**: `/n/community/<int:id>/unlike`
-- **Method**: `PUT`
-- **Description**: Remove a like from a post.
-
-- **Response**:
-
-```
-Post unliked successfully.
-```
-
-#### 10. Save a Post
-
-- **URL**: `/n/community/<int:id>/save`
-- **Method**: `PUT`
-- **Description**: Save a post to the user's saved posts.
-
-- **Response**:
-
-```
-Post saved successfully.
-```
-
-#### 11. Unsave a Post
-
-- **URL**: `/n/community/<int:id>/unsave`
-- **Method**: `PUT`
-- **Description**: Remove a post from the user's saved posts.
-
-- **Response**:
-
-```
-Post unsaved successfully.
-```
-
-#### 12. View Comments on a Post
-
-- **URL**: `/n/community/<int:post_id>/comments`
-- **Method**: `GET`
-- **Description**: Retrieve comments on a specific post.
-
-- **Response**:
-
-```json
-[
-    {
-        "comment_text": "Great post!",
-        "commenter": "user123"
-    },
-    {
-        "comment_text": "I agree!",
-        "commenter": "user456"
-    }
-]
-```
-
-#### 13. Write a Comment on a Post
-
-- **URL**: `/n/community/<int:post_id>/write_comment`
-- **Method**: `POST`
-- **Description**: Add a new comment to a post.
-
-- **Request Body**:
-    - `comment_text`: Comment text
-
-- **Example Request**:
-
-```json
-{
-    "comment_text": "Great post!"
-}
-```
-
-- **Response**:
-
-```json
-{
-    "comment_text": "Great post!",
-    "commenter": "john_doe"
-}
-```
-
-#### 14. Delete a Post
-
-- **URL**: `/n/community/<int:post_id>/delete`
-- **Method**: `PUT`
-- **Description**: Delete a specific post.
-
-- **Response**:
-
-```
-Post deleted successfully.
-```
-
-#### 15. Follow a User
-
-- **URL**: `/<str:username>/follow`
-- **Method**: `PUT`
-- **Description**: Follow another user.
-
-- **Response**:
-
-```
-You are now following user123.
-```
-
-#### 16. Unfollow a User
-
-- **URL**: `/<str:username>/unfollow`
-- **Method**: `PUT`
-- **Description**: Unfollow a user.
-
-- **Response**:
-
-```
-You are no longer following user123.
-```
 ## Environment Variables
 
 - **SECRET_KEY:** Django secret key for security (store in a secure environment).

@@ -2424,3 +2424,5 @@ AttributeError: 'NoneType' object has no attribute 'encode'
 2023-11-07 13:06:48,087 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/views.py changed, reloading.
 2023-11-07 13:07:31,411 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/views.py changed, reloading.
 2023-11-07 13:08:08,517 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/ClimateWavers2/climate_wavers/views.py changed, reloading.
+2023-11-07 19:41:26,910 - WARNING - django.request - Method Not Allowed: /api/v1/backend/login
+2023-11-07 19:43:25,049 - WARNING - django.request - Method Not Allowed: /api/v1/backend/login
