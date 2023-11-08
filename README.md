@@ -69,22 +69,25 @@ The system allows for the dispatch of climate-related alerts to users based on t
    ```bash
    npm start
 
-Connect to the System
+## Connect to the System
 
 Connect to the specified port to start receiving notifications.
 
-Test the System
+## Test the System
 
 To test the system, simulate different scenarios and check the functionality of the email notifications.
 
-Contributing
+## Contributing
+
 Contributions are welcome! Please follow these steps:
 
-Fork the repository.
-Create a new branch (git checkout -b feature/awesome-contribution).
-Commit changes (git commit -am 'Add new feature').
-Push to the branch (git push origin feature/awesome-contribution).
-Create a pull request.
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/awesome-contribution`).
+3. Commit changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature/awesome-contribution`).
+5. Create a pull request.
 
-License
+## License
+
 This project is licensed under the MIT License.
+
