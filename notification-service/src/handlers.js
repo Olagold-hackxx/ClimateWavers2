@@ -1,9 +1,9 @@
-// src/handlers.js
-const EmailService = require('./emailService'); // Import the email service
+const EmailService = require('./emailService');
+const { Notification } = require('./models'); // Import Notification model
 
 function handleConnection(socket) {
   console.log('Client connected');
-
+  
   // Assuming you have a trigger to send email notifications
   triggerEmailNotifications();
 
@@ -14,9 +14,12 @@ function handleConnection(socket) {
 
 // Function to trigger email notifications
 function triggerEmailNotifications() {
-  // Create and send email notifications
-  const notification = new Notification(1, 'Climate Alert', 'Your message here', new Date().toISOString());
-  sendEmailNotification(notification);
+  // Fetch and process notifications for email dispatch
+  const notifications = fetchNotifications(); // Implement the method to retrieve notifications
+  
+  notifications.forEach((notification) => {
+    sendEmailNotification(notification); // Send email for each notification
+  });
 }
 
 // Function to send an email notification
@@ -27,12 +30,31 @@ function sendEmailNotification(notification) {
     // Add any additional email parameters or configuration here
   };
 
-  // Assuming you have the recipient's email address
-  const recipientEmail = 'user@example.com'; // Replace with the actual recipient's email address
+  const recipientEmail = getUserEmail(notification.userId); // Implement method to fetch user's email
 
-  // Send the email using the EmailService
-  EmailService.sendEmail(recipientEmail, emailContent);
+  EmailService.sendEmail(recipientEmail, emailContent); // Send the email
+}
+
+// Function to fetch notifications
+function fetchNotifications() {
+  // Implement logic to fetch actual notifications from the system
+  // Return a list of notifications
+  return [
+    new Notification(1, 'Notification Type', 'Notification Message', new Date().toISOString(), 'userID_1'),
+    // Add more notifications if needed
+  ];
+}
+
+// Function to fetch user email based on user ID
+function getUserEmail(userId) {
+  // Implement logic to fetch user-specific email from  database 
+  // Replace this placeholder code with the actual email retrieval process
+  const usersEmails = {
+    userID_1: 'user1@example.com',
+    // Add more user-email pairs if needed
+  };
+
+  return usersEmails[userId];
 }
 
 module.exports = { handleConnection };
-

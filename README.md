@@ -1,88 +1,90 @@
-# Climate Wavers - Django Server
+# ClimateWavers Notification System
 
-
-The Django Server component of the Climate Change and Disaster Response Platform is responsible for handling core functionalities, user management, and data processing tasks. Built on the Django web framework, this server provides a robust and secure backend for the application.
+This notification system facilitates the sending of climate-related alerts to registered users based on their last known location. It leverages email notifications for alert dissemination.
 
 ## Table of Contents
 
-- [Climate Wavers - Django Server](#climate-wavers---django-server)
-  - [Table of Contents](#table-of-contents)
-  - [Project Overview](#project-overview)
-  - [Features](#features)
-  - [Installation and Setup](#installation-and-setup)
-  - [API Endpoints](#api-endpoints)
-  - [Environment Variables](#environment-variables)
-  - [License](#license)
+- [Overview](#overview)
+- [Setup](#setup)
+- [Code Structure](#code-structure)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
+## Overview
 
-## Project Overview
+The ClimateWavers Notification System employs a series of interconnected modules to handle the process of sending climate-related notifications to users.
 
-The Climate Change and Disaster Response Platform aims to monitor climate changes, predict natural disasters, and facilitate efficient disaster response. Leveraging Django, the server component ensures seamless user experience, data management, and integration with various data sources.
+## Setup
 
-## Features
+1. **Clone Repository**
 
-- **User Authentication:** Secure user registration, login, and profile management.
-- **Data Management:** Store and manage user data, community information, and datasets.
-- **Real-time Data Processing:** Process incoming data streams for analysis and visualization.
-- **Collaborative Communities:** Enable users to form communities, share observations, and collaborate.
-- **API Endpoints:** Provides RESTful APIs for frontend interaction and external integrations.
-
-## Installation and Setup
-
-1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/IsmaelKiprop/ClimateWavers.git
-   cd ClimateWavers
-   ```
+   git clone https://github.com/Olagold-hackxx/ClimateWavers2.git
 
-2. **Install Dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
 
-3. **Database Setup:**
-   - Configure the database settings in `settings.py`.
-   - Run migrations:
-     ```bash
-     python manage.py migrate
-     ```
+Install Dependencies
 
-4. **Static and Media Files:**
-   - Collect static files:
-     ```bash
-     python manage.py collectstatic
-     ```
-   - Configure media file settings in `settings.py`.
-
-5. **Run the Django Development Server:**
-   ```bash
-   python manage.py runserver
-   ```
-
-   The Django server will be available at `http://localhost:8000`.
-
-## API Endpoints
-
-- **User Management:**
-  - `/api/users/register/`: POST endpoint for user registration.
-  - `/api/users/login/`: POST endpoint for user login.
-  - `/api/users/profile/`: GET endpoint to retrieve user profile information.
-
-- **Community Management:**
-  - `/api/communities/`: GET and POST endpoint for community management.
-  - `/api/communities/<community_id>/`: GET, PUT, and DELETE endpoint for individual communities.
-
-- **Data Processing:**
-  - Define additional endpoints for real-time data processing based on project requirements.
+cd ClimateWavers2/notification-service
+npm install
 
 ## Environment Variables
 
-- **SECRET_KEY:** Django secret key for security (store in a secure environment).
-- **DEBUG:** Set to `True` for development, `False` for production.
-- **DATABASE_URL:** Database connection URL for MYSQL databases.
-- **ALLOWED_HOSTS:** List of allowed hostnames for the Django server.
+Ensure to set up the following environment variables:
 
+- `EMAIL_USER`: Email service username
+- `EMAIL_PASSWORD`: Email service password
+- `EMAIL_SERVICE`: Email service provider (e.g., Gmail)
 
-## License
+Create a `.env` file in the root of the `notification-service` folder and add the environment variables.
 
-This project is licensed under the [MIT License](LICENSE).
+## Code Structure
+
+The notification system comprises the following key files:
+
+- `EmailNotificationController.js`
+- `handlers.js`
+- `models.js`
+- `emailService.js`
+- `main.js`
+- `senders.js`
+
+The functionalities of these files are as follows:
+
+- `EmailNotificationController.js`: Handles incoming messages and user locations to dispatch email notifications.
+- `handlers.js`: Manages the connections and triggers notifications.
+- `models.js`: Defines the structure for notification data.
+- `emailService.js`: Manages the service for sending emails.
+- `main.js`: Coordinates the trigger for sending notifications.
+- `senders.js`: Specifies the process of sending email notifications.
+
+## Usage
+
+The system allows for the dispatch of climate-related alerts to users based on their last known location. To utilize the notification system, follow these steps:
+
+1. **Start the Service**
+
+   Run the following command in the `notification-service` directory:
+
+   ```bash
+   npm start
+
+Connect to the System
+
+Connect to the specified port to start receiving notifications.
+
+Test the System
+
+To test the system, simulate different scenarios and check the functionality of the email notifications.
+
+Contributing
+Contributions are welcome! Please follow these steps:
+
+Fork the repository.
+Create a new branch (git checkout -b feature/awesome-contribution).
+Commit changes (git commit -am 'Add new feature').
+Push to the branch (git push origin feature/awesome-contribution).
+Create a pull request.
+
+License
+This project is licensed under the MIT License.
