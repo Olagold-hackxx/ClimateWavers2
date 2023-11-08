@@ -68,7 +68,7 @@ The Climate Change and Disaster Response Platform aims to monitor climate change
    python manage.py runserver
    ```
 
-   The Django server will be available at `http://localhost:8000`.
+   The Django server will be available at `http://localhost:8001`.
 
 ## Setting up a MariaDB Database
 
