@@ -147,64 +147,232 @@ Before using the Climate Wavers API, users must register and log in to obtain an
 
 All endpoints are relative to this base URL.
 
-## API Endpoints
-
 ### User Management
 
-- `POST /register`: Register a new user.
-- `GET /confirm/<str:uidb64>/<str:token>`: Confirm user registration.
-- `POST /login`: Log in as an existing user.
-- `GET /logout`: Log out the current user.
-- `GET /users`: List all users.
-- `GET /<str:username>/profile`: View a user's profile.
-- `PUT /edit-profile`: Edit the current user's profile.
-- `GET /<str:user_id>/verify`: Verify a user.
-- `GET /<str:user_id>/status`: Check the verification status of a user.
-- `POST /reset_password`: Initiate a password reset process.
-- `POST /password_reset`: Send a password reset email.
+#### Register User
+- **Endpoint**: `/api/v1/backend/register`
+- **Method**: POST
+- **Description**: Register a new user.
+- **Request Body**:
+  - `username`: User's username (required)
+  - `email`: User's email address (required)
+  - `password`: User's password (required)
+  - Additional fields for user profile (e.g., `first_name`, `last_name`, `profession`, etc.)
+- **Response**:
+  - HTTP 201 Created: User registered successfully.
+  - HTTP 400 Bad Request: Invalid or missing data.
+  - HTTP 405 Method Not Allowed: GET method not allowed.
+
+#### Verify User
+- **Endpoint**: `/api/v1/backend/<str:user_id>/verify`
+- **Method**: GET
+- **Description**: Send a confirmation email to the user for account verification.
+- **Response**:
+  - HTTP 201 Created: Confirmation email sent.
+  - HTTP 400 Bad Request: Invalid user or email already taken.
+
+#### Check User Verification Status
+- **Endpoint**: `/api/v1/backend/<str:user_id>/status`
+- **Method**: GET
+- **Description**: Check the verification status of a user.
+- **Response**: User verification status.
+
+#### Login User
+- **Endpoint**: `/api/v1/backend/login`
+- **Method**: POST
+- **Description**: User login.
+- **Request Body**:
+  - `username` or `email`: User's username or email address (required)
+  - `password`: User's password (required)
+- **Response**:
+  - HTTP 200 OK: Login successful with access token.
+  - HTTP 401 Unauthorized: Invalid credentials.
+  - HTTP 400 Bad Request: Missing data.
+  - HTTP 401 Unauthorized: Unverified account.
+
+#### Logout User
+- **Endpoint**: `/api/v1/backend/logout`
+- **Method**: POST
+- **Description**: Log out the user and refresh the refresh token.
+- **Response**:
+  - HTTP 200 OK: User logged out successfully.
+
+#### User Profile
+- **Endpoint**: `/api/v1/backend/profile/<str:username>`
+- **Method**: GET
+- **Description**: Retrieve a user's profile details, posts, and follower/following counts.
+- **Response**: User profile information, posts, and follower/following counts.
+
+#### Edit User Profile
+- **Endpoint**: `/api/v1/backend/edit_profile`
+- **Method**: PUT
+- **Description**: Edit the user's profile information.
+- **Response**: Updated user profile details.
+
+#### User Followers
+- **Endpoint**: `/api/v1/backend/followers/<str:username>`
+- **Method**: GET
+- **Description**: Retrieve a list of users following the specified user.
+- **Response**: List of followers.
+
+#### User Followings
+- **Endpoint**: `/api/v1/backend/followings/<str:username>`
+- **Method**: GET
+- **Description**: Retrieve a list of users that the specified user is following.
+- **Response**: List of followings.
+
+#### Current User's Followings
+- **Endpoint**: `/api/v1/backend/my_followings`
+- **Method**: GET
+- **Description**: Retrieve the list of users that the current user is following.
+- **Response**: List of followings.
+
+#### Current User's Followers
+- **Endpoint**: `/api/v1/backend/my_followers`
+- **Method**: GET
+- **Description**: Retrieve the list of users following the current user.
+- **Response**: List of followers.
+
+#### User Following Posts
+- **Endpoint**: `/api/v1/backend/following_posts`
+- **Method**: GET
+- **Description**: Retrieve posts from users that the current user is following.
+- **Response**: List of posts from followed users.
+
+#### User Saved Posts
+- **Endpoint**: `/api/v1/backend/saved`
+- **Method**: GET
+- **Description**: Retrieve posts saved by the current user.
+- **Response**: List of saved posts.
+
+#### Change Password
+- **Endpoint**: `/api/v1/backend/change_password`
+- **Method**: POST
+- **Description**: Change the user's password.
+- **Response**: Password changed successfully or an error message.
+
+#### Reset Password
+- **Endpoint**: `/api/v1/backend/reset_password`
+- **Method**: POST
+- **Description**: Reset the user's password.
+- **Response**: Password reset confirmation.
+
+#### Request Password Reset
+- **Endpoint**: `/api/v1/backend/password_reset`
+- **Method**: POST
+- **Description**: Request a password reset email.
+- **Response**: Password reset email confirmation.
+
+#### Refresh Token
+- **Endpoint**: `/api/v1/backend/refresh_token`
+- **Method**: POST
+- **Description**: Refresh the user's access token using a refresh token.
+- **Response**: New access token or an error message.
 
 ### Posts
 
-- `GET /`: Display all posts on the homepage.
-- `GET /education`: Display posts in the "Education" category.
-- `GET /happening`: Display posts in the "Happening Now" category.
-- `GET /community`: Display posts in the "Community" category.
-- `POST /posts/create`: Create a new post.
-- `PUT /posts/<str:post_id>/edit`: Edit an existing post.
-- `PUT /posts/<str:post_id>/like`: Like a post.
-- `PUT /posts/<str:post_id>/unlike`: Unlike a post.
-- `PUT /posts/<str:post_id>/save`: Save a post.
-- `PUT /posts/<str:post_id>/unsave`: Unsave a post.
-- `GET /following/posts`: Display posts from users the current user is following.
-- `GET /posts/saved`: Display posts saved by the current user.
-- `PUT /posts/<str:post_id>/delete`: Delete a post.
-- `GET /posts/<str:post_id>/comments`: View comments on a post.
-- `POST /posts/<str:post_id>/comment`: Write a comment on a post.
-- `GET /comments/<str:comment_id>/subcomments`: View all subcomments on a comment.
-- `POST /comments/<str:comment_id>/subcomment`: Write subcomments on a comment.
-- `PUT /comments/<str:comment_id>/edit`: Edit a comment.
+#### Get All Posts
+- **Endpoint**: `/api/v1/backend`
+- **Method**: GET
+- **Description**: Retrieve all posts.
+- **Response**: List of posts and access token.
 
-### Followers and Followings
+#### Get Posts in "Happening" Category
+- **Endpoint**: `/api/v1/backend/happening`
+- **Method**: GET
+- **Description**: Retrieve posts in the "Happening" category.
+- **Response**: List of posts in the "Happening" category and access token.
 
-- `PUT /<str:username>/follow`: Follow a user.
-- `PUT /<str:username>/unfollow`: Unfollow a user.
-- `GET /<str:username>/followers`: List a user's followers.
-- `GET /<str:username>/followings`: List a user's followings.
-- `GET /followers`: List the current user's followers.
-- `GET /followings`: List the current user's followings.
+#### Get Posts in "Education" Category
+- **Endpoint**: `/api/v1/backend/education`
+- **Method**: GET
+- **Description**: Retrieve posts in the "Education" category.
+- **Response**: List of posts in the "Education" category and access token.
 
-### Password Management
+#### Get Posts in "Community" Category
+- **Endpoint**: `/api/v1/backend/community`
+- **Method**: GET
+- **Description**: Retrieve posts in the "Community" category.
+- **Response**: List of posts in the "Community" category and access token.
 
-- `POST /change_password`: Change the user's password.
-- `POST /access_token/refresh`: Obtain a new access token.
+#### Create Post
+- **Endpoint**: `/api/v1/backend/create_post`
+- **Method**: POST
+- **Description**: Create a new post.
+- **Request Body**:
+  - `text`: Post content (optional)
+  - `picture`: Post image (optional)
+  - `category`: Post category (required)
+- **Response**:
+  - HTTP 201 Created: Post created successfully.
+  - HTTP 400 Bad Request: Invalid or missing data.
 
-Error Handling
+#### Edit Post
+- **Endpoint**: `/api/v1/backend/edit_post/<int:post_id>`
+- **Method**: PUT
+- **Description**: Edit an existing post.
+- **Request Body**:
+  - `text`: Updated post content (optional)
+  - `picture`: Updated post image (optional)
+  - `img_change`: Flag to indicate image change (optional)
+- **Response**:
+  - HTTP 200 OK: Post edited successfully.
+  - HTTP 400 Bad Request: Invalid data.
+  - HTTP 403 Forbidden: Permission denied.
 
-The API returns appropriate HTTP status codes and error messages in the response body. Please refer to the API documentation for specific error codes and messages.
+#### Like Post
+- **Endpoint**: `/api/v1/backend/like_post/<int:post_id>`
+- **Method**: PUT
+- **Description**: Like a post.
+- **Response**:
+  - HTTP 204 No Content: Post liked.
+  - HTTP 400 Bad Request: Error liking the post.
+  - HTTP 405 Method Not Allowed: GET method not allowed.
 
-Please note that this documentation provides an overview of the available API endpoints and their purposes. Additional details, request and response formats, and required parameters should be included in your API documentation for comprehensive usage instructions.
+#### Unlike Post
+- **Endpoint**: `/api/v1/backend/unlike_post/<int:post_id>`
+- **Method**: PUT
+- **Description**: Unlike a post.
+- **Response**:
+  - HTTP 204 No Content: Post unliked.
+  - HTTP 400 Bad Request: Error unliking the post.
 
-Make sure to replace `https://backend-olagoldhackxx-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/api/v1/backend/` with the correct base URL that you intend to use for your API.
+#### Comment on Post
+- **Endpoint**: `/api/v1/backend/comment/<int:post_id>`
+- **Method**: POST
+- **Description**: Add a comment to a post.
+- **Request Body**:
+  - `text`: Comment content (required)
+- **Response**:
+  - HTTP 201 Created: Comment added successfully.
+  - HTTP 400 Bad Request: Invalid or missing data.
+
+#### Edit Comment
+- **Endpoint**: `/api/v1/backend/edit_comment/<int:comment_id>`
+- **Method**: PUT
+- **Description**: Edit an existing comment on a post.
+- **Request Body**:
+  - `text`: Updated comment content (required)
+- **Response**:
+  - HTTP 200 OK: Comment edited successfully.
+  - HTTP 400 Bad Request: Invalid or missing data.
+  - HTTP 403 Forbidden: Permission denied.
+
+#### Delete Comment
+- **Endpoint**: `/api/v1/backend/delete_comment/<int:comment_id>`
+- **Method**: DELETE
+- **Description**: Delete a comment on a post.
+- **Response**:
+  - HTTP 204 No Content: Comment deleted.
+  - HTTP 403 Forbidden: Permission denied.
+
+#### Delete Post
+- **Endpoint**: `/api/v1/backend/delete_post/<int:post_id>`
+- **Method**: DELETE
+- **Description**: Delete a post.
+- **Response**:
+  - HTTP 204 No Content: Post deleted.
+  - HTTP 403 Forbidden: Permission denied.
 
 ## Environment Variables
 
