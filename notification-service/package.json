@@ -1,7 +1,7 @@
 {
   "name": "notification-service",
   "version": "1.0.0",
-  "description": "",
+  "description": "This notification system facilitates the sending of climate-related alerts to registered users based on their last known location. It leverages email notifications for alert dissemination.",
   "main": "main.js",
   "dependencies": {
     "dotenv": "^16.3.1",
