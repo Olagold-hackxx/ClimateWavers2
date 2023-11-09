@@ -1,5 +1,3 @@
-// src/main.js
-
 // Import the required modules
 const { sendNotification } = require('./senders');
 const EmailService = require('./emailService');
@@ -24,7 +22,7 @@ function triggerEmailNotifications() {
 function fetchNotifications() {
   // Simulating notifications related to climate disasters
 
-  // Sample  notifications 
+  // Sample notifications
   return [
     { type: 'Flood', message: 'Flood warning: Heavy rain expected in your area. Take precautions.' },
     { type: 'Earthquake', message: 'Earthquake alert: Mild tremors reported in your region.' },
@@ -34,6 +32,8 @@ function fetchNotifications() {
 
 // Function to send an email notification
 function sendEmailNotification(type, message) {
+  const recipientEmail = 'example@example.com'; // Replace with the recipient's email
+
   const emailContent = {
     subject: `Notification: ${type}`,
     body: message,
@@ -41,7 +41,7 @@ function sendEmailNotification(type, message) {
   };
 
   // Assuming the EmailService provides a method to send emails
-  EmailService.sendEmail(recipientEmail, emailContent); // Replace 'recipientEmail' with the appropriate recipient email address
+  EmailService.sendEmail(recipientEmail, emailContent);
 }
 
 // Export the email notification trigger function (if needed)
