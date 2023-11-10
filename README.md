@@ -1,87 +1,128 @@
-# Climate Wavers - Django Server
+# Climate Wavers
 
-
-The Django Server component of the Climate Change and Disaster Response Platform is responsible for handling core functionalities, user management, and data processing tasks. Built on the Django web framework, this server provides a robust and secure backend for the application.
+Climate Wavers is an innovative AI-driven social media application designed to enhance disaster preparedness and response. The platform integrates community engagement, educational resources, and real-time disaster updates to create a comprehensive user experience.
 
 ## Table of Contents
 
-- [Climate Wavers - Django Server](#climate-wavers---django-server)
-  - [Table of Contents](#table-of-contents)
-  - [Project Overview](#project-overview)
-  - [Features](#features)
-  - [Installation and Setup](#installation-and-setup)
-  - [API Endpoints](#api-endpoints)
-  - [Environment Variables](#environment-variables)
-  - [License](#license)
-
-
-## Project Overview
-
-The Climate Change and Disaster Response Platform aims to monitor climate changes, predict natural disasters, and facilitate efficient disaster response. Leveraging Django, the server component ensures seamless user experience, data management, and integration with various data sources.
+- [Features](#features)
+- [Architecture](#architecture)
+- [Microservices](#microservices)
+- [Deployment](#deployment)
+- [Getting Started](#getting-started)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Features
 
-- **User Authentication:** Secure user registration, login, and profile management.
-- **Data Management:** Store and manage user data, community information, and datasets.
-- **Real-time Data Processing:** Process incoming data streams for analysis and visualization.
-- **Collaborative Communities:** Enable users to form communities, share observations, and collaborate.
-- **API Endpoints:** Provides RESTful APIs for frontend interaction and external integrations.
+### 1. Community Pages
 
-## Installation and Setup
+**Description:** Users can share information about their local climates, fostering community-driven collaboration.
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/IsmaelKiprop/ClimateWavers.git
-   cd ClimateWavers
-   ```
+**Functionality:**
+- Post updates about local climates.
+- Engage with climate experts and community members through discussions.
 
-2. **Install Dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 2. Educational Page
 
-3. **Database Setup:**
-   - Configure the database settings in `settings.py`.
-   - Run migrations:
-     ```bash
-     python manage.py migrate
-     ```
+**Description:** An AI model generates educational posts on disasters to provide users with relevant and timely information.
 
-4. **Static and Media Files:**
-   - Collect static files:
-     ```bash
-     python manage.py collectstatic
-     ```
-   - Configure media file settings in `settings.py`.
+**Functionality:**
+- Dynamic content generation based on real-time disaster data.
+- Educational posts tailored to user preferences.
 
-5. **Run the Django Development Server:**
-   ```bash
-   python manage.py runserver
-   ```
+### 3. Happening Now
 
-   The Django server will be available at `http://localhost:8000`.
+**Description:** Real-time updates on disasters currently occurring around the world.
 
-## API Endpoints
+**Functionality:**
+- Aggregation of real-time data feeds from authoritative sources.
+- User notifications for relevant disasters based on location and preferences.
 
-- **User Management:**
-  - `/api/users/register/`: POST endpoint for user registration.
-  - `/api/users/login/`: POST endpoint for user login.
-  - `/api/users/profile/`: GET endpoint to retrieve user profile information.
+## Architecture
 
-- **Community Management:**
-  - `/api/communities/`: GET and POST endpoint for community management.
-  - `/api/communities/<community_id>/`: GET, PUT, and DELETE endpoint for individual communities.
+Climate Wavers follows a microservices architecture to ensure modularity, scalability, and maintainability.
 
-- **Data Processing:**
-  - Define additional endpoints for real-time data processing based on project requirements.
+**Architecture Components:**
+- Frontend (React)
+- Backend (Django)
+- Auth Flow (Node.js)
+- Chatbot (MongoDB)
+- Tweetbot
+- Model Bot
+- Database Microservice (MariaDB)
+- WaverX-NLP Microservice
+- WaverX-Analysis
+- WaverX-Vision
 
-## Environment Variables
+![Architecture Diagram](./docs/architecture-diagram.png)
 
-- **SECRET_KEY:** Django secret key for security (store in a secure environment).
-- **DEBUG:** Set to `True` for development, `False` for production.
-- **DATABASE_URL:** Database connection URL for MYSQL databases.
-- **ALLOWED_HOSTS:** List of allowed hostnames for the Django server.
+## Microservices
 
+### Frontend (React)
+
+- **Directory:** `frontend/`
+- **Description:** The React application provides the user interface for the Climate Wavers platform.
+
+### Backend (Django)
+
+- **Directory:** `backend/`
+- **Description:** The Django backend houses the core application logic and APIs.
+
+### Auth Flow (Node.js)
+
+- **Directory:** `authflow/`
+- **Description:** Node.js application managing open authentication and Red Hat SSO.
+
+### Chatbot (MongoDB)
+
+- **Directory:** `chatbot/`
+- **Description:** MongoDB for storing chat conversations with users.
+
+### Tweetbot
+
+- **Directory:** `tweetbot/`
+- **Description:** Generates educational posts on disasters.
+
+### Model Bot
+
+- **Directory:** `modelbot/`
+- **Description:** Generates model responses.
+
+### Database Microservice (MariaDB)
+
+- **Directory:** `database/`
+- **Description:** MariaDB database connecting all microservices.
+
+### WaverX-NLP Microservice
+
+- **Directory:** `waverx-nlp/`
+- **Description:** NLP model for natural language processing.
+
+### WaverX-Analysis
+
+- **Directory:** `waverx-analysis/`
+- **Description:** Disaster magnitude analysis model.
+
+### WaverX-Vision
+
+- **Directory:** `waverx-vision/`
+- **Description:** Vision model for image analysis.
+
+## Deployment
+
+The application is deployed on OpenShift, a robust container orchestration platform, ensuring scalability and reliability.
+
+**Deployment Configurations:**
+- Configuration files are available in the `openshift/` directory.
+
+## Getting Started
+
+1. Clone the repository: `git clone https://github.com/yourusername/climate-wavers.git`
+2. Follow the README in each microservice directory for specific setup instructions.
+
+## Contributing
+
+We welcome contributions from the community! Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
 
