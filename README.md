@@ -118,7 +118,7 @@ The application is deployed on OpenShift, a robust container orchestration platf
 ## Getting Started
 
 1. Clone the repository: `git clone https://github.com/yourusername/climate-wavers.git`
-2. Follow the README in each microservice directory for specific setup instructions.
+2. Follow the README in each microservice repository for specific setup instructions.
 
 ## Contributing
 
