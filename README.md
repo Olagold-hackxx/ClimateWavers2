@@ -60,52 +60,52 @@ Climate Wavers follows a microservices architecture to ensure modularity, scalab
 
 ### Frontend (React)
 
-- **Directory:** `frontend/`
+- **Repository:** `frontend/`
 - **Description:** The React application provides the user interface for the Climate Wavers platform.
 
 ### Backend (Django)
 
-- **Directory:** `backend/`
+- **Repository:** `backend/`
 - **Description:** The Django backend houses the core application logic and APIs.
 
 ### Auth Flow (Node.js)
 
-- **Directory:** `authflow/`
+- **Repository:** `authflow/`
 - **Description:** Node.js application managing open authentication and Red Hat SSO.
 
-### Chatbot (MongoDB)
+### Chatbot
 
-- **Directory:** `chatbot/`
+- **Repository:** `chatbot/`
 - **Description:** MongoDB for storing chat conversations with users.
 
 ### Tweetbot
 
-- **Directory:** `tweetbot/`
+- **Repository** `tweetbot/`
 - **Description:** Generates educational posts on disasters.
 
 ### Model Bot
 
-- **Directory:** `modelbot/`
+- **Repository** `modelbot/`
 - **Description:** Generates model responses.
 
 ### Database Microservice (MariaDB)
 
-- **Directory:** `database/`
+- **Repository** `database/`
 - **Description:** MariaDB database connecting all microservices.
 
 ### WaverX-NLP Microservice
 
-- **Directory:** `waverx-nlp/`
+- **Repository** `waverx-nlp/`
 - **Description:** NLP model for natural language processing.
 
 ### WaverX-Analysis
 
-- **Directory:** `waverx-analysis/`
+- **Repository** `waverx-analysis/`
 - **Description:** Disaster magnitude analysis model.
 
 ### WaverX-Vision
 
-- **Directory:** `waverx-vision/`
+- **Repository** `waverx-vision/`
 - **Description:** Vision model for image analysis.
 
 ## Deployment
