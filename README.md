@@ -3,13 +3,13 @@
 Climate Wavers is an innovative AI-driven social media application designed to enhance disaster preparedness and response. The platform integrates community engagement, educational resources, and real-time disaster updates to create a comprehensive user experience.
 
 ## Table of Contents
-
 - [Features](#features)
-- [Architecture](#architecture)
 - [Technology Stack](#technology-stack)
+- [Architecture](#architecture)
 - [Microservices](#microservices)
 - [Deployment](#deployment)
 - [Getting Started](#getting-started)
+- [Demo](#demo)
 - [Contributing](#contributing)
 - [License](#license)
 
