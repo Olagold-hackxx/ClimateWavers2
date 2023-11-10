@@ -6,6 +6,7 @@ Climate Wavers is an innovative AI-driven social media application designed to e
 
 - [Features](#features)
 - [Architecture](#architecture)
+- [Technology Stack](#technology-stack)
 - [Microservices](#microservices)
 - [Deployment](#deployment)
 - [Getting Started](#getting-started)
