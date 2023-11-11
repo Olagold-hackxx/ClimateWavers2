@@ -166,19 +166,19 @@ Climate Wavers follows a microservices architecture to ensure modularity, scalab
 
 ## Deployment
 
-The application is deployed on OpenShift, a robust container orchestration platform, ensuring scalability and reliability.
+The application is deployed on OpenShift, a robust container orchestration platform, ensuring scalability and reliability. The application was exported 3 days before deadline to ensure it runs throught judging period.
 
 **Deployment Configurations:**
 - Configuration files are available in the `k8s/` directory of the microservices branches and repositories.
 - During development, deployment was done in three different ways.
-      - Using the scripts provided in the `automate_deployment` directory of all microservice
-      - Importing git repository on openshift cluster (recommended)
-      - Tekton pipeline
+        - Using the scripts provided in the `automate_deployment` directory of all microservice
+        - Importing git repository on openshift cluster (recommended)
+        - Tekton pipeline
 - More details on deployment in each microservice repository or branch
   
 ## Getting Started
 
-1. Either clone all the microservices repository in the microservice account, which is recommended: `git clone https://github.com/climatewavers`
+1. Either clone all the microservices repository in the microservice account, which is recommended: `git clone https://github.com/climatewavers/{microservice name}`
 or clone the development repository : `git clone https://github.com/olagold-hackxx/climatewavers2.git`
 2. Follow the README in each microservice repository or branch in development repository for specific setup instructions.
 
