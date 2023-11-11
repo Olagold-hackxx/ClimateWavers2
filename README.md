@@ -142,7 +142,7 @@ Before using the Climate Wavers API, users must register and log in to obtain an
 
 ## Base URL
 
-`https://backend-olagoldhackxx-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/api/v1/backend/`
+`https://backend-climatewavers-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/api/v1/backend/`
 
 
 All endpoints are relative to this base URL.
