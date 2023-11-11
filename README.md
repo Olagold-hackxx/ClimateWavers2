@@ -10,7 +10,6 @@ Climate Wavers is an innovative AI-driven social media application designed to e
 - [Deployment](#deployment)
 - [Getting Started](#getting-started)
 - [Demo](#demo)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Features
@@ -39,23 +38,79 @@ Climate Wavers is an innovative AI-driven social media application designed to e
 - Aggregation of real-time data feeds from authoritative sources.
 - User notifications for relevant disasters based on location and preferences.
 
+## Technology Stack
+
+Climate Wavers is a disaster-driven social media application designed to prepare users for disasters and provide features to aid disaster response. The application utilizes a diverse set of technologies to deliver its functionality:
+
+### Backend:
+
+#### 1. Node.js and Express
+
+- **Description:** Node.js is used as the backend runtime, and Express is the web application framework for building robust and scalable server-side applications.
+
+#### 2. Django
+
+- **Description:** Django, a high-level Python web framework, is employed to build the backend infrastructure, handle user authentication, and manage data.
+
+#### 3. MariaDB
+
+- **Description:** MariaDB, a MySQL fork, serves as the relational database management system for storing structured data related to users, posts, and application configurations.
+
+#### 4. MongoDB
+
+- **Description:** MongoDB, a NoSQL database, is used to store unstructured data such as chat conversations, providing flexibility in managing diverse data types.
+
+#### 5. PyTorch, scikit-learn, and TensorFlow
+
+- **Description:** These machine learning frameworks are integrated for various AI-driven functionalities, including disaster magnitude analysis and natural language processing.
+
+#### 6. Intel PyTorch Extension and Intel scikit-learn Extension
+
+- **Description:** Extensions provided by Intel optimize the performance of PyTorch and scikit-learn on Intel architectures, leveraging hardware acceleration.
+
+#### 7. OpenVINO Quantization and OpenVINO Model Server
+
+- **Description:** OpenVINO tools are utilized for model quantization and inference serving, optimizing deep learning models for edge computing and improving inference speed.
+
+### Frontend:
+
+#### 1. React
+
+- **Description:** React is the JavaScript library used for building the user interface, providing a responsive and dynamic experience for Climate Wavers users.
+
+### Redhat Integration:
+
+#### 1. Red Hat SSO
+
+- **Description:** Red Hat Single Sign-On is employed for secure user authentication, ensuring a seamless and secure login experience for Climate Wavers users.
+
+#### 2. Red Hat AMQ Streams (Apache Kafka)
+
+- **Description:** AMQ Streams, based on Apache Kafka, is used for reliable and scalable messaging between different components of the application, facilitating real-time data communication.
+
+### Automation:
+
+#### 1. Bash Automation
+
+- **Description:** Bash scripts are used for automation tasks, streamlining deployment processes, and managing application configurations.
+
 ## Architecture
 
 Climate Wavers follows a microservices architecture to ensure modularity, scalability, and maintainability.
 
 **Architecture Components:**
-- Frontend (React)
-- Backend (Django)
-- Auth Flow (Node.js)
-- Chatbot (MongoDB)
+- Frontend
+- Backend
+- Auth Flow
+- Chatbot
 - Tweetbot
 - Model Bot
-- Database Microservice (MariaDB)
+- Database Microservice
 - WaverX-NLP Microservice
 - WaverX-Analysis
 - WaverX-Vision
 
-![Architecture Diagram](climate_wavers.drawio.png)
+![Architecture Diagram](https://github.com/Olagold-hackxx/ClimateWavers2/blob/1621d2f857769e9b83f396456210a896d8d3318a/climate_wavers.drawio.png)
 
 ## Microservices
 
@@ -111,19 +166,21 @@ Climate Wavers follows a microservices architecture to ensure modularity, scalab
 
 ## Deployment
 
-The application is deployed on OpenShift, a robust container orchestration platform, ensuring scalability and reliability.
+The application is deployed on OpenShift, a robust container orchestration platform, ensuring scalability and reliability. The application was exported 3 days before deadline to ensure it runs throught judging period.
 
 **Deployment Configurations:**
-- Configuration files are available in the `openshift/` directory.
-
+- Configuration files are available in the `k8s/` directory of the microservices branches and repositories.
+- During development, deployment was done in three different ways.
+        - Using the scripts provided in the `automate_deployment` directory of all microservice
+        - Importing git repository on openshift cluster (recommended)
+        - Tekton pipeline
+- More details on deployment in each microservice repository or branch
+  
 ## Getting Started
 
-1. Clone the repository: `git clone https://github.com/yourusername/climate-wavers.git`
-2. Follow the README in each microservice repository for specific setup instructions.
-
-## Contributing
-
-We welcome contributions from the community! Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+1. Either clone all the microservices repository in the microservice account, which is recommended: `git clone https://github.com/climatewavers/{microservice name}`
+or clone the development repository : `git clone https://github.com/olagold-hackxx/climatewavers2.git`
+2. Follow the README in each microservice repository or branch in development repository for specific setup instructions.
 
 ## License
 
