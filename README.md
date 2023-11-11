@@ -10,7 +10,6 @@ Climate Wavers is an innovative AI-driven social media application designed to e
 - [Deployment](#deployment)
 - [Getting Started](#getting-started)
 - [Demo](#demo)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Features
@@ -100,13 +99,13 @@ Climate Wavers is a disaster-driven social media application designed to prepare
 Climate Wavers follows a microservices architecture to ensure modularity, scalability, and maintainability.
 
 **Architecture Components:**
-- Frontend (React)
-- Backend (Django)
-- Auth Flow (Node.js)
-- Chatbot (MongoDB)
+- Frontend
+- Backend
+- Auth Flow
+- Chatbot
 - Tweetbot
 - Model Bot
-- Database Microservice (MariaDB)
+- Database Microservice
 - WaverX-NLP Microservice
 - WaverX-Analysis
 - WaverX-Vision
