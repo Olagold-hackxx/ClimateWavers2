@@ -55,7 +55,7 @@ Climate Wavers follows a microservices architecture to ensure modularity, scalab
 - WaverX-Analysis
 - WaverX-Vision
 
-![Architecture Diagram](./docs/architecture-diagram.png)
+![Architecture Diagram](climate_wavers.drawio.png)
 
 ## Microservices
 
