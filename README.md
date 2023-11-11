@@ -94,52 +94,52 @@ Climate Wavers follows a microservices architecture to ensure modularity, scalab
 
 ## Microservices
 ### Frontend (React)
-- **Repository:** `https://github.com/climatewavers/frontend/`
+- **Repository:** `https://github.com/climatewavers/frontend`
 - **Development branch:** Frontend
 - **Description:** The React application provides the user interface for the Climate Wavers platform.
 
 ### Backend (Django)
-- **Repository:** `https://github.com/climatewavers/backend/`
+- **Repository:** `https://github.com/climatewavers/backend`
 - **Development branch:** Django-backend
 - **Description:** The Django backend houses the core application logic and APIs.
 
 ### Auth Flow (Node.js)
-- **Repository:** `https://github.com/climatewavers/authentication/`
+- **Repository:** `https://github.com/climatewavers/authentication`
 - **Development branch:** node-auth-flow
 - **Description:** Node.js application managing open authentication and Red Hat SSO.
 
 ### Chatbot
-- **Repository:** `https://github.com/climatewavers/chatbot/`
+- **Repository:** `https://github.com/climatewavers/chatbot`
 - **Development branch:** chatbot
 - **Description:** Chat conversations with users abd waverx bot, stored in Mongodb.
 
 ### Tweetbot
-- **Repository** `https://github.com/climatewavers/tweetbot/`
+- **Repository** `https://github.com/climatewavers/tweetbot`
 - **Development branch:** backend
 - **Description:** Generates educational posts on disasters.
 
 ### Model Bot
-- **Repository** `https://github.com/climatewavers/modelbot/`
+- **Repository** `https://github.com/climatewavers/modelbot`
 - **Development branch:** modelbot
 - **Description:** Generates model responses.
 
 ### Database (MariaDB)
-- **Repository** `https://github.com/climatewavers/database/`
+- **Repository** `https://github.com/climatewavers/database`
 - **Development branch:** database
 - **Description:** MariaDB database connecting all microservices.
 
 ### WaverX-NLP Microservice
-- **Repository** `https://github.com/climatewavers/waverx-nlp/`
+- **Repository** `https://github.com/climatewavers/waverx-nlp`
 - **Development branch:** waverX-NLP
 - **Description:** NLP model for natural language processing.
 
 ### WaverX-Analysis
-- **Repository** `https://github.com/climatewavers/waverx-analysis/`
+- **Repository** `https://github.com/climatewavers/waverx-analysis`
 - **Development branch:** waverX-Analysis
 - **Description:** Disaster magnitude analysis model.
 
 ### WaverX-Vision
-- **Repository** `https://github.com/climatewavers/waverx-vision/`
+- **Repository** `https://github.com/climatewavers/waverx-vision`
 - **Development branch:** waverX-Vision
 - **Description:** Vision model for image analysis.
 
