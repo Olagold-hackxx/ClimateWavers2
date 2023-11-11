@@ -15,9 +15,7 @@ Climate Wavers is an innovative AI-driven social media application designed to e
 ## Features
 
 ### 1. Community Pages
-
 **Description:** Users can share information about their local climates, fostering community-driven collaboration.
-
 **Functionality:**
 - Post updates about local climates.
 - Engage with climate experts and community members through discussions.
@@ -25,15 +23,12 @@ Climate Wavers is an innovative AI-driven social media application designed to e
 ### 2. Educational Page
 
 **Description:** An AI model generates educational posts on disasters to provide users with relevant and timely information.
-
 **Functionality:**
 - Dynamic content generation based on real-time disaster data.
 - Educational posts tailored to user preferences.
 
 ### 3. Happening Now
-
 **Description:** Real-time updates on disasters currently occurring around the world.
-
 **Functionality:**
 - Aggregation of real-time data feeds from authoritative sources.
 - User notifications for relevant disasters based on location and preferences.
@@ -49,55 +44,40 @@ Climate Wavers is a disaster-driven social media application designed to prepare
 - **Description:** Node.js is used as the backend runtime, and Express is the web application framework for building robust and scalable server-side applications.
 
 #### 2. Django
-
 - **Description:** Django, a high-level Python web framework, is employed to build the backend infrastructure, handle user authentication, and manage data.
 
 #### 3. MariaDB
-
 - **Description:** MariaDB, a MySQL fork, serves as the relational database management system for storing structured data related to users, posts, and application configurations.
 
 #### 4. MongoDB
-
 - **Description:** MongoDB, a NoSQL database, is used to store unstructured data such as chat conversations, providing flexibility in managing diverse data types.
 
 #### 5. PyTorch, scikit-learn, and TensorFlow
-
 - **Description:** These machine learning frameworks are integrated for various AI-driven functionalities, including disaster magnitude analysis and natural language processing.
 
 #### 6. Intel PyTorch Extension and Intel scikit-learn Extension
-
 - **Description:** Extensions provided by Intel optimize the performance of PyTorch and scikit-learn on Intel architectures, leveraging hardware acceleration.
 
 #### 7. OpenVINO Quantization and OpenVINO Model Server
-
 - **Description:** OpenVINO tools are utilized for model quantization and inference serving, optimizing deep learning models for edge computing and improving inference speed.
 
 ### Frontend:
 
 #### 1. React
-
 - **Description:** React is the JavaScript library used for building the user interface, providing a responsive and dynamic experience for Climate Wavers users.
 
 ### Redhat Integration:
-
 #### 1. Red Hat SSO
-
 - **Description:** Red Hat Single Sign-On is employed for secure user authentication, ensuring a seamless and secure login experience for Climate Wavers users.
-
 #### 2. Red Hat AMQ Streams (Apache Kafka)
-
 - **Description:** AMQ Streams, based on Apache Kafka, is used for reliable and scalable messaging between different components of the application, facilitating real-time data communication.
 
 ### Automation:
-
 #### 1. Bash Automation
-
 - **Description:** Bash scripts are used for automation tasks, streamlining deployment processes, and managing application configurations.
 
 ## Architecture
-
 Climate Wavers follows a microservices architecture to ensure modularity, scalability, and maintainability.
-
 **Architecture Components:**
 - Frontend
 - Backend
@@ -113,55 +93,54 @@ Climate Wavers follows a microservices architecture to ensure modularity, scalab
 ![Architecture Diagram](https://github.com/Olagold-hackxx/ClimateWavers2/blob/1621d2f857769e9b83f396456210a896d8d3318a/climate_wavers.drawio.png)
 
 ## Microservices
-
 ### Frontend (React)
-
-- **Repository:** `frontend/`
+- **Repository:** `https://github.com/climatewavers/frontend/`
+- **Development branch:** Frontend
 - **Description:** The React application provides the user interface for the Climate Wavers platform.
 
 ### Backend (Django)
-
-- **Repository:** `backend/`
+- **Repository:** `https://github.com/climatewavers/backend/`
+- **Development branch:** Django-backend
 - **Description:** The Django backend houses the core application logic and APIs.
 
 ### Auth Flow (Node.js)
-
-- **Repository:** `authflow/`
+- **Repository:** `https://github.com/climatewavers/authentication/`
+- **Development branch:** node-auth-flow
 - **Description:** Node.js application managing open authentication and Red Hat SSO.
 
 ### Chatbot
-
-- **Repository:** `chatbot/`
-- **Description:** MongoDB for storing chat conversations with users.
+- **Repository:** `https://github.com/climatewavers/chatbot/`
+- **Development branch:** chatbot
+- **Description:** Chat conversations with users abd waverx bot, stored in Mongodb.
 
 ### Tweetbot
-
-- **Repository** `tweetbot/`
+- **Repository** `https://github.com/climatewavers/tweetbot/`
+- **Development branch:** backend
 - **Description:** Generates educational posts on disasters.
 
 ### Model Bot
-
-- **Repository** `modelbot/`
+- **Repository** `https://github.com/climatewavers/modelbot/`
+- **Development branch:** modelbot
 - **Description:** Generates model responses.
 
-### Database Microservice (MariaDB)
-
-- **Repository** `database/`
+### Database (MariaDB)
+- **Repository** `https://github.com/climatewavers/database/`
+- **Development branch:** database
 - **Description:** MariaDB database connecting all microservices.
 
 ### WaverX-NLP Microservice
-
-- **Repository** `waverx-nlp/`
+- **Repository** `https://github.com/climatewavers/waverx-nlp/`
+- **Development branch:** waverX-NLP
 - **Description:** NLP model for natural language processing.
 
 ### WaverX-Analysis
-
-- **Repository** `waverx-analysis/`
+- **Repository** `https://github.com/climatewavers/waverx-analysis/`
+- **Development branch:** waverX-Analysis
 - **Description:** Disaster magnitude analysis model.
 
 ### WaverX-Vision
-
-- **Repository** `waverx-vision/`
+- **Repository** `https://github.com/climatewavers/waverx-vision/`
+- **Development branch:** waverX-Vision
 - **Description:** Vision model for image analysis.
 
 ## Deployment
