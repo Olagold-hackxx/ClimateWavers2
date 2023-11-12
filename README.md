@@ -151,7 +151,7 @@ The application is deployed on OpenShift, a robust container orchestration platf
 - Configuration files are available in the `k8s/` directory of the microservices branches and repositories.
 - During development, deployment was done in three different ways.
         - Using the scripts provided in the `automate_deployment` directory of all microservice
-        - Importing git repository on openshift cluster (recommended)
+        - Importing git repository on openshift cluster (recommended for some microservices)
         - Tekton pipeline
 - More details on deployment in each microservice repository or branch
   
