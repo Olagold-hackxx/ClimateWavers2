@@ -12,11 +12,11 @@ class UserSerializer(serializers.ModelSerializer):
                   "is_google_user",
                   "is_redhat_user",
                   "is_verified",
-                  "is_twitter_user",
+                  "is_linkedin_user",
                   "is_facebook_user",
-                  "is_staff",
                   "is_active",
-                  "date_joined")  # Serialize all fields of the User model
+                  "created_at",
+                  "updated_at")  # Serialize all fields of the User model
 
 # Serializer for the Post model
 
@@ -31,6 +31,7 @@ class PostSerializer(serializers.ModelSerializer):
     def get_comments_count(self, obj):
         # Calculate and return the comments count for the specific post object
         return obj.comments.count()
+
 
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:

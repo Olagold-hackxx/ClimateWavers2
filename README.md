@@ -33,8 +33,8 @@ The Climate Change and Disaster Response Platform aims to monitor climate change
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/IsmaelKiprop/ClimateWavers.git
-   cd ClimateWavers
+   https://github.com/ClimateWavers/backend.git
+   cd backend
    ```
 2. **Create virtual environment:**
   ```bash
@@ -146,6 +146,8 @@ Before using the Climate Wavers API, users must register and log in to obtain an
 
 
 All endpoints are relative to this base URL.
+
+## API Documentation
 
 ### User Management
 
@@ -373,7 +375,7 @@ All endpoints are relative to this base URL.
 - **Response**:
   - HTTP 204 No Content: Post deleted.
   - HTTP 403 Forbidden: Permission denied.
-
+    
 ## Environment Variables
 
 - **SECRET_KEY:** Django secret key for security (store in a secure environment).

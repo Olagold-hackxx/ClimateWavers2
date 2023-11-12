@@ -5,4 +5,3 @@ logging.basicConfig(filename='climatewavers.log', level=logging.INFO, format='%(
 
 # Create a logger instance
 logger = logging.getLogger('climatewavers')
-

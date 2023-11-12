@@ -123,16 +123,14 @@ def register(request):
 
             # Generate a confirmation token for the user
             user_id = str(user.id)
-            token = serializer.dumps(user_id.encode('utf-8'))
-            uid = urlsafe_base64_encode(force_bytes(user.pk))
-
+            token = serializer.dumps(user_id)
+            uid = urlsafe_base64_encode(force_bytes(user_id))
             # Build the confirmation URL
             domain = os.getenv("DOMAIN")
             confirmation_url = reverse('confirm-registration',
                 kwargs={'uidb64': uid, 'token': token})
             confirmation_url = f'{domain}{confirmation_url}'
             confirmation_page = os.getenv("CONFIRMATION_PAGE")
-
             # Send a confirmation email
             subject = 'Confirm Your Registration'
             message = f'{os.getenv("VERIFICATION_MAIL")} {confirmation_page}/{token}'
@@ -141,10 +139,11 @@ def register(request):
 
             send_mail(subject, message, from_email, recipient_list)
 
-            return JsonResponse({'message': 'User registered. Confirmation email sent.', "id": user.id, "confirmation_url": confirmation_url, "token": token, "access_token": request.access_token}, status=status.HTTP_201_CREATED)
+            return JsonResponse({'message': 'User registered. Confirmation email sent.', "id": user.id, "confirmation_url": confirmation_url, "token": token}, status=status.HTTP_201_CREATED)
         except Exception as e:
             logger.error(e)
-            return JsonResponse({"message": "Username or email already taken."}, status=status.HTTP_400_BAD_REQUEST)
+            print(e)
+            return JsonResponse({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
     return JsonResponse(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
@@ -157,25 +156,26 @@ def verify_user(request, user_id):
         user_id = str(user_id)
         if user.is_verified:
             return JsonResponse({"message": "User is verified, Sign in instead"})
-        token = serializer.dumps(user_id.encode('utf-8'))
-        uid = urlsafe_base64_encode(force_bytes(user.pk))
+        token = serializer.dumps(user_id)
+        uid = urlsafe_base64_encode(force_bytes(user_id))
         # Build the confirmation URL
         domain = os.getenv("DOMAIN")
         confirmation_url = reverse('confirm-registration',
             kwargs={'uidb64': uid, 'token': token})
         confirmation_url = f'{domain}{confirmation_url}'
-        # Send a confirmation email
+        confirmation_page = os.getenv("CONFIRMATION_PAGE")
+            # Send a confirmation email
         subject = 'Confirm Your Registration'
-        message = f'{os.getenv("VERIFICATION_MAIL")} {confirmation_url}'
+        message = f'{os.getenv("VERIFICATION_MAIL")} {confirmation_page}/{token}'
         from_email = os.getenv("APP_EMAIL")  # Replace with your email
         recipient_list = [user.email]
 
         send_mail(subject, message, from_email, recipient_list)
 
-        return JsonResponse({'message': 'User registered. Confirmation email sent.'}, status=status.HTTP_201_CREATED)
+        return JsonResponse({'message': 'Confirmation email sent.', "id": user.id, "confirmation_url": confirmation_url, "token": token}, status=status.HTTP_201_CREATED)
     except Exception as e:
         logger.error(e)
-        return JsonResponse({"message": "Username or email already taken."}, status=status.HTTP_400_BAD_REQUEST)
+        return JsonResponse({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 # Check user verification status
 @api_view(['GET'])
@@ -215,14 +215,17 @@ def login_view(request):
                 return JsonResponse({"message": "Please verify your account"})
             try:
                 refresh_token = RefreshToken(user_token.refresh_token)
+                print(refresh_token)
                 # Generate new access tokens
                 access_token = str(refresh_token.access_token)
-                refresh_token = user_token.refresh_token
+                print(access_token)
                 user = UserSerializer(user)
-                return JsonResponse({"refresh_token": refresh_token, "access_token": access_token, "user_details": user.data, "status": status.HTTP_200_OK})
+                print(user.data)
+                return JsonResponse({"refresh_token": str(refresh_token), "access_token": access_token, "user_details": user.data}, status=status.HTTP_200_OK)
             except Exception as e:
                 logger.error(e)
-                return JsonResponse({"message": "Please verify your account, refresh token is invalid"})
+                print(e)
+                return JsonResponse({"message": str(e)})
 
         return JsonResponse({"message": "Invalid username, email or password."}, status=status.HTTP_401_UNAUTHORIZED)
 
@@ -764,8 +767,8 @@ def password_reset(request):
         if user is not None:
             # Generate a reset token for the user
             user_id = str(user.id)
-            token = serializer.dumps(user_id.encode('utf-8'))
-            uid = urlsafe_base64_encode(force_bytes(user.pk))
+            token = serializer.dumps(user_id)
+            uid = urlsafe_base64_encode(force_bytes(user_id))
 
             # Build the reset password URL
             reset_url = reverse('reset_password',
