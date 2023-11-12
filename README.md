@@ -144,7 +144,6 @@ Before using the Climate Wavers API, users must register and log in to obtain an
 
 `https://backend-climatewavers-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/api/v1/backend/`
 
-
 All endpoints are relative to this base URL.
 
 ## API Documentation
