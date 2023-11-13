@@ -1,6 +1,6 @@
 // routes/emailRoutes.js
 const express = require('express');
-const { sendEmailController } = require('../controllers/EmailNotificationController.js');
+const { sendEmailController } = require('../controllers/emailController');
 
 const router = express.Router();
 

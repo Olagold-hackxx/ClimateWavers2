@@ -1,18 +1,21 @@
 {
-  "name": "notification_service",
+  "name": "notification_system",
   "version": "1.0.0",
-  "description": "This notification system facilitates the sending of climate-related alerts to registered users based on their last known location. It leverages email notifications for alert dissemination.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "nodemailer": "^6.9.7"
-  },
-  "devDependencies": {},
-  "keywords": []
+    "mariadb": "^3.2.2",
+    "nodemailer": "^6.9.7",
+    "openai": "^4.17.4",
+    "sequelize": "^6.35.0",
+    "winston": "^3.11.0"
+  }
 }

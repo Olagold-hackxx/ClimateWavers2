@@ -1,0 +1,52 @@
+2023-11-12T19:41:06.209Z [info]: Server is running on port 3000
+2023-11-12T19:41:06.247Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers-mariadb
+2023-11-12T19:42:48.257Z [info]: Server is running on port 3000
+2023-11-12T19:42:48.381Z [info]: Connected to MariaDB
+2023-11-12T19:46:15.308Z [info]: Server is running on port 3000
+2023-11-12T19:46:15.359Z [info]: Connected to MariaDB
+2023-11-12T19:47:44.560Z [info]: Server is running on port 3000
+2023-11-12T19:47:44.608Z [info]: Connected to MariaDB
+2023-11-12T19:48:20.785Z [error]: Error in generateOpenAIResponse: Cannot read properties of undefined (reading 'create')
+2023-11-12T19:48:20.787Z [error]: Error occurred:  Cannot read properties of undefined (reading 'create')
+2023-11-12T19:54:47.878Z [info]: Server is running on port 3000
+2023-11-12T19:54:47.929Z [info]: Connected to MariaDB
+2023-11-12T19:54:51.363Z [error]: Error in generateOpenAIResponse: Cannot read properties of undefined (reading 'create')
+2023-11-12T19:54:51.365Z [error]: Error occurred:  Cannot read properties of undefined (reading 'create')
+2023-11-12T19:55:46.105Z [error]: Error in generateOpenAIResponse: Cannot read properties of undefined (reading 'create')
+2023-11-12T19:55:46.106Z [error]: Error occurred:  Cannot read properties of undefined (reading 'create')
+2023-11-12T19:56:57.139Z [info]: Server is running on port 3000
+2023-11-12T19:56:57.188Z [info]: Connected to MariaDB
+2023-11-12T19:57:00.252Z [error]: Error in generateOpenAIResponse: Cannot read properties of undefined (reading 'create')
+2023-11-12T19:57:00.254Z [error]: Error occurred:  Cannot read properties of undefined (reading 'create')
+2023-11-12T19:58:03.910Z [info]: Server is running on port 3000
+2023-11-12T19:58:03.959Z [info]: Connected to MariaDB
+2023-11-12T20:00:10.377Z [info]: Server is running on port 3000
+2023-11-12T20:00:10.423Z [info]: Connected to MariaDB
+2023-11-12T20:00:13.573Z [error]: Error in generateOpenAIResponse: Cannot read properties of undefined (reading 'create')
+2023-11-12T20:00:13.575Z [error]: Error occurred:  Cannot read properties of undefined (reading 'create')
+2023-11-12T20:03:27.818Z [info]: Server is running on port 3000
+2023-11-12T20:03:27.864Z [info]: Connected to MariaDB
+2023-11-12T20:03:33.602Z [error]: Error in generateOpenAIResponse: Cannot read properties of undefined (reading 'create')
+2023-11-12T20:03:33.604Z [error]: Error occurred:  Cannot read properties of undefined (reading 'create')
+2023-11-12T20:19:30.333Z [info]: Server is running on port 3000
+2023-11-12T20:19:30.384Z [info]: Connected to MariaDB
+2023-11-12T20:19:33.750Z [error]: Error in generateOpenAIResponse: openai is not defined
+2023-11-12T20:19:33.751Z [error]: Error occurred:  openai is not defined
+2023-11-12T20:21:14.548Z [info]: Server is running on port 3000
+2023-11-12T20:21:14.596Z [info]: Connected to MariaDB
+2023-11-12T20:42:08.925Z [info]: Email sent to sojbaba98@gmail.com: 250 2.0.0 OK  1699821728 p6-20020adfe606000000b0032d2f09d991sm3893518wrm.33 - gsmtp
+2023-11-12T20:49:25.335Z [info]: Server is running on port 3000
+2023-11-12T20:49:25.385Z [info]: Connected to MariaDB
+2023-11-12T20:49:34.519Z [info]: Email sent to sojbaba98@gmail.com: 250 2.0.0 OK  1699822174 z13-20020a05640235cd00b0053e15aefb0fsm2657632edc.85 - gsmtp
+2023-11-12T20:51:45.812Z [info]: Server is running on port 3000
+2023-11-12T20:51:45.862Z [info]: Connected to MariaDB
+2023-11-12T20:52:00.098Z [info]: Email sent to sojbaba98@gmail.com: 250 2.0.0 OK  1699822320 d7-20020a170906370700b009dd4b2d412fsm3002317ejc.36 - gsmtp
+2023-11-12T20:52:36.713Z [info]: Server is running on port 3000
+2023-11-12T20:52:36.762Z [info]: Connected to MariaDB
+2023-11-12T20:52:52.360Z [info]: Email sent to sojbaba98@gmail.com: 250 2.0.0 OK  1699822372 s4-20020a170906168400b009aa292a2df2sm2972339ejd.217 - gsmtp
+2023-11-12T20:54:28.552Z [info]: Server is running on port 3000
+2023-11-12T20:54:28.603Z [info]: Connected to MariaDB
+2023-11-12T20:54:35.506Z [info]: Email sent to sojbaba98@gmail.com: 250 2.0.0 OK  1699822475 gy7-20020a170906f24700b009b2d46425absm2961877ejb.85 - gsmtp
+2023-11-12T20:55:30.659Z [info]: Server is running on port 3000
+2023-11-12T20:55:30.706Z [info]: Connected to MariaDB
+2023-11-12T20:55:43.223Z [info]: Email sent to sojbaba98@gmail.com: 250 2.0.0 OK  1699822543 p22-20020a17090635d600b009ad829ed144sm2974315ejb.130 - gsmtp

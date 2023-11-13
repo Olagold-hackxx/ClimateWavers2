@@ -1,27 +1,26 @@
-kind: Deployment
-apiVersion: apps/v1
+---
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
 metadata:
-  name: climatewavers
   labels:
-    app: climatewavers
-    sandbox: olagoldhackxx
-    sandbox-olagoldhackxx: climatewavers
+    app: notification-system
+    app.kubernetes.io/component: notification-system
+    app.kubernetes.io/instance: notification-system
+    app.kubernetes.io/name: notification-system
+  name: notification-system
 spec:
   replicas: 1
   selector:
-    matchLabels:
-      app: climatewavers
+    app: notification-system
   template:
     metadata:
       labels:
-        app: climatewavers
+        app: notification-system
     spec:
-      imagePullSecrets:
-        - name: quay-registry-secret
       containers:
-        - name: climatewavers
-          image: quay.io/olagoldhackxx/climatewavers:v1
+        - image: quay.io/olagoldhackxx/notification-system:v1
           imagePullPolicy: Always
+          name: notification-system
           ports:
-            - containerPort: 8000
+            - containerPort: 3002
               protocol: TCP
