@@ -12,6 +12,9 @@ The ClimateWavers Frontend Microservice is the user interface of the ClimateWave
 - Hook Form: A library for managing forms in React using hooks.
 - Tailwind CSS: A utility-first CSS framework for building responsive and design-friendly interfaces.
 
+## UI/UX Design
+![Design](https://github.com/ClimateWavers/frontend/blob/a833389c682db21507c92f26a8d34df9786f2b95/design.png)
+Check out the ![figma](https://www.figma.com/file/Byq6CeRKlxrK9HLkZRu50E/Climate-Waver?type=design&mode=design)
 ## Features
 
 - **User Authentication**: Secure user authentication using industry-standard protocols.
@@ -88,7 +91,7 @@ If the image repository was changed when building, update the `development.yaml`
 ### Tekton pipeline deployment script
 Deploy with tekton with the pipeline deployment script in `automated_deployment` directory
    ```bash
-   automate_deployment/./tekton_pipeline.sh
+   automate_deployment/./pipeline.sh
    ```
 
 ## License

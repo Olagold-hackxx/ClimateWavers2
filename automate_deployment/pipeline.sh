@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Clone the Django backend, build image and deploy.
-GH_REPO_URL='https://github.com/Olagold-hackxx/Climate_wavers_DjangoBackend_microservice.git'
+GH_REPO_URL='https://github.com/ClimateWavers/frontend.git'
 PIPELINE='build-and-deploy'
 WORKSPACE=shared-work
-DEPLOY_NAME=climatewavers-backend
-IMAGE='quay.io/olagolhackxx/climatewavers-djangobackend:v1'
+DEPLOY_NAME=frontend
+IMAGE='quay.io/olagolhackxx/frontend:v1'
 export volumeClaimTemplateFile
 volumeClaimTemplateFile="$(dirname -- "$0")/k8s/persistent_volume_claim.yaml"
 echo Start pipeline $PIPELINE:

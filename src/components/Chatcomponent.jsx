@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { AiOutlineSend } from "react-icons/ai";
 
@@ -7,17 +8,16 @@ const Chatcomponent = () => {
   const [receivedMessages, setReceivedMessages] = useState([]);
   const [allMessages, setAllMessages] = useState([]);
   //const userId = 1;
-  //const kafkaApi = import.meta.env.VITE_APP_KAFKA_URL;
+  const kafkaApi = import.meta.env.VITE_APP_KAFKA_URL;
 
   const produceMessage = async () => {
-    /**try {
-      await fetch(`${kafkaApi}/api/chat`, {
-        method: "POST",
+    try {
+      await axios.post(`${kafkaApi}/api/chat`, {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message: textValue, userId: userId }),
-      });**/
+        body: JSON.stringify({"userId": "e9d11e91-2db8-4ae9-ab62-367f278cc1ed", "message": "what is heat?", "userLocation": {"latitude": 40.73061, "longitude": -73.935242}}),
+      });
       if (textValue.trim() !== "" && isSubmited) {
         // Update the list with the new item
         setAllMessages((allMessages) => [...allMessages, textValue]);
@@ -26,9 +26,9 @@ const Chatcomponent = () => {
         // Clear the newItem state for the next input
         setTextValue("");
       }
-    /**} catch (error) {
+    } catch (error) {
       console.error(error);
-    }**/
+    }
   };
 
  /** const fetchMessages = async () => {
@@ -46,12 +46,13 @@ const Chatcomponent = () => {
   };
   fetchMessages();*/
 
- /** useEffect(() => {
+  useEffect(() => {
     // Fetch messages from the kafka consumer endpoint
     const consumeMessages = async () => {
       try {
-        const response = await fetch(`${kafkaApi}/api/ai-response`);
+        const response = await axios.get(`${kafkaApi}/api/ai-response/e9d11e91-2db8-4ae9-ab62-367f278cc1ed`);
         const data = await response.json();
+		console.log(data)
 
         // Update receivedMessages state with the fetched messages
         setReceivedMessages(data.messages);
@@ -63,7 +64,6 @@ const Chatcomponent = () => {
     // Call the fetchMessages function
     consumeMessages();
   }, []);
-  **/
   return (
     <div className="max-h-fit h-[90%] flex flex-col justify-between">
       <div className="overflow-auto">
