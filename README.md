@@ -96,7 +96,7 @@ Climate Wavers follows a microservices architecture to ensure modularity, scalab
 ### Frontend (React)
 - **Repository:** `https://github.com/climatewavers/frontend`
 - **Development branch:** Frontend
-- **Description:** The React application provides the user interface for the Climate Wavers platform.
+- **Description:** The React application provides the user interface for the Climate Wavers platform. The frontend hasn't been able to integrate with all the APIs from all microservices due to the hackathon time constraints.
 
 ### Backend (Django)
 - **Repository:** `https://github.com/climatewavers/backend`
