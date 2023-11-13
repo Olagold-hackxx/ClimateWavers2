@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#Pipeline to run at production
 #Make sure you have oc and tkn installed
 #Get ENV variable
 source .env

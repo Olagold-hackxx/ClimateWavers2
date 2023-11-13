@@ -3,17 +3,17 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   labels:
-    app: oauth
-    app.kubernetes.io/component: oauth
-    app.kubernetes.io/instance: oauth
-    app.kubernetes.io/name: oauth
-  name: oauth
+    app: chat-interface
+    app.kubernetes.io/component: chat-interface
+    app.kubernetes.io/instance: chat-interface
+    app.kubernetes.io/name: chat-interface
+  name: chat-interface
 spec:
   port:
-    targetPort: 8000-tcp
+    targetPort: 3003-tcp
   tls:
     insecureEdgeTerminationPolicy: Redirect
     termination: edge
   to:
     kind: Service
-    name: oauth
+    name: chat-interface

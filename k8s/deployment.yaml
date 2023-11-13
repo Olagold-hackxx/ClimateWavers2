@@ -3,24 +3,24 @@ apiVersion: apps.openshift.io/v1
 kind: DeploymentConfig
 metadata:
   labels:
-    app: oauth
-    app.kubernetes.io/component: oauth
-    app.kubernetes.io/instance: oauth
-    app.kubernetes.io/name: oauth
-  name: oauth
+    app: chat-interface
+    app.kubernetes.io/component: chat-interface
+    app.kubernetes.io/instance: chat-interface
+    app.kubernetes.io/name: chat-interface
+  name: chat-interface
 spec:
   replicas: 1
   selector:
-    app: oauth
+    app: chat-interface
   template:
     metadata:
       labels:
-        app: oauth
+        app: chat-interface
     spec:
       containers:
-        - image: quay.io/olagoldhackxx/oauth:v1
+        - image: quay.io/olagoldhackxx/chat-interface:v1
           imagePullPolicy: Always
-          name: oauth
+          name: chat-interface
           ports:
-            - containerPort: 8000
+            - containerPort: 3003
               protocol: TCP

@@ -1,63 +1,84 @@
-# Climate Wavers - Authentication microservices
+# Chat Interface Microservice
 
 ## Overview
 
-This microservice is a part of Climate Wavers  an AI-driven disaster response application that utilizes multiple authentication providers such as Red Hat SSO, Facebook, LinkedIn, GitHub, and Google. The microservices architecture is implemented in Node.js, with passport and openid connect libraries for authentication. The application securely stores user data in a MariaDB database and uses refresh tokens for extended access.
+The Chat Interface Microservice in the ClimateWavers application serves as the communication bridge between the frontend and Kafka. It provides APIs that the frontend can call to interact with the Kafka messaging system.
 
-## Features
-
-- **Authentication Providers:** Integrates Red Hat SSO, Facebook, LinkedIn, GitHub, and Google for user authentication.
-- **Token Management:** Utilizes refresh tokens for prolonged access and sends access tokens to users for accessing other microservices.
-- **Database:** Stores user data securely in the application main MariaDB database, to enable synchronise with other microservices in the application using same database
- 
 ## Technologies Used
 
-- Node.js
-- Passport
-- OpenID Connect
-- Red Hat SSO
-- Facebook Login API
-- LinkedIn API
-- GitHub API
-- Google API
-- MariaDB
-- OpenShift (for deploying Red Hat SSO server)
+- Node.js: The server-side runtime for running JavaScript code.
+- Express.js: A web application framework for Node.js used to build robust APIs.
+- Kafka: A distributed event streaming platform for handling real-time data feeds.
 
 ## Setup
 
-### Prerequisites
-
-- Node.js installed
-- MariaDB installed
-- OpenShift cluster set up
-
-### Installation
-
 1. Clone the repository:
 
-```bash
-git clone https://github.com/yourusername/your-repo.git
-cd your-repo
-```
+   ```bash
+   git clone https://github.com/your-username/climatewavers-chat-interface.git
+   ```
 
 2. Install dependencies:
 
-```bash
-npm install
-```
+   ```bash
+   cd climatewavers-chat-interface
+   npm install
+   ```
 
-3. Configure environment variables:
+3. Set up environment variables:
 
-   - Set up credentials for authentication providers (Red Hat SSO, Facebook, LinkedIn, GitHub, Google).
-   - Configure the database connection details.
+   Create a `.env` file and configure the following variables:
 
-4. Start the application:
+   ```env
+   KAFKA_BROKER_URL=your_kafka_broker_url
+   KAFKA_TOPIC=your_kafka_topic
+   ```
 
-```bash
-npm start
-```
+## Usage
 
-## Deployment
+1. Start the server:
+
+   ```bash
+   npm start
+   ```
+
+   The server will be running on the specified port (default is 3000).
+
+2. Frontend Integration:
+
+   Integrate the provided APIs into your frontend application to enable real-time messaging using Kafka.
+
+## API Endpoints
+
+### 1. Produce Message
+
+- **Endpoint**: `/produce-message`
+- **Method**: POST
+- **Description**: Produces a message to the Kafka topic.
+- **Request Body**:
+
+  ```json
+  {
+    "message": "Your message content"
+  "userId": "e9d11e91-2db8-4ae9-ab62-367f278cc1ed",
+  "userLocation": {"latitude": 40.73061, "longitude": -73.935242}
+  }
+  ```
+
+### 2. Consume Messages
+
+- **Endpoint**: `/consume-messages`
+- **Method**: GET
+- **Description**: Consumes messages from the Kafka topic.
+- **Response**:
+
+  ```json
+  {
+    "messages": ["Message 1", "Message 2", ...]
+  }
+  ```
+
+  ## Deployment
 We provide three different methods for deploying this microservice to openshift clusters.
 ### Import Git Repositoy (Recommended)
 Use the import git repository feature on openshift console.
@@ -82,60 +103,11 @@ If the image repository was changed when building, update the `development.yaml`
    ```
 
 ### Tekton pipeline deployment script
-Deploy with tekton with the pipeline deployment script in `automated_deployment` directory. Setup environment variabes after deployment
+Deploy with tekton with the pipeline deployment script in `automated_deployment` directory
    ```bash
    automate_deployment/./tekton_pipeline.sh
    ```
 
-
-### Red Hat SSO Server on OpenShift Cluster
-
-1. Instantiate the Redhat SSO Persistent volume template to deploy SSO server on your OpenShift cluster.
-2. Configure the necessary realms, clients, and users within the Red Hat SSO administration console.
-
-
-## Environment Variables
-
-This project uses several environment variables to configure various aspects. These variables are stored in a file named `.env` in the project root directory. Below is a list of available environment variables and their purposes:
-
-### Database Configuration
-
-- **MARIADB_USER**: Username for MariaDB database.
-- **MARIADB_PASSWORD**: Password for MariaDB database.
-- **MARIADB_DB_NAME**: Name of the MariaDB database.
-- **MARIADB_PORT**: Port on which MariaDB is running.
-- **MARIADB_SERVER**: Server or host address for MariaDB.
-
-### Google OAuth Configuration
-
-- **GOOGLE_CLIENT_ID**: Client ID for Google OAuth.
-- **GOOGLE_CLIENT_SECRET**: Client Secret for Google OAuth.
-
-### JWT Token Configuration
-
-- **ACCESS_SECRET**: Secret key for JWT token.
-- **ACCESS_EXPIRES_IN**: Expiry time for JWT token in seconds.
-
-### Server Configuration
-
-- **PORT**: Port on which the server will run.
-- **BASE_URL**: Base URL for the application.
-
-### Keycloak Configuration
-
-- **KEYCLOAK_SERVER_URL**: URL of the Keycloak server.
-- **KEYCLOAK_CLIENT_SECRET**: Client secret for Keycloak.
-
-### LinkedIn OAuth Configuration
-
-- **LINKEDIN_CLIENT_ID**: Client ID for LinkedIn OAuth.
-- **LINKEDIN_CLIENT_SECRET**: Client Secret for LinkedIn OAuth.
-
-### Facebook OAuth Configuration
-
-- **FB_CLIENT_ID**: Client ID for Facebook OAuth.
-- **FB_CLIENT_SECRET**: Client Secret for Facebook OAuth.
-
-### License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
