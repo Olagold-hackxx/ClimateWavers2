@@ -7,12 +7,11 @@ from transformers import BertTokenizer, BertConfig
 from tqdm import tqdm
 import logging
 
-## setting the threshold of logger to INFO
-logging.basicConfig(filename='data_loader.log', level=logging.INFO)
+# Configure the logging settings
+logging.basicConfig(filename='waverx_nlp.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(name)s - %(message)s')
 
-## creating an object
-logger = logging.getLogger()
-
+# Create a logger instance
+logger = logging.getLogger('waverx_nlp')
 
 
 class DisastersData:

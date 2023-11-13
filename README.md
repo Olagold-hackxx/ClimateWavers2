@@ -1,88 +1,100 @@
-# Climate Wavers - Django Server
 
+# WaverX-NLP Microservice for Climate Wavers
 
-The Django Server component of the Climate Change and Disaster Response Platform is responsible for handling core functionalities, user management, and data processing tasks. Built on the Django web framework, this server provides a robust and secure backend for the application.
+## Overview
 
-## Table of Contents
-
-- [Climate Wavers - Django Server](#climate-wavers---django-server)
-  - [Table of Contents](#table-of-contents)
-  - [Project Overview](#project-overview)
-  - [Features](#features)
-  - [Installation and Setup](#installation-and-setup)
-  - [API Endpoints](#api-endpoints)
-  - [Environment Variables](#environment-variables)
-  - [License](#license)
-
-
-## Project Overview
-
-The Climate Change and Disaster Response Platform aims to monitor climate changes, predict natural disasters, and facilitate efficient disaster response. Leveraging Django, the server component ensures seamless user experience, data management, and integration with various data sources.
+The `waverX-NLP` microservice is a part of the Climate Wavers disaster response application. It is responsible for processing user reports using a fine-tuned BERT model, developed with Hugging Face, to classify posts into different disaster labels. The model covers a range of disaster categories, including Earthquake, Drought, Damaged Infrastructure, Human Damage, Human, Land Slide, Non-Damage Buildings and Street, Non-Damage Wildlife Forest, Sea, Urban Fire, Wild Fire, Water Disaster, and Humanitarian Aid. The microservice is built on the OpenShift Data Science platform, utilizing the Intel oneAPI toolkit in a Jupyter Notebook environment. The model is optimized with Intel PyTorch extensions and served using Flask.
 
 ## Features
 
-- **User Authentication:** Secure user registration, login, and profile management.
-- **Data Management:** Store and manage user data, community information, and datasets.
-- **Real-time Data Processing:** Process incoming data streams for analysis and visualization.
-- **Collaborative Communities:** Enable users to form communities, share observations, and collaborate.
-- **API Endpoints:** Provides RESTful APIs for frontend interaction and external integrations.
+- **Natural Language Processing (NLP):** Utilizes a fine-tuned BERT model from Hugging Face for classifying user reports into various disaster labels.
+- **Disaster Labels:** Classifies posts into specific disaster categories, aiding in efficient disaster response.
+- **Intel Optimization:** The model is optimized using the Intel oneAPI toolkit and PyTorch extensions for enhanced performance.
+- **Flask API:** The model is served through a Flask API for seamless integration with other microservices.
 
-## Installation and Setup
+## Technologies Used
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/IsmaelKiprop/ClimateWavers.git
-   cd ClimateWavers
+- BERT Model (Hugging Face)
+- PyTorch
+- Intel oneAPI Toolkit
+- Intel PyTorch Extension
+- Flask
+- OpenShift Data Science
+- Jupyter Notebook
+
+## Setup
+
+### Prerequisites
+
+- Python installed
+- PyTorch and Hugging Face transformers library installed
+- Intel oneAPI toolkit installed
+- Flask installed
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/your-repo.git
+cd your-repo
+```
+
+2. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Configure environment variables:
+
+   - Set up necessary configurations for the BERT model and Flask API.
+
+4. Start the microservice:
+
+```bash
+python app.py
+```
+
+## Usage
+
+Describe how users can interact with the microservice, including API endpoints, request and response formats, and any other relevant details.
+
+## Model Training
+
+Include information on how the BERT model was fine-tuned, mentioning the Jupyter Notebook environment, Intel oneAPI toolkit, and PyTorch optimizations.
+
+## Deployment
+We provide three different methods for deploying this microservice to openshift clusters.
+### Import Git Repositoy (Recommended)
+Use the import git repository feature on openshift console.
+- Navigate to Add page in the Developer console on openshift
+- Select Dockerfile strategy
+- Deployment type should be Deployment Config
+- Secure routes
+- Supply the environment variables after deployment
+  
+### Automated Command line Deployment
+Using the scripts provided in `automate_development` folder, simplifies deployment. To use the scripts, docker and oc must be installed.
+
+#### Build and push image
+You can replace the image repository in the scripts `build.sh` in `automate_deployment` or use the repository we provided.
+  ```bash
+   automate_deployment/./build.sh
+   ```
+#### Deploy 
+If the image repository was changed when building, update the `development.yaml` file in `k8s` folder with your image repository
+  ```bash
+   automate_deployment/./deploy.sh
    ```
 
-2. **Install Dependencies:**
+### Tekton pipeline deployment script
+Deploy with tekton with the pipeline deployment script in `automated_deployment` directory. Setup environment variabes after deployment
    ```bash
-   pip install -r requirements.txt
+   automate_deployment/./tekton_pipeline.sh
    ```
-
-3. **Database Setup:**
-   - Configure the database settings in `settings.py`.
-   - Run migrations:
-     ```bash
-     python manage.py migrate
-     ```
-
-4. **Static and Media Files:**
-   - Collect static files:
-     ```bash
-     python manage.py collectstatic
-     ```
-   - Configure media file settings in `settings.py`.
-
-5. **Run the Django Development Server:**
-   ```bash
-   python manage.py runserver
-   ```
-
-   The Django server will be available at `http://localhost:8000`.
-
-## API Endpoints
-
-- **User Management:**
-  - `/api/users/register/`: POST endpoint for user registration.
-  - `/api/users/login/`: POST endpoint for user login.
-  - `/api/users/profile/`: GET endpoint to retrieve user profile information.
-
-- **Community Management:**
-  - `/api/communities/`: GET and POST endpoint for community management.
-  - `/api/communities/<community_id>/`: GET, PUT, and DELETE endpoint for individual communities.
-
-- **Data Processing:**
-  - Define additional endpoints for real-time data processing based on project requirements.
-
-## Environment Variables
-
-- **SECRET_KEY:** Django secret key for security (store in a secure environment).
-- **DEBUG:** Set to `True` for development, `False` for production.
-- **DATABASE_URL:** Database connection URL for MYSQL databases.
-- **ALLOWED_HOSTS:** List of allowed hostnames for the Django server.
-
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This microservice is licensed under the [MIT License](LICENSE).
+
