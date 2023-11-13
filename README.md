@@ -109,19 +109,19 @@ Climate Wavers follows a microservices architecture to ensure modularity, scalab
 - **Description:** Node.js application managing open authentication and Red Hat SSO.
 
 ### Chatbot
-- **Repository:** `https://github.com/climatewavers/chatbot`
+- **Repository:** `https://github.com/climatewavers/waverx-chatbot`
 - **Development branch:** chatbot
 - **Description:** Chat conversations with users abd waverx bot, stored in Mongodb.
 
 ### Tweetbot
-- **Repository** `https://github.com/climatewavers/tweetbot`
+- **Repository** `https://github.com/climatewavers/waverx-tweet`
 - **Development branch:** backend
 - **Description:** Generates educational posts on disasters.
 
 ### Model Bot
-- **Repository** `https://github.com/climatewavers/modelbot`
+- **Repository** `https://github.com/climatewavers/waverx-model`
 - **Development branch:** modelbot
-- **Description:** Generates model responses.
+- **Description:** Model response system.
 
 ### Database (MariaDB)
 - **Repository** `https://github.com/climatewavers/database`
@@ -142,6 +142,11 @@ Climate Wavers follows a microservices architecture to ensure modularity, scalab
 - **Repository** `https://github.com/climatewavers/waverx-vision`
 - **Development branch:** waverX-Vision
 - **Description:** Vision model for image analysis.
+
+### Notification system
+- **Repository** `https://github.com/climatewavers/Notification-System`
+- **Development branch:** Notification-System
+- **Description:** Alerting and notification system
 
 ## Deployment
 
