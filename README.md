@@ -158,6 +158,11 @@ The application is deployed on OpenShift, a robust container orchestration platf
         - Using the scripts provided in the `automate_deployment` directory of all microservice
         - Importing git repository on openshift cluster (recommended for some microservices)
         - Tekton pipeline
+  ### Building Pipeline
+  To use pipeline for deployment in the microservices, follow below script to deploy pipeline on your openshift namespace
+  ```bash
+  ./deploy_pipeline.sh
+  ```
 - More details on deployment in each microservice repository or branch
   
 ## Getting Started
