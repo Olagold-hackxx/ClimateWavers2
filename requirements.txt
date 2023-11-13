@@ -1,0 +1,11 @@
+pandas
+numpy
+imutil
+opencv-python
+ovmsclient==2023.1
+matplotlib
+scikit-learn==1.3.1
+openvino==2023.1.0
+tensorflow
+ipython
+addict

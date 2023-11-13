@@ -1,0 +1,16 @@
+{
+    "model_config_list":[
+        {
+            "config": {
+                "name":"ov_model",
+                "base_path":"/models/ov_model"
+            }
+        },
+        {
+            "config": {
+                "name":"quantized_model",
+                "base_path":"/models/quantized_model"
+            }
+        }
+    ]
+}

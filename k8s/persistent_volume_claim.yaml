@@ -1,13 +1,12 @@
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: source-pvc
-  labels:
-    sandbox: pipelines
-    pipelines: workspace
+  name: waverx-vision-pvc
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 500Mi
+      storage: 1Gi
+  volumeMode: Filesystem
