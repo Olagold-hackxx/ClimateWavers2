@@ -1,18 +1,21 @@
+---
 apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: climatewavers-chatbot
-    sandbox: olagoldhackxx
-    olagoldhackxx: climatewavers-chatbot
-  name: climatewavers-chatbot
+    app: tweetchatbot
+    app.kubernetes.io/component: tweetchatbot
+    app.kubernetes.io/instance: tweetchatbot
+    app.kubernetes.io/name: tweetchatbot
+  name: tweetchatbot
 spec:
   ports:
-  - name: 80-tcp
-    port: 80
-    protocol: TCP
-    targetPort: 80
+    - name: 3001-tcp
+      port: 3001
+      protocol: TCP
+      targetPort: 3001
   selector:
-    app: climatewavers-chatbot
+    app: tweetchatbot
   sessionAffinity: None
   type: ClusterIP
+  wildcardPolicy: None

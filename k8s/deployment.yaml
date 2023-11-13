@@ -1,27 +1,28 @@
-kind: Deployment
+---
 apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: climatewavers-chatbot
   labels:
-    app: climatewavers-chatbot
-    sandbox: olagoldhackxx
-    sandbox-olagoldhackxx: climatewavers-chatbot
+    app: tweetchatbot
+    app.kubernetes.io/component: tweetchatbot
+    app.kubernetes.io/instance: tweetchatbot
+    app.kubernetes.io/name: tweetchatbot
+    app.kubernetes.io/part-of: bots
+    app.openshift.io/runtime-namespace: climatewavers-dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: climatewavers-chatbot
+      app: tweetchatbot
   template:
     metadata:
       labels:
-        app: climatewavers-chatbot
+        app: tweetchatbot
+        deployment: tweetchatbot
     spec:
-      imagePullSecrets:
-        - name: quay-registry-secret
       containers:
-        - name: climatewavers-chatbot
-          image: quay.io/olagoldhackxx/climatewavers-chatbot:v1
-          imagePullPolicy: Always
+        - image: quay.io/olagoldhacxx/tweetchatbot:v1
+          name: tweetchatbot
           ports:
-            - containerPort: 80
+            - containerPort: 3000
               protocol: TCP
