@@ -1,74 +1,71 @@
-# waverX speaks
+# Climate Wavers - Authentication microservices
 
 ## Overview
 
-waverX speaks is a Tweet Generator Chatbot, Its a Node.js application that leverages the OpenAI platform to generate educational tweets on topics related to natural and artificial disasters. It uses an Axios HTTP client for data fetching and storage, integrating Sequelize for database operations. The application provides API endpoints for creating educational tweets and retrieving them from the database.
+This microservice is a part of Climate Wavers  an AI-driven disaster response application that utilizes multiple authentication providers such as Red Hat SSO, Facebook, LinkedIn, GitHub, and Google. The microservices architecture is implemented in Node.js, with passport and openid connect libraries for authentication. The application securely stores user data in a MariaDB database and uses refresh tokens for extended access.
 
-## Technologies
+## Features
+
+- **Authentication Providers:** Integrates Red Hat SSO, Facebook, LinkedIn, GitHub, and Google for user authentication.
+- **Token Management:** Utilizes refresh tokens for prolonged access and sends access tokens to users for accessing other microservices.
+- **Database:** Stores user data securely in the application main MariaDB database, to enable synchronise with other microservices in the application using same database
+ 
+## Technologies Used
 
 - Node.js
-- Express
-- Sequelize
-- Axios
-- OpenAI
-- Others...
- 
-## Getting Started
+- Passport
+- OpenID Connect
+- Red Hat SSO
+- Facebook Login API
+- LinkedIn API
+- GitHub API
+- Google API
+- MariaDB
+- OpenShift (for deploying Red Hat SSO server)
 
-1. **Installation:** Run `npm install` to install dependencies.
-2. **Environment Setup:** Set up a `.env` file with the necessary environment variables.
-OPENAI_API_KEY, MYSQL_USER MYSQL_PASSWORD, MYSQL_ROOT_PASSWORD, MYSQL_DATABASE, MYSQL_HOST, MYSQL_DIALECT
-3. **Running the Application:** Start the application using `npm start` or `node app.js` in the project directory.
+## Setup
 
-## Functionality
+### Prerequisites
 
-The chatbot generates educational tweets by querying the OpenAI model and saves them to the database. Users can access these tweets via API endpoints.
+- Node.js installed
+- MariaDB installed
+- OpenShift cluster set up
 
-## File Structure
+### Installation
 
-The application is structured into controllers, routes, and models:
+1. Clone the repository:
 
-- `controllers/`: Contains the business logic for generating educational tweets and handling API requests.
-- `routes/`: Manages the API endpoints for interacting with the chatbot.
-- `models/`: Defines the data models for educational tweets and stores them in the database.
+```bash
+git clone https://github.com/yourusername/your-repo.git
+cd your-repo
+```
 
-## Database
+2. Install dependencies:
 
-The application stores educational tweets in a database managed by Sequelize. It employs the EducationPost model for handling these tweets.
+```bash
+npm install
+```
 
-## Chatbot Operations
+3. Configure environment variables:
 
-### `generateEducationalTweet`
+   - Set up credentials for authentication providers (Red Hat SSO, Facebook, LinkedIn, GitHub, Google).
+   - Configure the database connection details.
 
-- **Description:** Generates an educational tweet related to climate, earthquakes, disasters, etc.
-- **Method:** `POST`
-- **Route:** `/generate-educational-tweet`
+4. Start the application:
 
-to test this endpoit using postman, send a POST request to localhost:3001/api/generate-educational-tweet
-### `getAllEducationalTweets`
-
-- **Description:** Retrieves all educational tweets from the database.
-- **Method:** `GET`
-- **Route:** `/educational-tweet`
-
-to test this endpoit using postman, send a GET request to localhost:3001/api/generate-educational-tweet
-## Error Handling
-
-The application uses middleware for error logging and returns appropriate error messages to the user.
-
-## Usage
-
-- The API endpoints can be accessed to generate and retrieve educational tweets.
+```bash
+npm start
+```
 
 ## Deployment
-We provide three different methods for deploying this microservice to openshift clusters. 
+We provide three different methods for deploying this microservice to openshift clusters.
 ### Import Git Repositoy (Recommended)
 Use the import git repository feature on openshift console.
 - Navigate to Add page in the Developer console on openshift
 - Select Dockerfile strategy
 - Deployment type should be Deployment Config
 - Secure routes
-- Set the environment variables after deployment
+- Supply the environment variables after deployment
   
 ### Automated Command line Deployment
 Using the scripts provided in `automate_development` folder, simplifies deployment. To use the scripts, docker and oc must be installed.
@@ -85,20 +82,60 @@ If the image repository was changed when building, update the `development.yaml`
    ```
 
 ### Tekton pipeline deployment script
-Deploy with tekton with the pipeline deployment script in `automated_deployment` directory. Setup environments variables after deployments
+Deploy with tekton with the pipeline deployment script in `automated_deployment` directory. Setup environment variabes after deployment
    ```bash
    automate_deployment/./tekton_pipeline.sh
    ```
 
 
-## Known Issues
+### Red Hat SSO Server on OpenShift Cluster
 
-There are no known issues at this time. Feel free to open an issue if you encounter any problems.
+1. Instantiate the Redhat SSO Persistent volume template to deploy SSO server on your OpenShift cluster.
+2. Configure the necessary realms, clients, and users within the Red Hat SSO administration console.
 
-## License
 
-This project is shared under the [MIT License](#).
+## Environment Variables
 
-## Contact Information
+This project uses several environment variables to configure various aspects. These variables are stored in a file named `.env` in the project root directory. Below is a list of available environment variables and their purposes:
 
-For support or queries, please contact me at masterjoetech@gmail.com
+### Database Configuration
+
+- **MARIADB_USER**: Username for MariaDB database.
+- **MARIADB_PASSWORD**: Password for MariaDB database.
+- **MARIADB_DB_NAME**: Name of the MariaDB database.
+- **MARIADB_PORT**: Port on which MariaDB is running.
+- **MARIADB_SERVER**: Server or host address for MariaDB.
+
+### Google OAuth Configuration
+
+- **GOOGLE_CLIENT_ID**: Client ID for Google OAuth.
+- **GOOGLE_CLIENT_SECRET**: Client Secret for Google OAuth.
+
+### JWT Token Configuration
+
+- **ACCESS_SECRET**: Secret key for JWT token.
+- **ACCESS_EXPIRES_IN**: Expiry time for JWT token in seconds.
+
+### Server Configuration
+
+- **PORT**: Port on which the server will run.
+- **BASE_URL**: Base URL for the application.
+
+### Keycloak Configuration
+
+- **KEYCLOAK_SERVER_URL**: URL of the Keycloak server.
+- **KEYCLOAK_CLIENT_SECRET**: Client secret for Keycloak.
+
+### LinkedIn OAuth Configuration
+
+- **LINKEDIN_CLIENT_ID**: Client ID for LinkedIn OAuth.
+- **LINKEDIN_CLIENT_SECRET**: Client Secret for LinkedIn OAuth.
+
+### Facebook OAuth Configuration
+
+- **FB_CLIENT_ID**: Client ID for Facebook OAuth.
+- **FB_CLIENT_SECRET**: Client Secret for Facebook OAuth.
+
+### License
+
+This project is licensed under the [MIT License](LICENSE).

@@ -1,28 +1,26 @@
 ---
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
 metadata:
   labels:
-    app: tweetchatbot
-    app.kubernetes.io/component: tweetchatbot
-    app.kubernetes.io/instance: tweetchatbot
-    app.kubernetes.io/name: tweetchatbot
-    app.kubernetes.io/part-of: bots
-    app.openshift.io/runtime-namespace: climatewavers-dev
+    app: oauth
+    app.kubernetes.io/component: oauth
+    app.kubernetes.io/instance: oauth
+    app.kubernetes.io/name: oauth
+  name: oauth
 spec:
   replicas: 1
   selector:
-    matchLabels:
-      app: tweetchatbot
+    app: oauth
   template:
     metadata:
       labels:
-        app: tweetchatbot
-        deployment: tweetchatbot
+        app: oauth
     spec:
       containers:
-        - image: quay.io/olagoldhacxx/tweetchatbot:v1
-          name: tweetchatbot
+        - image: quay.io/olagoldhackxx/oauth:v1
+          imagePullPolicy: Always
+          name: oauth
           ports:
-            - containerPort: 3000
+            - containerPort: 8000
               protocol: TCP

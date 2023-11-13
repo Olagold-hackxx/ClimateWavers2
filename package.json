@@ -1,32 +1,38 @@
 {
-  "name": "waverx",
-  "version": "1.0.0",
-  "main": "index.js",
-  "directories": {
-    "test": "tests"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^1.5.1",
-    "body-parser": "^1.20.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "express-rate-limit": "^7.1.1",
-    "expresss": "^0.0.0",
-    "helmet": "^7.0.0",
-    "mariadb": "^3.2.2",
-    "morgan": "^1.10.0",
-    "openai": "^4.12.1",
-    "sequelize": "^6.33.0",
-    "sequelize-cli": "^6.6.1",
-    "winston": "^3.11.0",
-    "ws": "^8.14.2"
-  },
-  "description": "## Overview"
+	"name": "auth-flow",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon app.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^1.6.0",
+		"cookie-parser": "^1.4.5",
+		"cors": "^2.8.5",
+		"dotenv": "^16.3.1",
+		"express": "^4.18.2",
+		"express-flash": "^0.0.2",
+		"express-session": "^1.17.3",
+		"helmet": "^4.6.0",
+		"https": "^1.0.0",
+		"jsonwebtoken": "^8.5.1",
+		"keycloak-connect": "^22.0.4",
+		"mongoose": "^7.4.1",
+		"morgan": "^1.10.0",
+		"mysql2": "^3.6.2",
+		"nodemon": "^3.0.1",
+		"openid-client": "^5.6.1",
+		"passport": "^0.4.0",
+		"passport-facebook": "^3.0.0",
+		"passport-github": "^1.1.0",
+		"passport-github2": "^0.1.12",
+		"passport-google-oauth20": "^2.0.0",
+		"passport-linkedin-oauth2": "^2.0.0",
+		"passport-twitter": "^0.1.5",
+		"sequelize": "^6.33.0"
+	}
 }
