@@ -4,7 +4,7 @@ FROM node:latest
 
 # This tells Docker to create a directory so that other commands will use it
 WORKDIR /app
-
+ENV npm_config_cache=/app
 #Copy Our package.json and package-lock.json file into the app directory to tell node the module we want to use
 COPY package.json /app
 
