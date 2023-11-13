@@ -10,10 +10,10 @@ metadata:
   name: backend
 spec:
   ports:
-    - name: 443-tcp
-      port: 443
+    - name: 5173-tcp
+      port: 5173
       protocol: TCP
-      targetPort: 443
+      targetPort: 5173
   selector:
     app: backend
   sessionAffinity: None

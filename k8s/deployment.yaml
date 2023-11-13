@@ -22,5 +22,5 @@ spec:
           imagePullPolicy: Always
           name: frontend
           ports:
-            - containerPort: 443
+            - containerPort: 5173
               protocol: TCP

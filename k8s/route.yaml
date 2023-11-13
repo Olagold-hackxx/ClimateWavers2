@@ -10,7 +10,7 @@ metadata:
   name: backend
 spec:
   port:
-    targetPort: 443-tcp
+    targetPort: 5173-tcp
   tls:
     insecureEdgeTerminationPolicy: Redirect
     termination: edge
