@@ -1,5 +1,10 @@
 #!/bin/bash
 
-docker login quay.io
-docker build -t quay.io/olagoldhackxx/climatewavers-backend:v1 .
-docker push quay.io/olagoldhackxx/climatewavers-backend:v1
+# oc  must be installed to deploy with this script
+
+echo "Deploying deployment"
+oc apply -f k8s/deployment.yaml
+echo "Deploying service"
+oc apply -f k8s/service.yaml
+echo "Deploy route"
+oc apply -f k8s/route.yaml

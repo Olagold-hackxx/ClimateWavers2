@@ -18,7 +18,7 @@ urlpatterns = [
     # Users
     path("users", views.users, name="users"),
     # Login page
-    path("login", ensure_csrf_cookie(views.login_view), name="login"),
+    path("login", views.login_view, name="login"),
     # Logout page
     path("logout", views.logout_view, name="logout"),
     # Registration page

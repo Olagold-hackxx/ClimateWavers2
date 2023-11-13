@@ -1,18 +1,20 @@
+---
 apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: climatewavers-backend
-    sandbox: olagoldhackxx
-    olagoldhackxx: climatewavers-backend
-  name: climatewavers-backend
+    app: backend
+    app.kubernetes.io/component: backend
+    app.kubernetes.io/instance: backend
+    app.kubernetes.io/name: backend
+  name: backend
 spec:
   ports:
-  - name: 8000-tcp
-    port: 8000
-    protocol: TCP
-    targetPort: 8000
+    - name: 8001-tcp
+      port: 8001
+      protocol: TCP
+      targetPort: 8001
   selector:
-    app: climatewavers-backend
+    app: backend
   sessionAffinity: None
   type: ClusterIP

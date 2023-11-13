@@ -123,7 +123,7 @@ def register(request):
 
             # Generate a confirmation token for the user
             user_id = str(user.id)
-            token = serializer.dumps(user_id)
+            token = serializer.dumps(user.username)
             uid = urlsafe_base64_encode(force_bytes(user_id))
             # Build the confirmation URL
             domain = os.getenv("DOMAIN")
@@ -156,7 +156,7 @@ def verify_user(request, user_id):
         user_id = str(user_id)
         if user.is_verified:
             return JsonResponse({"message": "User is verified, Sign in instead"})
-        token = serializer.dumps(user_id)
+        token = serializer.dumps(user.username)
         uid = urlsafe_base64_encode(force_bytes(user_id))
         # Build the confirmation URL
         domain = os.getenv("DOMAIN")
@@ -767,7 +767,7 @@ def password_reset(request):
         if user is not None:
             # Generate a reset token for the user
             user_id = str(user.id)
-            token = serializer.dumps(user_id)
+            token = serializer.dumps(user.username)
             uid = urlsafe_base64_encode(force_bytes(user_id))
 
             # Build the reset password URL

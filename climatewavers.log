@@ -25,7 +25,82 @@
 2023-11-10 01:59:07,455 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/backend/climate_wavers/serializers.py changed, reloading.
 2023-11-10 01:59:27,101 - ERROR - climatewavers - Object of type RefreshToken is not JSON serializable
 2023-11-10 01:59:50,162 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/backend/climate_wavers/views.py changed, reloading.
-2023-11-12 08:45:26,615 - WARNING - django.request - Unauthorized: /api/v1/backend//api/v1/backend/profile/9e827ba8-a426-4df3-a2ae-2cd38cd2bc18>
-2023-11-12 08:45:37,439 - WARNING - django.request - Unauthorized: /api/v1/backend//api/v1/backend/profile/9e827ba8-a426-4df3-a2ae-2cd38cd2bc18>
-2023-11-12 08:46:59,656 - WARNING - django.request - Unauthorized: /api/v1/backend//api/v1/backend/logout
-2023-11-12 08:47:45,209 - WARNING - django.request - Unauthorized: /api/v1/backend//api/v1/backend/logout
+2023-11-13 08:55:54,245 - INFO - climatewavers - User matching query does not exist.
+2023-11-13 08:55:54,251 - WARNING - django.request - Unauthorized: /api/v1/backend/login
+2023-11-13 08:57:43,081 - WARNING - django.request - Bad Request: /api/v1/backend/register
+2023-11-13 09:00:03,313 - ERROR - django.request - Internal Server Error: /api/v1/backend/profile
+Traceback (most recent call last):
+  File "/home/olagold-hackxx/Projects/Portfolio/backend/climate_wavers/middlewares.py", line 31, in __call__
+    token = CustomToken.objects.get(refresh_token=refresh_token)
+  File "/home/olagold-hackxx/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/olagold-hackxx/.local/lib/python3.10/site-packages/django/db/models/query.py", line 435, in get
+    raise self.model.DoesNotExist(
+climate_wavers.models.CustomToken.DoesNotExist: CustomToken matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/olagold-hackxx/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/olagold-hackxx/Projects/Portfolio/backend/climate_wavers/middlewares.py", line 59, in __call__
+    elif refresh_token and (token != "") and (refresh_token != token.refresh_token):
+AttributeError: 'str' object has no attribute 'refresh_token'
+2023-11-13 09:01:34,383 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/backend/climate_wavers/middlewares.py changed, reloading.
+2023-11-13 09:05:48,871 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/backend/climate_wavers/middlewares.py changed, reloading.
+2023-11-13 09:05:56,082 - WARNING - django.request - Unauthorized: /api/v1/backend/profile
+2023-11-13 09:06:16,687 - WARNING - django.request - Unauthorized: /api/v1/backend/profile
+2023-11-13 09:06:31,339 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/backend/climate_wavers/middlewares.py changed, reloading.
+2023-11-13 09:07:04,030 - WARNING - django.request - Unauthorized: /api/v1/backend/profile
+2023-11-13 09:09:09,604 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/backend/climate_wavers/middlewares.py changed, reloading.
+2023-11-13 09:09:15,417 - WARNING - django.request - Unauthorized: /api/v1/backend/profile
+2023-11-13 09:09:32,255 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/backend/climate_wavers/middlewares.py changed, reloading.
+2023-11-13 09:09:39,291 - WARNING - django.request - Unauthorized: /api/v1/backend/profile
+2023-11-13 09:10:51,690 - WARNING - django.request - Unauthorized: /api/v1/backend/
+2023-11-13 09:11:38,742 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/backend/climate_wavers/middlewares.py changed, reloading.
+2023-11-13 09:11:42,555 - WARNING - django.request - Forbidden: /api/v1/backend/
+2023-11-13 09:11:54,960 - WARNING - django.request - Forbidden: /api/v1/backend/
+2023-11-13 09:13:09,311 - WARNING - django.request - Forbidden: /api/v1/backend/
+2023-11-13 09:14:01,716 - WARNING - django.request - Forbidden: /api/v1/backend/
+2023-11-13 09:14:34,453 - WARNING - django.request - Not Found: /api/v1/backend/profile
+2023-11-13 09:14:44,101 - WARNING - django.request - Forbidden: /api/v1/backend/test/profile
+2023-11-13 09:15:20,567 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/backend/climate_wavers/urls.py changed, reloading.
+2023-11-13 09:15:24,787 - WARNING - django.request - Forbidden: /api/v1/backend/test/profile
+2023-11-13 09:15:27,165 - WARNING - django.request - Forbidden: /api/v1/backend/test/profile
+2023-11-13 09:15:32,054 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/backend/climate_wavers/urls.py changed, reloading.
+2023-11-13 09:15:39,190 - WARNING - django.request - Forbidden: /api/v1/backend/test/profile
+2023-11-13 09:15:41,858 - WARNING - django.request - Forbidden: /api/v1/backend/test/profile
+2023-11-13 09:17:05,613 - WARNING - django.request - Forbidden: /api/v1/backend/
+2023-11-13 09:17:21,535 - WARNING - django.request - Forbidden: /api/v1/backend/
+2023-11-13 09:17:39,891 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/backend/climate_wavers/middlewares.py changed, reloading.
+2023-11-13 09:17:45,403 - WARNING - django.request - Forbidden: /api/v1/backend/
+2023-11-13 09:17:52,485 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/backend/climate_wavers/middlewares.py changed, reloading.
+2023-11-13 09:18:20,531 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/backend/climate_wavers/middlewares.py changed, reloading.
+2023-11-13 09:18:24,541 - WARNING - django.request - Forbidden: /api/v1/backend/
+2023-11-13 09:18:41,839 - WARNING - django.request - Forbidden: /api/v1/backend/
+2023-11-13 09:18:53,797 - WARNING - django.request - Forbidden: /api/v1/backend/community
+2023-11-13 09:18:56,918 - WARNING - django.request - Forbidden: /api/v1/backend/community
+2023-11-13 09:19:10,160 - WARNING - django.request - Forbidden: /api/v1/backend/community
+2023-11-13 09:19:44,250 - WARNING - django.request - Forbidden: /api/v1/backend/
+2023-11-13 09:20:04,600 - WARNING - django.request - Forbidden: /api/v1/backend/
+2023-11-13 09:20:07,321 - WARNING - django.request - Forbidden: /api/v1/backend/
+2023-11-13 09:20:25,431 - WARNING - django.request - Forbidden: /api/v1/backend/
+2023-11-13 09:20:51,370 - WARNING - django.request - Not Found: /api/v1/backend/communtiy
+2023-11-13 09:20:57,136 - WARNING - django.request - Forbidden: /api/v1/backend/community
+2023-11-13 09:21:33,531 - WARNING - django.request - Forbidden: /api/v1/backend/community
+2023-11-13 09:23:14,392 - WARNING - django.request - Forbidden: /api/v1/backend/community
+2023-11-13 09:23:43,602 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/backend/climate_wavers/urls.py changed, reloading.
+2023-11-13 09:23:52,068 - ERROR - django.request - Internal Server Error: /api/v1/backend
+Traceback (most recent call last):
+  File "/home/olagold-hackxx/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/olagold-hackxx/.local/lib/python3.10/site-packages/django/utils/deprecation.py", line 116, in __call__
+    response = self.process_request(request)
+  File "/home/olagold-hackxx/.local/lib/python3.10/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/olagold-hackxx/.local/lib/python3.10/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8001/api/v1/backend/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2023-11-13 09:24:08,750 - WARNING - django.request - Forbidden: /api/v1/backend/
+2023-11-13 09:24:33,159 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/backend/climate_wavers/urls.py changed, reloading.
+2023-11-13 09:24:39,266 - WARNING - django.request - Forbidden: /api/v1/backend/
