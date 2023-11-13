@@ -150,7 +150,11 @@ Climate Wavers follows a microservices architecture to ensure modularity, scalab
 
 ## Deployment
 
-The application is deployed on OpenShift, a robust container orchestration platform, ensuring scalability and reliability. The application was exported 3 days before deadline to ensure it runs throught judging period.
+The application is deployed on OpenShift, a robust container orchestration platform, ensuring scalability and reliability. The application was exported and redeployed 3 days before deadline to ensure it runs throughout judging period.
+**Application sandbox details**:
+Username: climatewavers
+Email: Climatewaver@gmail.com
+Password: Climatewaver2023
 
 **Deployment Configurations:**
 - Configuration files are available in the `k8s/` directory of the microservices branches and repositories.
