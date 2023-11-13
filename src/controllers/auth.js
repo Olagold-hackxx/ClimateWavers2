@@ -44,7 +44,8 @@ const redhatSS0 = async (req, res) => {
     });
 
     if (!existingToken) {
-      return res.status(201).json({ accessToken: token, user });
+		attachCookiesToResponse({ res, user: user, accessToken: token });
+		return res.redirect(process.env.HOMEPAGE)
     }
     refreshToken = token.refresh_token;
     attachCookiesToResponse({ res, user: user, accessToken: token, refreshToken });
