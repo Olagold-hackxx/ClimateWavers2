@@ -54,7 +54,7 @@ class TokenVerificationMiddleware:
 
                     # Verify access token, if available
                     elif verify_access_token(access_token) is None:
-                        return JsonResponse({'detail': 'Invaid tokens'}, status=401)
+                        return JsonResponse({'detail': 'Invalid tokens'}, status=401)
                     #Decode access token
                     decoded_acc_token = verify_access_token(access_token)
                     # Get user
