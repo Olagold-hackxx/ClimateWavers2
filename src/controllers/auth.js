@@ -24,36 +24,13 @@ const oauthSignIn = async (req, res) => {
     refreshToken = existingToken.refreshToken;
     user.refreshToken = refreshToken;
     attachCookiesToResponse({ res, user: user, refreshToken });
-    return res.status(201).json({ user });
+    return res.redirect(process.env.HOMEPAGE)
   } catch (err) {
     console.log(err);
     return res.status(403).send(err);
   }
 };
 
-const redhatSS0 = async (req, res) => {
-  try {
-    const token = JSON.parse(req.session["keycloak-token"]);
-    console.log(token.access_token);
-    const user = isTokenValid(token.access_token);
-    console.log(user);
-    // check for existing token
-    const existingUser = await User.findOne({ where: { email: user.email } });
-    const existingToken = await Token.findOne({
-      where: { userId: existingUser.id },
-    });
-
-    if (!existingToken) {
-		attachCookiesToResponse({ res, user: user, accessToken: token });
-		return res.redirect(process.env.HOMEPAGE)
-    }
-    refreshToken = token.refresh_token;
-    attachCookiesToResponse({ res, user: user, accessToken: token, refreshToken });
-    return res.redirect(process.env.HOMEPAGE)
-  } catch (err) {
-    return res.status(500).send(err);
-  }
-};
 
 const linkedInOauth = async (req, res, next) => {
   try {
