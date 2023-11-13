@@ -1,20 +1,28 @@
 # Clean the dataset by filtering out rows with missing or empty longitude and latitude values
 import pandas as pd
 
-# Function to clean CSV files
+# Functions to clean CSV files
 
-
-def clean_csv(input_file, output_file):
+def clean_climate_csv(file):
     # Read CSV file into a DataFrame
-    df = pd.read_csv(input_file)
+    df = pd.read_csv(file)
+    # Write cleaned DataFrame back to a CSV file
+    df.dropna(inplace=True)
+    print(f"Cleaned climate data to {file}")
+    df.to_csv(file, index=False)
+
+
+def clean_disaster_csv(file):
+    # Read CSV file into a DataFrame
+    df = pd.read_csv(file)
 
     # Drop rows where longitude or latitude column has missing values
     cleaned_df = df.dropna(subset=['Longitude', 'Latitude'])
 
     # Write cleaned DataFrame back to a CSV file
-    cleaned_df.to_csv(output_file, index=False)
+    cleaned_df.to_csv(file, index=False)
 
-    print(f"Cleaned data saved to {output_file}")
+    print(f"Cleaned disaster historical data saved to {file}")
 
 
 # Example usage
@@ -24,9 +32,11 @@ if __name__ == "__main__":
     disaster_types = ["Storm", "Flood", "Epidemic",
                       "Earthquake", "Drought", "Volcanic activity", "Wildfire"]
     disaster_dataset = f"{base_dir}/historical-disasters.csv"
-    clean_csv(disaster_dataset, disaster_dataset)
+    clean_climate_csv(f"{base_dir}/climate_data.csv")
+    clean_disaster_csv(disaster_dataset)
+
     for disaster in disaster_types:
         disaster_dataset = f"{base_dir}disaster types/{disaster}.csv"
 
         # Clean the CSV file
-        clean_csv(disaster_dataset, disaster_dataset)
+        clean_disaster_csv(disaster_dataset)

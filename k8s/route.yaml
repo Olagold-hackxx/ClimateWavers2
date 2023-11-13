@@ -1,0 +1,19 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: waverx-analysis
+    app.kubernetes.io/component: waverx-analysis
+    app.kubernetes.io/instance: waverx-analysis
+    app.kubernetes.io/name: waverx-analysis
+  name: waverx-analysis
+spec:
+  port:
+    targetPort: 6000-tcp
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: waverx-analysis

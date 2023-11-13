@@ -1,0 +1,27 @@
+---
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  labels:
+    app: waverx-analysis
+    app.kubernetes.io/component: waverx-analysis
+    app.kubernetes.io/instance: waverx-analysis
+    app.kubernetes.io/name: waverx-analysis
+    app.kubernetes.io/part-of: models
+  name: waverx-analysis
+spec:
+  replicas: 1
+  selector:
+    app: waverx-analysis
+  template:
+    metadata:
+      labels:
+        app: waverx-analysis
+    spec:
+      containers:
+        - image: quay.io/olagoldhackxx/waverx-analysis:v1
+          imagePullPolicy: Always
+          name: waverx-analysis
+          ports:
+            - containerPort: 6000
+              protocol: TCP
