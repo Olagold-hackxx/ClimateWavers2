@@ -3,11 +3,11 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: tweetchatbot
-    app.kubernetes.io/component: tweetchatbot
-    app.kubernetes.io/instance: tweetchatbot
-    app.kubernetes.io/name: tweetchatbot
-  name: tweetchatbot
+    app: tweetbot
+    app.kubernetes.io/component: tweetbot
+    app.kubernetes.io/instance: tweetbot
+    app.kubernetes.io/name: tweetbot
+  name: tweetbot
 spec:
   ports:
     - name: 3001-tcp
@@ -15,7 +15,7 @@ spec:
       protocol: TCP
       targetPort: 3001
   selector:
-    app: tweetchatbot
+    app: tweetbot
   sessionAffinity: None
   type: ClusterIP
   wildcardPolicy: None

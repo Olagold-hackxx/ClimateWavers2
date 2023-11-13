@@ -4,12 +4,12 @@
 #Make sure you have oc and tkn installed
 #Get ENV variable
 
-# Clone the Django backend, build image and deploy.
-GH_REPO_URL='https://github.com/Olagold-hackxx/Climate_wavers_DjangoBackend_microservice.git'
+# Clone the repo, build image and deploy.
+GH_REPO_URL='https://github.com/ClimateWavers/waverX-tweet.git'
 PIPELINE='build-and-deploy'
 WORKSPACE=shared-work
-DEPLOY_NAME=climatewavers-backend
-IMAGE='quay.io/olagolhackxx/climatewavers-djangobackend:v1'
+DEPLOY_NAME=tweetbot
+IMAGE='quay.io/olagolhackxx/tweetbot:v1'
 export volumeClaimTemplateFile
 volumeClaimTemplateFile="$(dirname -- "$0")/k8s/persistent_volume_claim.yaml"
 echo Start pipeline $PIPELINE:

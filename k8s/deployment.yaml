@@ -3,26 +3,26 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: tweetchatbot
-    app.kubernetes.io/component: tweetchatbot
-    app.kubernetes.io/instance: tweetchatbot
-    app.kubernetes.io/name: tweetchatbot
+    app: tweetbot
+    app.kubernetes.io/component: tweetbot
+    app.kubernetes.io/instance: tweetbot
+    app.kubernetes.io/name: tweetbot
     app.kubernetes.io/part-of: bots
     app.openshift.io/runtime-namespace: climatewavers-dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: tweetchatbot
+      app: tweetbot
   template:
     metadata:
       labels:
-        app: tweetchatbot
-        deployment: tweetchatbot
+        app: tweetbot
+        deployment: tweetbot
     spec:
       containers:
-        - image: quay.io/olagoldhacxx/tweetchatbot:v1
-          name: tweetchatbot
+        - image: quay.io/olagoldhacxx/tweetbot:v1
+          name: tweetbot
           ports:
             - containerPort: 3000
               protocol: TCP

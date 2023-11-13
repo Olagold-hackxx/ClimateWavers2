@@ -3,11 +3,11 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   labels:
-    app: tweetchatbot
-    app.kubernetes.io/component: tweetchatbot
-    app.kubernetes.io/instance: tweetchatbot
-    app.kubernetes.io/name: tweetchatbot
-  name: tweetchatbot
+    app: tweetbot
+    app.kubernetes.io/component: tweetbot
+    app.kubernetes.io/instance: tweetbot
+    app.kubernetes.io/name: tweetbot
+  name: tweetbot
 spec:
   port:
     targetPort: 3001-tcp
@@ -16,4 +16,4 @@ spec:
     termination: edge
   to:
     kind: Service
-    name: tweetchatbot
+    name: tweetbot
