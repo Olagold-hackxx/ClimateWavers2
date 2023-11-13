@@ -1,72 +1,13 @@
-# Climate Wavers MariaDB Backend
+There are three microservices in this project 
 
-This repository contains the backend component of the Climate Wavers application, responsible for managing data storage and communication between various microservices.
+ 1. waverX
+ 2. waverX speaks
+ 3. waverX predicts
 
-## Overview
+-- waverX is a microservice that manages conversation between users and Ai, it uses kafka a medium of interaction with the frontend. The Ai can interact with the users in real time. For more information check the documentation in the waverx project directory. [waverX documentation](https://github.com/ClimateWavers/chatBot/blob/main/chatbot/README.md)
 
-The Climate Wavers application is an AI-driven disaster response and social media platform. This MariaDB backend is a crucial part of the architecture, providing a robust and scalable database solution to store and retrieve data for the application.
+-- waverx speaks is a microservice that generates educational tweets based on climate and disaster. for more information check the documentation in the waverX speaks directory. [waverX speaks documentation](https://github.com/ClimateWavers/chatBot/blob/main/tweetChatbot/README.md) 
 
-## Features
+--- waverX predicts 
 
-- **Data Storage**: MariaDB is used to store and manage data related to users, posts, disaster alerts, and other relevant information.
-- **Microservices Integration**: The backend facilitates communication between different microservices, ensuring seamless interaction and data exchange.
-- **Security**: The MariaDB backend ensures the security of stored data and implements access controls to protect sensitive information.
-- **Scalability**: MariaDB provides scalability options to handle the growing volume of data as the application expands.
-
-## Environment Variables
-
-Ensure you have set the required environment variables for the MariaDB connection. These variables include:
-
-- `MARIADB_USER`: The username for MariaDB authentication.
-- `MARIADB_PASSWORD`: The password for MariaDB authentication.
-- `MARIADB_DB_NAME`: The name of the MariaDB database.
-- `MARIADB_PORT`: The port on which MariaDB is running.
-- `MARIADB_SERVER`: The address or hostname of the MariaDB server. Database service on openshift cluster
-
-## Getting Started
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/climatewavers/database.git
-   ```
-
-2. Setup database in local environment
-
-   ```bash
-   cd database
-   cat setup_mariadb | mysql -u root -p
-   ```
-
-## Deployment
-
-We provide two different methods for deploying the database microservice to openshift clusters.
-
-### Openshift MariaDB template (Recommended)
-Using the  MariaDB template on openshift console.
-- Navigate to Add page in the Developer console on openshift
-- Select All services and search for mariadb, persistent storage
-- Fill the form with the details of database to use
-- Update the environment variables of deployed microservices using the database with the database service name
-  
-### Automated Command line Deployment
-Using the scripts provided in `automate_development` folder, simplifies deployment. To use the scripts, oc and kubectl must be installed.
-
-#### Deploy mariaDB
-```bash
-./deploy.sh
-```
-#### Setup database on openshift
-```bash
-./database_setup.sh
-```
-
-
-## Contributing
-
-If you would like to contribute to the development of the Climate Wavers MariaDB backend, please follow the [contribution guidelines](CONTRIBUTING.md).
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
+to be updated!

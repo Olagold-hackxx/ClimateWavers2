@@ -1,0 +1,58 @@
+2023-10-28T17:02:06.071Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T17:02:06.084Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T17:02:15.239Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T17:02:15.256Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T17:08:38.693Z [error]: (conn=13, no: 1054, SQLState: 42S22) Unknown column 'categoryId' in 'field list'
+sql: SELECT `id`, `content`, `timestamp`, `categoryId`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-28T17:09:01.378Z [error]: (conn=16, no: 1054, SQLState: 42S22) Unknown column 'categoryId' in 'field list'
+sql: SELECT `id`, `content`, `timestamp`, `categoryId`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-28T17:09:02.095Z [error]: (conn=16, no: 1054, SQLState: 42S22) Unknown column 'categoryId' in 'field list'
+sql: SELECT `id`, `content`, `timestamp`, `categoryId`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-28T17:09:21.288Z [error]: (conn=18, no: 1054, SQLState: 42S22) Unknown column 'categoryId' in 'field list'
+sql: SELECT `id`, `content`, `timestamp`, `categoryId`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-28T17:09:52.159Z [error]: (conn=21, no: 1054, SQLState: 42S22) Unknown column 'categoryId' in 'field list'
+sql: SELECT `id`, `content`, `timestamp`, `categoryId`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-28T17:23:00.649Z [error]: (conn=28, no: 1364, SQLState: HY000) Field 'category' doesn't have a default value
+sql: INSERT INTO `EducationPosts` (`id`,`content`,`timestamp`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?); - parameters:['
+
+"Did you know that climate change can increase the frequency and intensity of natural disasters like earthquakes and flooding? Let'...]
+2023-10-28T17:23:27.425Z [error]: (conn=29, no: 1364, SQLState: HY000) Field 'category' doesn't have a default value
+sql: INSERT INTO `EducationPosts` (`id`,`content`,`timestamp`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?); - parameters:['
+
+"Did you know that climate change can increase the frequency and intensity of natural disasters like floods, earthquakes and hurric...]
+2023-10-28T17:27:18.491Z [error]: notNull Violation: EducationPost.category cannot be null
+2023-10-28T21:28:04.715Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T21:28:04.759Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T21:29:53.287Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T21:29:53.326Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-29T06:48:22.924Z [error]: (conn=19, no: 1146, SQLState: 42S02) Table 'post.EducationPosts' doesn't exist
+sql: SELECT `id`, `content`, `timestamp`, `category`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-29T06:48:26.281Z [error]: (conn=19, no: 1146, SQLState: 42S02) Table 'post.EducationPosts' doesn't exist
+sql: SELECT `id`, `content`, `timestamp`, `category`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-29T06:49:05.050Z [error]: (conn=23, no: 1146, SQLState: 42S02) Table 'post.EducationPosts' doesn't exist
+sql: SELECT `id`, `content`, `timestamp`, `category`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-29T06:52:21.239Z [error]: (conn=11, no: 1406, SQLState: 22001) Data too long for column 'content' at row 1
+sql: INSERT INTO `EducationPosts` (`id`,`content`,`timestamp`,`category`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?); - parameters:['
+
+"Let's not forget the impact of climate change on our communities and economies. Rising sea levels and extreme weather...]
+2023-10-29T07:52:41.594Z [error]: isGreeting is not defined
+2023-11-03T09:39:19.809Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-03T09:56:38.227Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-03T12:36:45.625Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:06:12.227Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:47:29.243Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:48:07.783Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:51:20.025Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:55:13.075Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:56:05.566Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:56:37.899Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:57:37.986Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:58:41.757Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:59:04.996Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T08:02:25.151Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T09:09:04.653Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T09:10:23.582Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T10:12:31.062Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T10:13:23.065Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-06T14:56:42.000Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-06T15:53:16.385Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN loclhost
