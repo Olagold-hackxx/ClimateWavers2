@@ -272,9 +272,7 @@ def profile(request, username):
         except Exception as e:
             logger.error(e)
             follower = False
-    except Exception as e:
-        logger.error(e)
-    return JsonResponse({
+        return JsonResponse({
         "user_details": user_details.data,
         "posts": posts,
         "posts_count": posts_count,
@@ -283,6 +281,10 @@ def profile(request, username):
         "following_count": following_count,
         "access_token": request.access_token
     })
+    except Exception as e:
+        logger.error(e)
+        return JsonResponse({"error": str(e)}, status=401)
+
 
 # View for editing a user's profile.
 @api_view(['PUT'])

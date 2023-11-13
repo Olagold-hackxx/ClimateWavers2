@@ -104,3 +104,5 @@ RuntimeError: You called this URL via POST, but the URL doesn't end in a slash a
 2023-11-13 09:24:08,750 - WARNING - django.request - Forbidden: /api/v1/backend/
 2023-11-13 09:24:33,159 - INFO - django.utils.autoreload - /home/olagold-hackxx/Projects/Portfolio/backend/climate_wavers/urls.py changed, reloading.
 2023-11-13 09:24:39,266 - WARNING - django.request - Forbidden: /api/v1/backend/
+2023-11-13 09:30:16,325 - WARNING - django.request - Method Not Allowed: /api/v1/backend/
+2023-11-13 09:30:41,691 - ERROR - climatewavers - Follower matching query does not exist.
