@@ -1,84 +1,67 @@
-# Chat Interface Microservice
+# ClimateWavers Frontend Microservice Readme
 
 ## Overview
 
-The Chat Interface Microservice in the ClimateWavers application serves as the communication bridge between the frontend and Kafka. It provides APIs that the frontend can call to interact with the Kafka messaging system.
+The ClimateWavers Frontend Microservice is the user interface of the ClimateWavers application. It is built using React, Redux, React Query, Hook Form, and styled with Tailwind CSS. The microservice is responsible for providing an engaging and user-friendly experience to the end-users while interacting with the ClimateWavers platform.
 
 ## Technologies Used
 
-- Node.js: The server-side runtime for running JavaScript code.
-- Express.js: A web application framework for Node.js used to build robust APIs.
-- Kafka: A distributed event streaming platform for handling real-time data feeds.
+- React: A JavaScript library for building user interfaces.
+- Redux: A state management library for managing the global state of the application.
+- React Query: A data fetching library for React applications.
+- Hook Form: A library for managing forms in React using hooks.
+- Tailwind CSS: A utility-first CSS framework for building responsive and design-friendly interfaces.
+
+## Features
+
+- **User Authentication**: Secure user authentication using industry-standard protocols.
+- **Real-time Messaging**: Integration with the Chat Interface Microservice for real-time messaging.
+- **Data Visualization**: Visual representation of climate-related data for better understanding.
+- **Form Management**: User-friendly forms powered by Hook Form for efficient data entry.
 
 ## Setup
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/climatewavers-chat-interface.git
+   git clone https://github.com/your-username/climatewavers-frontend.git
    ```
 
 2. Install dependencies:
 
    ```bash
-   cd climatewavers-chat-interface
+   cd climatewavers-frontend
    npm install
    ```
 
 3. Set up environment variables:
 
-   Create a `.env` file and configure the following variables:
+   Create a `.env` file and configure the necessary variables such as API endpoints, authentication details, etc.
 
    ```env
-   KAFKA_BROKER_URL=your_kafka_broker_url
-   KAFKA_TOPIC=your_kafka_topic
+   REACT_APP_API_URL=https://api.climatewavers.com
+   REACT_APP_CHAT_API_URL=https://chat-api.climatewavers.com
+   REACT_APP_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
    ```
 
 ## Usage
 
-1. Start the server:
+1. Start the development server:
 
    ```bash
-   npm start
+   npm run dev
    ```
 
-   The server will be running on the specified port (default is 3000).
+   The application will be accessible at `http://localhost:3000`.
 
-2. Frontend Integration:
+2. Build for production:
 
-   Integrate the provided APIs into your frontend application to enable real-time messaging using Kafka.
+   ```bash
+   npm run build
+   ```
+  The production build will be available in the `build` directory.
 
-## API Endpoints
-
-### 1. Produce Message
-
-- **Endpoint**: `/produce-message`
-- **Method**: POST
-- **Description**: Produces a message to the Kafka topic.
-- **Request Body**:
-
-  ```json
-  {
-    "message": "Your message content"
-  "userId": "e9d11e91-2db8-4ae9-ab62-367f278cc1ed",
-  "userLocation": {"latitude": 40.73061, "longitude": -73.935242}
-  }
-  ```
-
-### 2. Consume Messages
-
-- **Endpoint**: `/consume-messages`
-- **Method**: GET
-- **Description**: Consumes messages from the Kafka topic.
-- **Response**:
-
-  ```json
-  {
-    "messages": ["Message 1", "Message 2", ...]
-  }
-  ```
-
-  ## Deployment
+## Deployment
 We provide three different methods for deploying this microservice to openshift clusters.
 ### Import Git Repositoy (Recommended)
 Use the import git repository feature on openshift console.

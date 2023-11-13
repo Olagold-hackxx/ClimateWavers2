@@ -3,18 +3,18 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: chat-interface
-    app.kubernetes.io/component: chat-interface
-    app.kubernetes.io/instance: chat-interface
-    app.kubernetes.io/name: chat-interface
-  name: chat-interface
+    app: backend
+    app.kubernetes.io/component: backend
+    app.kubernetes.io/instance: backend
+    app.kubernetes.io/name: backend
+  name: backend
 spec:
   ports:
-    - name: 3003-tcp
-      port: 3003
+    - name: 443-tcp
+      port: 443
       protocol: TCP
-      targetPort: 3003
+      targetPort: 443
   selector:
-    app: chat-interface
+    app: backend
   sessionAffinity: None
   type: ClusterIP

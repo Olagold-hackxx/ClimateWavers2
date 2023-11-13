@@ -1,14 +1,5 @@
 #!/bin/bash
 
-#Pipeline to run at production
-#Make sure you have oc and tkn installed
-#Get ENV variable
-source .env
-token=$TOKEN
-server=$SERVER
-
-#Login to openshift cli
-oc login  --token=$token --server=$server
 # Clone the Django backend, build image and deploy.
 GH_REPO_URL='https://github.com/Olagold-hackxx/Climate_wavers_DjangoBackend_microservice.git'
 PIPELINE='build-and-deploy'

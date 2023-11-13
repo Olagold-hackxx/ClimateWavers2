@@ -3,24 +3,24 @@ apiVersion: apps.openshift.io/v1
 kind: DeploymentConfig
 metadata:
   labels:
-    app: chat-interface
-    app.kubernetes.io/component: chat-interface
-    app.kubernetes.io/instance: chat-interface
-    app.kubernetes.io/name: chat-interface
-  name: chat-interface
+    app: frontend
+    app.kubernetes.io/component: frontend
+    app.kubernetes.io/instance: frontend
+    app.kubernetes.io/name: frontend
+  name: frontend
 spec:
   replicas: 1
   selector:
-    app: chat-interface
+    app: frontend
   template:
     metadata:
       labels:
-        app: chat-interface
+        app: frontend
     spec:
       containers:
-        - image: quay.io/olagoldhackxx/chat-interface:v1
+        - image: quay.io/olagoldhackxx/frontend:v1
           imagePullPolicy: Always
-          name: chat-interface
+          name: frontend
           ports:
-            - containerPort: 3003
+            - containerPort: 443
               protocol: TCP

@@ -3,17 +3,17 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   labels:
-    app: chat-interface
-    app.kubernetes.io/component: chat-interface
-    app.kubernetes.io/instance: chat-interface
-    app.kubernetes.io/name: chat-interface
-  name: chat-interface
+    app: backend
+    app.kubernetes.io/component: backend
+    app.kubernetes.io/instance: backend
+    app.kubernetes.io/name: backend
+  name: backend
 spec:
   port:
-    targetPort: 3003-tcp
+    targetPort: 443-tcp
   tls:
     insecureEdgeTerminationPolicy: Redirect
     termination: edge
   to:
     kind: Service
-    name: chat-interface
+    name: backend
