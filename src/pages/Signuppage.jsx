@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom'
 import Signupform from '../components/Signupform'
 import { AiOutlineClose } from 'react-icons/ai'
 import axios from 'axios'
-import { ToastContainer } from 'react-toastify'
+import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import Cookies from 'js-cookie'
 
 const Signuppage = () => {
 
@@ -16,12 +17,29 @@ const Signuppage = () => {
         axios.get("https://oauth-olagoldhackxx-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/api/v1/auth/new-google")
     }
 
+    const userId = Cookies.get("userId")
+    const resendEmailFn = () => {
+        axios.get(`https://backend-climatewavers-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/api/v1/backend/${userId}/verify`)
+            .then((response) => console.log(response))
+            .then((error) => console.log(error))
+    }
+
+    const handleResendEmail = () => {
+        toast.promise(
+            resendEmailFn, 
+            {
+              pending: 'Resending Mail...',
+              success: 'Succesful 👌 Please re-Check your email',
+              error: 'An Error occured 🤯'
+            }
+        )
+    }
+
     const [isFormOpen, setIsFormOpen] = useState(false)
 
 
   return (
     <>
-    <ToastContainer />
     <div className='grid md:grid-cols-[3fr_4fr] grid-cols-[1fr]  items-center '>
         <div className='bg-green grid place-content-center h-[80vh] md:h-[100vh]   '>
             <img src="../../public/logolargewhite.png" alt="" />
@@ -37,10 +55,10 @@ const Signuppage = () => {
                 // onClick={() => googleSigninFunction()}
                 ><FcGoogle className='mr-2 ' size={32} /> Continue in with Google</div></a>
                 <div className='flex flex-row gap-3 w-[100%] justify-center bg-white py-3 '>
-                    <img className='w-[35px]' src="../../public/2.png" alt="" />
-                    <img className='w-[35px]' src="../../public/3.png" alt="" />
-                    <img className='w-[35px]' src="../../public/4.png" alt="" />
-                    <img className='w-[35px]' src="../../public/5.png" alt="" />
+                    <a href='https://oauth-climatewavers-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/api/v1/auth/titter'><img className='w-[35px]' src="../../public/2.png" alt="" /></a>
+                    <a href='https://oauth-climatewavers-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/api/v1/auth/facebook' ><img className='w-[35px]' src="../../public/3.png" alt="" /></a>
+                    <a href='https://oauth-climatewavers-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/api/v1/auth/redhat-sso' ><img className='w-[35px]' src="../../public/4.png" alt="" /></a>
+                    <a href='https://oauth-climatewavers-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/api/v1/auth/linkedin' ><img className='w-[35px]' src="../../public/5.png" alt="" /></a>
                 </div>
                 <p>or</p>
                 <button className='md:text-xl text-base font-semibold bg-green text-white p-4 rounded-full w-[50%] ' onClick={() => setIsFormOpen(true)}  >Sign Up</button>
@@ -52,15 +70,20 @@ const Signuppage = () => {
                     <Signupform />
                 </div>
             }
+            
             {
-                isFormOpen === true ?
-                <button className='w-[20%] p-2 bg-green text-white rounded cursor-pointer z-10 absolute bottom-0 right-0 '>
-                    Resend email
-                </button>
-                : null
-            }
+            isFormOpen === true ?
+            <button 
+            onClick={() => handleResendEmail()}
+            className='w-[20%] p-2 bg-green text-white rounded cursor-pointer z-10 absolute -bottom-[100px] right-2 '
+            >
+                Resend email
+            </button>
+            : null
+        }
             
         </div>
+        
     </div>
     </>
   )

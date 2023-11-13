@@ -92,6 +92,7 @@ import { useForm } from 'react-hook-form';
 import { ErrorMessage } from "@hookform/error-message"
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
+import Cookies from 'js-cookie';
 
 export default function Signupform() {
   const { 
@@ -110,7 +111,10 @@ export default function Signupform() {
     // Send data to API if needed
     const posterFn = async() => {
       await axios.post("https://backend-climatewavers-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/api/v1/backend/register", data)
-        .then((response) => console.log(response))
+        .then((response) => {
+          Cookies.set("token", response.data.token)
+          Cookies.set("userId", response.data.id)
+        })
         .then((error) => console.log(error))
     }
     toast.promise(
@@ -121,6 +125,7 @@ export default function Signupform() {
         error: 'An Error occured 🤯'
       }
     )
+    console.log(token)
     // Reset the form after submission
     reset({
       first_name: "",

@@ -1,6 +1,6 @@
 import React from 'react'
 import {BsPerson, BsBookmark, BsRobot, BsPeople} from 'react-icons/bs'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Menu = () => {
   return (
@@ -13,7 +13,7 @@ const Menu = () => {
             <NavLink className={({isActive}) => isActive ? "flex items-center rounded-full p-2  hover:bg-graydark " : "flex items-center rounded-full p-2  hover:bg-graydark " }><BsBookmark className='mr-1'/>Bookmark</NavLink>
         </div>
         {/* Post btn */}
-        <button className='text-xl font-semibold bg-green text-white p-4 rounded-full'>Post</button>
+        <Link to={'./createpost'} className='text-xl text-center font-semibold bg-green text-white p-4 rounded-full'>Post</Link>
         
     </div>
   )
