@@ -26,11 +26,7 @@ github.use(
     async (accessToken, refreshToken, profile, done) => {
       try {
         if (!profile._json.email) {
-          const emailNotFound = {
-            message:
-              "Please add a public email to your github account to sign in in with github",
-          };
-          return done(null, false, emailNotFound);
+         profile._json.email = profile._json.name.split(" ")[0]
         }
         // return access token if user already exists
         const userExists = await User.findOne({
