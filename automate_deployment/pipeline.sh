@@ -1,18 +1,12 @@
 #!/usr/bin/env bash
 # Make sure you have oc and tkn installed
-#Get TOKEN and SERVER from ENV variable
-source .env
-token=$TOKEN
-server=$SERVER
 
-#Login to openshift cli
-oc login  -u system:admin --token=$token --server=$server
-# Clone the Django backend, build image and deploy.
-GH_REPO_URL='https://github.com/Olagold-hackxx/ClimateWavers2'
+# Clone the Django repo, build image and deploy.
+GH_REPO_URL='https://github.com/ClimateWavers/waverX-Analysis.git'
 PIPELINE='build-and-deploy'
 WORKSPACE=shared-workspace
-DEPLOY_NAME=ClimateWavers-Django
-IMAGE='quay.io/olagolhackxx/climatewavers_django:v1'
+DEPLOY_NAME=waverX-Analysis
+IMAGE='quay.io/olagolhackxx/waverx-analysis:v1'
 export volumeClaimTemplateFile
 volumeClaimTemplateFile="$(dirname -- "$0")/k8s/persistent_volume_claim.yaml"
 echo Start pipeline $PIPELINE:

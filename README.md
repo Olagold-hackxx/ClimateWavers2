@@ -1,5 +1,3 @@
-
-
 # WaverX-Analysis Microservice for Climate Wavers
 
 ## Overview
@@ -92,7 +90,7 @@ If the image repository was changed when building, update the `development.yaml`
 ### Tekton pipeline deployment script
 Deploy with tekton with the pipeline deployment script in `automated_deployment` directory
    ```bash
-   automate_deployment/./tekton_pipeline.sh
+   automate_deployment/./pipeline.sh
    ```
 
 
