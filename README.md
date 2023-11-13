@@ -1,141 +1,111 @@
-# Climate Wavers - Authentication microservices
+# waverX
 
 ## Overview
 
-This microservice is a part of Climate Wavers  an AI-driven disaster response application that utilizes multiple authentication providers such as Red Hat SSO, Facebook, LinkedIn, GitHub, and Google. The microservices architecture is implemented in Node.js, with passport and openid connect libraries for authentication. The application securely stores user data in a MariaDB database and uses refresh tokens for extended access.
+Welcome to waverX ChatBot! This chatBot provides answers to questions related to climate and disaster.
+This README provides an in-depth guide on setting up, using, and contributing to this project.
 
-## Features
+## Table of Contents
 
-- **Authentication Providers:** Integrates Red Hat SSO, Facebook, LinkedIn, GitHub, and Google for user authentication.
-- **Token Management:** Utilizes refresh tokens for prolonged access and sends access tokens to users for accessing other microservices.
-- **Database:** Stores user data securely in the application main MariaDB database, to enable synchronise with other microservices in the application using same database
- 
-## Technologies Used
+1. [Getting Started](#getting-started)
+   - [Prerequisites](#prerequisites)
+   - [Installation](#installation)
+2. [Usage](#usage)
+3. [Project Structure](#project-structure)
+4. [Contributing](#contributing)
+5. [License](#license)
+6. [Acknowledgments](#acknowledgments)
 
-- Node.js
-- Passport
-- OpenID Connect
-- Red Hat SSO
-- Facebook Login API
-- LinkedIn API
-- GitHub API
-- Google API
-- MariaDB
-- OpenShift (for deploying Red Hat SSO server)
-
-## Setup
+## Getting Started
 
 ### Prerequisites
 
-- Node.js installed
-- MariaDB installed
-- OpenShift cluster set up
+Before you begin, ensure you have met the following requirements:
+
+- Node.js and npm installed
+- MongoDB and MariaDB (or the database of your choice) installed and running
+- API keys for OpenAI (for generating chatbot responses)
 
 ### Installation
 
 1. Clone the repository:
 
-```bash
-git clone https://github.com/yourusername/your-repo.git
-cd your-repo
-```
+   git clone https://github.com/ClimateWavers/chatBot.git
+   cd chatbot
 
-2. Install dependencies:
-
-```bash
-npm install
-```
-
-3. Configure environment variables:
-
-   - Set up credentials for authentication providers (Red Hat SSO, Facebook, LinkedIn, GitHub, Google).
-   - Configure the database connection details.
-
-4. Start the application:
-
-```bash
-npm start
-```
-
-## Deployment
-We provide three different methods for deploying this microservice to openshift clusters.
-### Import Git Repositoy (Recommended)
-Use the import git repository feature on openshift console.
-- Navigate to Add page in the Developer console on openshift
-- Select Dockerfile strategy
-- Deployment type should be Deployment Config
-- Secure routes
-- Supply the environment variables after deployment
-  
-### Automated Command line Deployment
-Using the scripts provided in `automate_development` folder, simplifies deployment. To use the scripts, docker and oc must be installed.
-
-#### Build and push image
-You can replace the image repository in the scripts `build.sh` in `automate_deployment` or use the repository we provided.
-  ```bash
-   automate_deployment/./build.sh
-   ```
-#### Deploy 
-If the image repository was changed when building, update the `development.yaml` file in `k8s` folder with your image repository
-  ```bash
-   automate_deployment/./deploy.sh
-   ```
-
-### Tekton pipeline deployment script
-Deploy with tekton with the pipeline deployment script in `automated_deployment` directory. Setup environment variabes after deployment
-   ```bash
-   automate_deployment/./pipeline.sh
-   ```
+    Install dependencies:
 
 
-### Red Hat SSO Server on OpenShift Cluster
+    npm install
 
-1. Instantiate the Redhat SSO Persistent volume template to deploy SSO server on your OpenShift cluster.
-2. Configure the necessary realms, clients, and users within the Red Hat SSO administration console.
+Set up environment variables:
+
+    Create a .env file in the root directory and add the following:
+
+env
+
+OPENAI_API_KEY=your-openai-api-key
+
+Replace the placeholders with your actual values.
+
+Go to the config/config.js file set these with actual values from your mongoDb  
+    username: 'your_username',
+      password: 'your_password',
+      database: 'post',
+      host: 'localhost',
+      dialect: 'mysql',
 
 
-## Environment Variables
 
-This project uses several environment variables to configure various aspects. These variables are stored in a file named `.env` in the project root directory. Below is a list of available environment variables and their purposes:
+Finally go to db/mariaDb.js file
 
-### Database Configuration
+Replace the placeholders with your actual values.
 
-- **MARIADB_USER**: Username for MariaDB database.
-- **MARIADB_PASSWORD**: Password for MariaDB database.
-- **MARIADB_DB_NAME**: Name of the MariaDB database.
-- **MARIADB_PORT**: Port on which MariaDB is running.
-- **MARIADB_SERVER**: Server or host address for MariaDB.
+Start the server:
 
-### Google OAuth Configuration
 
-- **GOOGLE_CLIENT_ID**: Client ID for Google OAuth.
-- **GOOGLE_CLIENT_SECRET**: Client Secret for Google OAuth.
+    npm start
 
-### JWT Token Configuration
+Usage
+API Endpoints
 
-- **ACCESS_SECRET**: Secret key for JWT token.
-- **ACCESS_EXPIRES_IN**: Expiry time for JWT token in seconds.
+    /api/:userId/chatbot (POST): Send a message to the chatbot.
+    /api/generate-educational-tweet (POST): Generate an educational tweet about climate or disasters.
+    /api/educational-tweet (GET): Get a list of educational tweets.
 
-### Server Configuration
+ChatBot Usage
 
-- **PORT**: Port on which the server will run.
-- **BASE_URL**: Base URL for the application.
+    Send a POST request to /api/:userId/chatbot with a JSON body containing message and userLocation.
+    If the message is a greeting, the chatbot will respond with a welcome message.
+    If it's not a greeting, the chatbot will generate responses using the OpenAI GPT-3 model.
 
-### Keycloak Configuration
+Project Structure
 
-- **KEYCLOAK_SERVER_URL**: URL of the Keycloak server.
-- **KEYCLOAK_CLIENT_SECRET**: Client secret for Keycloak.
+    app.js: Entry point for the Express application.
+    controllers/: Contains controllers for handling API routes.
+    models/: Defines MongoDB and MariaDB (Sequelize) data models.
+    routes/: Defines API routes.
+    logger.js: Custom logger for the application.
+    views/: Frontend views (if applicable).
 
-### LinkedIn OAuth Configuration
+Contributing
 
-- **LINKEDIN_CLIENT_ID**: Client ID for LinkedIn OAuth.
-- **LINKEDIN_CLIENT_SECRET**: Client Secret for LinkedIn OAuth.
+We welcome contributions from the community! To contribute to this project, please follow these steps:
 
-### Facebook OAuth Configuration
+    Fork the repository.
+    Create a new branch for your feature or bug fix.
+    Implement your changes and ensure they are well-documented and tested.
+    Create a pull request to the main branch of the original repository.
+    Wait for a maintainer to review your PR.
 
-- **FB_CLIENT_ID**: Client ID for Facebook OAuth.
-- **FB_CLIENT_SECRET**: Client Secret for Facebook OAuth.
+License
 
-### License
+This project is licensed under the MIT License - see the LICENSE file for details.
+Acknowledgments
 
-This project is licensed under the [MIT License](LICENSE).
+We would like to express our gratitude to the following libraries and tools that make this project possible:
+
+    Express.js
+    Mongoose
+    Sequelize
+    OpenAI GPT-3

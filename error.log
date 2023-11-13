@@ -1,0 +1,82 @@
+2023-10-28T17:02:06.071Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T17:02:06.084Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T17:02:15.239Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T17:02:15.256Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T17:08:38.693Z [error]: (conn=13, no: 1054, SQLState: 42S22) Unknown column 'categoryId' in 'field list'
+sql: SELECT `id`, `content`, `timestamp`, `categoryId`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-28T17:09:01.378Z [error]: (conn=16, no: 1054, SQLState: 42S22) Unknown column 'categoryId' in 'field list'
+sql: SELECT `id`, `content`, `timestamp`, `categoryId`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-28T17:09:02.095Z [error]: (conn=16, no: 1054, SQLState: 42S22) Unknown column 'categoryId' in 'field list'
+sql: SELECT `id`, `content`, `timestamp`, `categoryId`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-28T17:09:21.288Z [error]: (conn=18, no: 1054, SQLState: 42S22) Unknown column 'categoryId' in 'field list'
+sql: SELECT `id`, `content`, `timestamp`, `categoryId`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-28T17:09:52.159Z [error]: (conn=21, no: 1054, SQLState: 42S22) Unknown column 'categoryId' in 'field list'
+sql: SELECT `id`, `content`, `timestamp`, `categoryId`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-28T17:23:00.649Z [error]: (conn=28, no: 1364, SQLState: HY000) Field 'category' doesn't have a default value
+sql: INSERT INTO `EducationPosts` (`id`,`content`,`timestamp`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?); - parameters:['
+
+"Did you know that climate change can increase the frequency and intensity of natural disasters like earthquakes and flooding? Let'...]
+2023-10-28T17:23:27.425Z [error]: (conn=29, no: 1364, SQLState: HY000) Field 'category' doesn't have a default value
+sql: INSERT INTO `EducationPosts` (`id`,`content`,`timestamp`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?); - parameters:['
+
+"Did you know that climate change can increase the frequency and intensity of natural disasters like floods, earthquakes and hurric...]
+2023-10-28T17:27:18.491Z [error]: notNull Violation: EducationPost.category cannot be null
+2023-10-28T21:28:04.715Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T21:28:04.759Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T21:29:53.287Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T21:29:53.326Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-29T06:48:22.924Z [error]: (conn=19, no: 1146, SQLState: 42S02) Table 'post.EducationPosts' doesn't exist
+sql: SELECT `id`, `content`, `timestamp`, `category`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-29T06:48:26.281Z [error]: (conn=19, no: 1146, SQLState: 42S02) Table 'post.EducationPosts' doesn't exist
+sql: SELECT `id`, `content`, `timestamp`, `category`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-29T06:49:05.050Z [error]: (conn=23, no: 1146, SQLState: 42S02) Table 'post.EducationPosts' doesn't exist
+sql: SELECT `id`, `content`, `timestamp`, `category`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-29T06:52:21.239Z [error]: (conn=11, no: 1406, SQLState: 22001) Data too long for column 'content' at row 1
+sql: INSERT INTO `EducationPosts` (`id`,`content`,`timestamp`,`category`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?); - parameters:['
+
+"Let's not forget the impact of climate change on our communities and economies. Rising sea levels and extreme weather...]
+2023-10-29T07:52:41.594Z [error]: isGreeting is not defined
+2023-11-06T13:14:17.913Z [error]: Cannot read properties of undefined (reading 'prediction')
+2023-11-06T13:15:18.102Z [error]: prediction is not defined
+2023-11-06T13:19:40.795Z [error]: Error in generateOpenAIResponse: message is not defined
+2023-11-06T13:19:40.801Z [error]: message is not defined
+2023-11-06T13:34:49.983Z [error]: Error connecting to MongoDB: querySrv ESERVFAIL _mongodb._tcp.cluster0.nel0lco.mongodb.net
+2023-11-06T13:37:53.923Z [error]: Error connecting to MongoDB: querySrv ESERVFAIL _mongodb._tcp.cluster0.nel0lco.mongodb.net
+2023-11-06T16:08:01.576Z [error]: Error in generateOpenAIResponse: message is not defined
+2023-11-06T16:08:01.580Z [error]: message is not defined
+2023-11-06T16:08:38.097Z [error]: Error in generateOpenAIResponse: message is not defined
+2023-11-06T16:08:38.105Z [error]: message is not defined
+2023-11-06T16:51:03.558Z [error]: Error connecting to MongoDB: querySrv ESERVFAIL _mongodb._tcp.cluster0.nel0lco.mongodb.net
+2023-11-06T16:51:10.043Z [error]: getaddrinfo EAI_AGAIN waver-x-nlp-olagoldhackxx-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com
+2023-11-10T08:08:16.378Z [error]: Request failed with status code 405
+2023-11-10T08:08:23.009Z [error]: Request failed with status code 405
+2023-11-10T08:09:51.916Z [error]: Request failed with status code 405
+2023-11-10T08:10:18.364Z [error]: Request failed with status code 405
+2023-11-10T08:15:06.422Z [error]: Request failed with status code 405
+2023-11-10T17:25:42.944Z [error]: Request failed with status code 503
+2023-11-10T17:48:25.204Z [error]: Request failed with status code 404
+2023-11-10T17:49:16.950Z [error]: Request failed with status code 404
+2023-11-10T17:55:52.799Z [error]: Unexpected token o in JSON at position 1
+2023-11-10T17:58:10.098Z [error]: Unexpected token o in JSON at position 1
+2023-11-10T17:58:50.724Z [error]: Unexpected token o in JSON at position 1
+2023-11-10T17:59:12.901Z [error]: Converting circular structure to JSON
+    --> starting at object with constructor 'ClientRequest'
+    |     property 'socket' -> object with constructor 'TLSSocket'
+    --- property '_httpMessage' closes the circle
+2023-11-10T17:59:57.895Z [error]: Unexpected token o in JSON at position 1
+2023-11-10T18:00:52.584Z [error]: Converting circular structure to JSON
+    --> starting at object with constructor 'ClientRequest'
+    |     property 'socket' -> object with constructor 'TLSSocket'
+    --- property '_httpMessage' closes the circle
+2023-11-10T19:45:53.681Z [error]: Error in generateOpenAIResponse: nlpRes.charAt(...).toUppercase is not a function
+2023-11-10T19:45:53.684Z [error]: nlpRes.charAt(...).toUppercase is not a function
+2023-11-11T08:45:48.171Z [error]: Request failed with status code 503
+2023-11-11T08:46:31.651Z [error]: Request failed with status code 503
+2023-11-11T08:48:32.759Z [error]: Cannot access 'nlpRes' before initialization
+2023-11-11T08:49:13.932Z [error]: Cannot access 'nlpRes' before initialization
+2023-11-11T18:41:16.855Z [error]: uuidv4 is not defined
+2023-11-11T18:42:07.645Z [error]: notNull Violation: user.created_at cannot be null,
+notNull Violation: user.updated_at cannot be null
+2023-11-11T18:45:46.488Z [error]: WHERE parameter "id" has invalid "undefined" value
+2023-11-11T18:47:16.423Z [error]: Assignment to constant variable.
+2023-11-11T18:48:50.817Z [error]: Assignment to constant variable.
