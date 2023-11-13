@@ -1,27 +1,40 @@
-kind: Deployment
+---
 apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: climatewavers
-  labels:
-    app: climatewavers
-    sandbox: olagoldhackxx
-    sandbox-olagoldhackxx: climatewavers
+  name: climatewavers-mariadb
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: climatewavers
+      app: climatewavers-mariadb
   template:
     metadata:
       labels:
-        app: climatewavers
+        app: climatewavers-mariadb
     spec:
-      imagePullSecrets:
-        - name: quay-registry-secret
       containers:
-        - name: climatewavers
-          image: quay.io/olagoldhackxx/climatewavers:v1
-          imagePullPolicy: Always
+        - env:
+            - name: MYSQL_USER
+              value: climatewavers
+            - name: MYSQL_PASSWORD
+              value: waverx
+            - name: MYSQL_DATABASE
+              value: climatewavers_db
+            - name: MYSQL_ROOT_PASSWORD
+              value: waver
+          image: mariadb:latest
+          name: climatewavers-mariadb
           ports:
-            - containerPort: 8000
-              protocol: TCP
+            - containerPort: 3306
+          resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi
+          volumeMounts:
+            - mountPath: /var/lib/mysql
+              name: mariadbvolume
+      volumes:
+        - name: mariadbvolume
+          persistentVolumeClaim:
+            claimName: mariadbvolume
