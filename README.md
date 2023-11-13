@@ -101,4 +101,4 @@ This project is shared under the [MIT License](#).
 
 ## Contact Information
 
-For support or queries, please contact me at masterjoetech@gmail.com
+For support or queries, please contact me at climatewaver@gmail.com
