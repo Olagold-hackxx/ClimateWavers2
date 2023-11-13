@@ -3,19 +3,19 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: waverx-nlp
-    app.kubernetes.io/component: waverx-nlp
-    app.kubernetes.io/instance: waverx-nlp
-    app.kubernetes.io/name: waverx-nlp
-  name: waverx-nlp
+    app: chatbot
+    app.kubernetes.io/component: chatbot
+    app.kubernetes.io/instance: chatbot
+    app.kubernetes.io/name: chatbot
+  name: chatbot
 spec:
   ports:
-    - name: 5000-tcp
-      port: 5000
+    - name: 3000-tcp
+      port: 3000
       protocol: TCP
-      targetPort: 5000
+      targetPort: 3000
   selector:
-    app: waverx-nlp
+    app: chatbot
   sessionAffinity: None
   type: ClusterIP
   wildcardPolicy: None

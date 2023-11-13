@@ -1,0 +1,746 @@
+2023-10-16T10:23:51.102Z [info]: Server is running on port 3000
+2023-10-16T10:23:54.396Z [info]: Connected to MongoDB Atlas
+2023-10-16T10:27:39.409Z [info]: Server is running on port 3000
+2023-10-16T10:27:42.956Z [info]: Connected to MongoDB Atlas
+2023-10-16T10:29:04.294Z [info]: Server is running on port 3000
+2023-10-16T10:29:08.068Z [info]: Connected to MongoDB Atlas
+2023-10-16T10:29:59.710Z [info]: Server is running on port 3000
+2023-10-16T10:30:02.035Z [info]: Connected to MongoDB Atlas
+2023-10-16T12:43:10.918Z [info]: Server is running on port 3000
+2023-10-16T12:43:14.399Z [info]: Connected to MongoDB Atlas
+2023-10-16T12:44:14.909Z [error]: Error in chatBot: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-16T12:44:25.693Z [error]: Error in chatBot: Conversation validation failed: conversation.3.message: Path `message` is required., conversation.5.message: Path `message` is required.
+2023-10-16T12:47:47.655Z [info]: Server is running on port 3000
+2023-10-16T12:47:51.904Z [info]: Connected to MongoDB Atlas
+2023-10-16T12:48:37.354Z [error]: Error in chatBot: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-16T12:49:09.354Z [info]: Server is running on port 3000
+2023-10-16T12:49:12.248Z [info]: Connected to MongoDB Atlas
+2023-10-16T12:50:11.325Z [error]: Error in chatBot: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-16T12:51:52.614Z [info]: Server is running on port 3000
+2023-10-16T12:51:55.865Z [info]: Connected to MongoDB Atlas
+2023-10-16T12:56:17.093Z [info]: Server is running on port 3000
+2023-10-16T12:56:20.246Z [info]: Connected to MongoDB Atlas
+2023-10-16T12:57:51.147Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-16T12:58:16.273Z [info]: Server is running on port 3000
+2023-10-16T12:58:19.345Z [info]: Connected to MongoDB Atlas
+2023-10-16T13:05:50.634Z [info]: Server is running on port 3000
+2023-10-16T13:05:53.894Z [info]: Connected to MongoDB Atlas
+2023-10-16T13:09:01.643Z [info]: Server is running on port 3000
+2023-10-16T13:09:05.094Z [info]: Connected to MongoDB Atlas
+2023-10-16T13:10:14.722Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-16T13:14:22.005Z [info]: Server is running on port 3000
+2023-10-16T13:14:25.285Z [info]: Connected to MongoDB Atlas
+2023-10-16T13:14:37.536Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required., conversation.5.message: Path `message` is required.
+2023-10-16T13:16:36.400Z [info]: Server is running on port 3000
+2023-10-16T13:16:39.656Z [info]: Connected to MongoDB Atlas
+2023-10-16T13:19:07.968Z [info]: Server is running on port 3000
+2023-10-16T13:19:11.091Z [info]: Connected to MongoDB Atlas
+2023-10-16T13:41:24.387Z [info]: Server is running on port 3000
+2023-10-16T13:41:27.608Z [info]: Connected to MongoDB Atlas
+2023-10-16T13:44:55.487Z [info]: Server is running on port 3000
+2023-10-16T13:44:58.603Z [info]: Connected to MongoDB Atlas
+2023-10-16T13:46:10.935Z [info]: Server is running on port 3000
+2023-10-16T13:46:14.362Z [info]: Connected to MongoDB Atlas
+2023-10-16T13:47:16.425Z [info]: Server is running on port 3000
+2023-10-16T13:47:19.485Z [info]: Connected to MongoDB Atlas
+2023-10-16T13:47:46.840Z [info]: Server is running on port 3000
+2023-10-16T13:47:49.226Z [info]: Connected to MongoDB Atlas
+2023-10-16T13:48:21.347Z [info]: Server is running on port 3000
+2023-10-16T13:48:24.546Z [info]: Connected to MongoDB Atlas
+2023-10-16T15:38:22.340Z [info]: Server is running on port 3000
+2023-10-16T15:38:22.350Z [error]: Error connecting to MongoDB: querySrv ESERVFAIL _mongodb._tcp.cluster0.nel0lco.mongodb.net
+2023-10-16T15:38:33.862Z [info]: Server is running on port 3000
+2023-10-16T15:38:42.518Z [info]: Connected to MongoDB Atlas
+2023-10-16T16:28:24.123Z [info]: Server is running on port 3000
+2023-10-16T16:28:27.514Z [info]: Connected to MongoDB Atlas
+2023-10-16T16:30:22.104Z [error]: Error in generateOpenAIResponse: 401 Incorrect API key provided: sk-yt2xu***************************************D8gz. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-10-16T16:30:22.107Z [error]: 401 Incorrect API key provided: sk-yt2xu***************************************D8gz. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-10-16T16:30:45.251Z [error]: Conversation validation failed: conversation.9.message: Path `message` is required.
+2023-10-16T16:31:06.174Z [error]: Error in generateOpenAIResponse: 401 Incorrect API key provided: sk-yt2xu***************************************D8gz. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-10-16T16:31:06.177Z [error]: 401 Incorrect API key provided: sk-yt2xu***************************************D8gz. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-10-16T16:33:25.091Z [error]: Error in generateOpenAIResponse: 401 Incorrect API key provided: sk-yt2xu***************************************D8gz. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-10-16T16:33:25.094Z [error]: 401 Incorrect API key provided: sk-yt2xu***************************************D8gz. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-10-16T16:33:40.408Z [error]: Error in generateOpenAIResponse: 401 Incorrect API key provided: sk-yt2xu***************************************D8gz. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-10-16T16:33:40.410Z [error]: 401 Incorrect API key provided: sk-yt2xu***************************************D8gz. You can find your API key at https://platform.openai.com/account/api-keys.
+2023-10-16T16:33:52.373Z [info]: Server is running on port 3000
+2023-10-16T16:33:55.760Z [info]: Connected to MongoDB Atlas
+2023-10-16T17:17:12.714Z [info]: Server is running on port 3000
+2023-10-16T17:17:12.724Z [error]: Error connecting to MongoDB: querySrv ESERVFAIL _mongodb._tcp.cluster0.nel0lco.mongodb.net
+2023-10-16T17:17:59.534Z [info]: Server is running on port 3000
+2023-10-16T17:18:02.690Z [info]: Connected to MongoDB Atlas
+2023-10-23T14:02:36.118Z [info]: Server is running on port 3000
+2023-10-23T14:02:40.466Z [info]: Connected to MongoDB Atlas
+2023-10-23T14:04:33.158Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T16:05:36.181Z [info]: Server is running on port 3000
+2023-10-23T16:05:36.198Z [error]: Error connecting to MongoDB: querySrv ESERVFAIL _mongodb._tcp.cluster0.nel0lco.mongodb.net
+2023-10-23T16:05:46.567Z [info]: Server is running on port 3000
+2023-10-23T16:05:50.441Z [info]: Connected to MongoDB Atlas
+2023-10-23T16:07:13.000Z [error]: 400 Unrecognized request argument supplied: context
+2023-10-23T16:09:27.188Z [info]: Server is running on port 3000
+2023-10-23T16:09:30.856Z [info]: Connected to MongoDB Atlas
+2023-10-23T16:09:39.650Z [error]: 400 Unrecognized request argument supplied: context
+2023-10-23T16:10:06.586Z [info]: Server is running on port 3000
+2023-10-23T16:10:09.032Z [info]: Connected to MongoDB Atlas
+2023-10-23T16:11:41.790Z [info]: Server is running on port 3000
+2023-10-23T16:11:45.244Z [info]: Connected to MongoDB Atlas
+2023-10-23T16:21:11.488Z [info]: Server is running on port 3000
+2023-10-23T16:21:15.974Z [info]: Connected to MongoDB Atlas
+2023-10-23T16:22:45.690Z [info]: Server is running on port 3000
+2023-10-23T16:22:49.069Z [info]: Connected to MongoDB Atlas
+2023-10-23T16:29:39.212Z [info]: Server is running on port 3000
+2023-10-23T16:29:43.393Z [info]: Connected to MongoDB Atlas
+2023-10-23T16:32:27.405Z [info]: Server is running on port 3000
+2023-10-23T16:32:30.615Z [info]: Connected to MongoDB Atlas
+2023-10-23T16:36:25.474Z [info]: Server is running on port 3000
+2023-10-23T16:36:28.959Z [info]: Connected to MongoDB Atlas
+2023-10-23T16:36:45.978Z [error]: Error in generateOpenAIResponse: conversationHistory.map is not a function
+2023-10-23T16:36:45.985Z [error]: conversationHistory.map is not a function
+2023-10-23T16:37:02.460Z [error]: Error in generateOpenAIResponse: conversationHistory.map is not a function
+2023-10-23T16:37:02.475Z [error]: conversationHistory.map is not a function
+2023-10-23T16:37:23.615Z [info]: Server is running on port 3000
+2023-10-23T16:37:26.080Z [info]: Connected to MongoDB Atlas
+2023-10-23T17:00:11.677Z [info]: Server is running on port 3000
+2023-10-23T17:00:15.130Z [info]: Connected to MongoDB Atlas
+2023-10-23T17:03:46.690Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T17:04:06.631Z [info]: Server is running on port 3000
+2023-10-23T17:04:10.408Z [info]: Connected to MongoDB Atlas
+2023-10-23T17:04:17.782Z [error]: Cannot read properties of undefined (reading 'toLowerCase')
+2023-10-23T17:04:25.606Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T17:09:07.006Z [info]: Server is running on port 3000
+2023-10-23T17:09:10.687Z [info]: Connected to MongoDB Atlas
+2023-10-23T17:09:16.698Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T17:13:17.719Z [info]: Server is running on port 3000
+2023-10-23T17:13:21.066Z [info]: Connected to MongoDB Atlas
+2023-10-23T17:13:25.999Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T17:17:52.267Z [info]: Server is running on port 3000
+2023-10-23T17:17:56.186Z [info]: Connected to MongoDB Atlas
+2023-10-23T17:19:08.916Z [info]: Server is running on port 3000
+2023-10-23T17:19:13.014Z [info]: Connected to MongoDB Atlas
+2023-10-23T17:21:28.214Z [info]: Server is running on port 3000
+2023-10-23T17:21:31.657Z [info]: Connected to MongoDB Atlas
+2023-10-23T17:28:45.992Z [info]: Server is running on port 3000
+2023-10-23T17:28:49.739Z [info]: Connected to MongoDB Atlas
+2023-10-23T17:30:38.921Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T17:35:31.300Z [info]: Server is running on port 3000
+2023-10-23T17:35:35.433Z [info]: Connected to MongoDB Atlas
+2023-10-23T17:36:28.608Z [info]: Server is running on port 3000
+2023-10-23T17:36:30.861Z [info]: Connected to MongoDB Atlas
+2023-10-23T17:36:38.379Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T17:37:07.269Z [info]: Server is running on port 3000
+2023-10-23T17:37:10.001Z [info]: Connected to MongoDB Atlas
+2023-10-23T17:37:15.554Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T17:45:49.305Z [info]: Server is running on port 3000
+2023-10-23T17:45:52.708Z [info]: Connected to MongoDB Atlas
+2023-10-23T17:45:58.496Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T17:47:43.391Z [info]: Server is running on port 3000
+2023-10-23T17:47:46.601Z [info]: Connected to MongoDB Atlas
+2023-10-23T17:48:25.081Z [info]: Server is running on port 3000
+2023-10-23T17:48:27.429Z [info]: Connected to MongoDB Atlas
+2023-10-23T17:50:15.399Z [info]: Server is running on port 3000
+2023-10-23T17:50:20.715Z [info]: Connected to MongoDB Atlas
+2023-10-23T17:50:39.493Z [info]: Server is running on port 3000
+2023-10-23T17:50:41.771Z [info]: Connected to MongoDB Atlas
+2023-10-23T17:51:03.099Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T17:52:30.701Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T17:58:48.080Z [info]: Server is running on port 3000
+2023-10-23T17:58:51.558Z [info]: Connected to MongoDB Atlas
+2023-10-23T17:59:17.457Z [error]: E11000 duplicate key error collection: test.conversations index: userId_1 dup key: { userId: "1" }
+2023-10-23T18:00:01.476Z [info]: Server is running on port 3000
+2023-10-23T18:00:06.631Z [info]: Connected to MongoDB Atlas
+2023-10-23T18:00:27.694Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T18:15:49.989Z [info]: Server is running on port 3000
+2023-10-23T18:15:54.650Z [info]: Connected to MongoDB Atlas
+2023-10-23T18:16:01.200Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T18:30:16.656Z [info]: Server is running on port 3000
+2023-10-23T18:30:22.721Z [info]: Connected to MongoDB Atlas
+2023-10-23T18:31:54.926Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T18:41:13.693Z [info]: Server is running on port 3000
+2023-10-23T18:41:18.443Z [info]: Connected to MongoDB Atlas
+2023-10-23T18:41:23.751Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T18:42:00.527Z [info]: Server is running on port 3000
+2023-10-23T18:42:02.814Z [info]: Connected to MongoDB Atlas
+2023-10-23T18:42:51.275Z [error]: Conversation validation failed: conversation.5.message: Path `message` is required.
+2023-10-23T18:43:41.997Z [error]: Conversation validation failed: conversation.7.message: Path `message` is required.
+2023-10-23T18:45:07.037Z [error]: Conversation validation failed: conversation.7.message: Path `message` is required.
+2023-10-23T18:45:17.128Z [error]: Conversation validation failed: conversation.7.message: Path `message` is required.
+2023-10-23T18:45:29.936Z [error]: Conversation validation failed: conversation.7.message: Path `message` is required.
+2023-10-23T18:50:31.387Z [info]: Server is running on port 3000
+2023-10-23T18:50:35.466Z [info]: Connected to MongoDB Atlas
+2023-10-23T18:50:40.493Z [error]: Conversation validation failed: conversation.7.message: Path `message` is required.
+2023-10-23T19:15:38.031Z [info]: Server is running on port 3000
+2023-10-23T19:15:41.623Z [info]: Connected to MongoDB Atlas
+2023-10-23T19:15:45.771Z [error]: Conversation validation failed: conversation.7.message: Path `message` is required.
+2023-10-23T19:17:02.745Z [info]: Server is running on port 3000
+2023-10-23T19:17:07.005Z [info]: Connected to MongoDB Atlas
+2023-10-23T19:17:27.863Z [error]: E11000 duplicate key error collection: test.conversations index: conversation.sender_1 dup key: { conversation.sender: "user" }
+2023-10-23T19:21:19.188Z [info]: Server is running on port 3000
+2023-10-23T19:21:22.538Z [info]: Connected to MongoDB Atlas
+2023-10-23T19:21:58.628Z [info]: Server is running on port 3000
+2023-10-23T19:22:00.929Z [info]: Connected to MongoDB Atlas
+2023-10-23T19:24:38.556Z [info]: Server is running on port 3000
+2023-10-23T19:24:42.218Z [info]: Connected to MongoDB Atlas
+2023-10-23T19:25:00.557Z [info]: Server is running on port 3000
+2023-10-23T19:25:02.901Z [info]: Connected to MongoDB Atlas
+2023-10-23T19:32:29.091Z [info]: Server is running on port 3000
+2023-10-23T19:32:35.213Z [info]: Connected to MongoDB Atlas
+2023-10-23T19:35:38.545Z [info]: Server is running on port 3000
+2023-10-23T19:35:43.469Z [info]: Connected to MongoDB Atlas
+2023-10-23T19:36:07.850Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T19:37:53.448Z [error]: Conversation validation failed: conversation.5.message: Path `message` is required.
+2023-10-23T19:38:23.371Z [error]: Conversation validation failed: conversation.5.message: Path `message` is required.
+2023-10-23T19:38:40.015Z [error]: Conversation validation failed: conversation.5.message: Path `message` is required.
+2023-10-23T19:39:47.210Z [info]: Server is running on port 3000
+2023-10-23T19:39:51.784Z [info]: Connected to MongoDB Atlas
+2023-10-23T19:40:04.100Z [error]: Conversation validation failed: conversation.5.message: Path `message` is required.
+2023-10-23T19:40:57.237Z [info]: Server is running on port 3000
+2023-10-23T19:41:00.819Z [info]: Connected to MongoDB Atlas
+2023-10-23T19:41:06.147Z [error]: Conversation validation failed: conversation.5.message: Path `message` is required.
+2023-10-23T19:42:44.957Z [info]: Server is running on port 3000
+2023-10-23T19:42:48.936Z [info]: Connected to MongoDB Atlas
+2023-10-23T19:43:08.478Z [info]: Server is running on port 3000
+2023-10-23T19:43:11.036Z [info]: Connected to MongoDB Atlas
+2023-10-23T19:46:34.061Z [error]: Conversation validation failed: conversation.9.message: Path `message` is required.
+2023-10-23T19:47:11.613Z [info]: Server is running on port 3000
+2023-10-23T19:47:23.954Z [info]: Connected to MongoDB Atlas
+2023-10-23T19:48:15.395Z [error]: Conversation validation failed: conversation.15.message: Path `message` is required.
+2023-10-23T19:48:47.083Z [info]: Server is running on port 3000
+2023-10-23T19:48:52.232Z [info]: Connected to MongoDB Atlas
+2023-10-23T19:50:49.974Z [error]: Error in generateOpenAIResponse: 429 Rate limit reached for * in organization org-HmOwy4EZavdJNLUCr1cRPxYY on requests per min. Limit: 3 / min. Please try again in 20s. Contact us through our help center at help.openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.
+2023-10-23T19:50:49.980Z [error]: 429 Rate limit reached for * in organization org-HmOwy4EZavdJNLUCr1cRPxYY on requests per min. Limit: 3 / min. Please try again in 20s. Contact us through our help center at help.openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.
+2023-10-23T19:52:03.513Z [info]: Server is running on port 3000
+2023-10-23T19:52:03.522Z [error]: Error connecting to MongoDB: querySrv ESERVFAIL _mongodb._tcp.cluster0.nel0lco.mongodb.net
+2023-10-23T19:52:27.856Z [info]: Server is running on port 3000
+2023-10-23T19:52:31.087Z [info]: Connected to MongoDB Atlas
+2023-10-23T19:52:49.489Z [error]: Conversation validation failed: conversation.27.message: Path `message` is required.
+2023-10-23T19:53:54.898Z [info]: Server is running on port 3000
+2023-10-23T19:53:59.066Z [info]: Connected to MongoDB Atlas
+2023-10-23T19:55:38.605Z [info]: Server is running on port 3000
+2023-10-23T19:55:42.275Z [info]: Connected to MongoDB Atlas
+2023-10-23T19:56:16.544Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T20:16:36.796Z [info]: Server is running on port 3000
+2023-10-23T20:16:40.773Z [info]: Connected to MongoDB Atlas
+2023-10-23T20:16:47.958Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T20:17:01.078Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T20:17:21.055Z [info]: Server is running on port 3000
+2023-10-23T20:17:23.393Z [info]: Connected to MongoDB Atlas
+2023-10-23T20:17:26.941Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T20:17:52.088Z [info]: Server is running on port 3000
+2023-10-23T20:17:55.228Z [info]: Connected to MongoDB Atlas
+2023-10-23T20:18:22.681Z [error]: Conversation validation failed: conversation.3.message: Path `message` is required.
+2023-10-23T20:25:38.995Z [info]: Server is running on port 3000
+2023-10-23T20:25:43.060Z [info]: Connected to MongoDB Atlas
+2023-10-23T20:28:38.800Z [error]: Conversation validation failed: conversation.15.message: Path `message` is required.
+2023-10-23T20:34:14.517Z [info]: Server is running on port 3000
+2023-10-23T20:34:19.261Z [info]: Connected to MongoDB Atlas
+2023-10-23T20:35:19.603Z [error]: Conversation validation failed: conversation.19.message: Path `message` is required.
+2023-10-23T20:38:10.953Z [info]: Server is running on port 3000
+2023-10-23T20:38:14.884Z [info]: Connected to MongoDB Atlas
+2023-10-23T20:39:08.342Z [error]: Error in generateOpenAIResponse: 429 Rate limit reached for * in organization org-HmOwy4EZavdJNLUCr1cRPxYY on requests per min. Limit: 3 / min. Please try again in 20s. Contact us through our help center at help.openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.
+2023-10-23T20:39:08.346Z [error]: 429 Rate limit reached for * in organization org-HmOwy4EZavdJNLUCr1cRPxYY on requests per min. Limit: 3 / min. Please try again in 20s. Contact us through our help center at help.openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.
+2023-10-23T20:39:24.050Z [info]: Server is running on port 3000
+2023-10-23T20:39:28.656Z [info]: Connected to MongoDB Atlas
+2023-10-23T20:41:28.487Z [error]: Error in generateOpenAIResponse: 429 Rate limit reached for * in organization org-HmOwy4EZavdJNLUCr1cRPxYY on requests per min. Limit: 3 / min. Please try again in 20s. Contact us through our help center at help.openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.
+2023-10-23T20:41:28.491Z [error]: 429 Rate limit reached for * in organization org-HmOwy4EZavdJNLUCr1cRPxYY on requests per min. Limit: 3 / min. Please try again in 20s. Contact us through our help center at help.openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.
+2023-10-23T20:42:51.817Z [info]: Server is running on port 3000
+2023-10-23T20:42:55.534Z [info]: Connected to MongoDB Atlas
+2023-10-23T20:43:45.911Z [info]: Server is running on port 3000
+2023-10-23T20:43:48.206Z [info]: Connected to MongoDB Atlas
+2023-10-23T20:45:09.192Z [info]: Server is running on port 3000
+2023-10-23T20:45:12.880Z [info]: Connected to MongoDB Atlas
+2023-10-23T20:46:37.727Z [error]: Error in generateOpenAIResponse: 429 Rate limit reached for * in organization org-HmOwy4EZavdJNLUCr1cRPxYY on requests per min. Limit: 3 / min. Please try again in 20s. Contact us through our help center at help.openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.
+2023-10-23T20:46:37.730Z [error]: 429 Rate limit reached for * in organization org-HmOwy4EZavdJNLUCr1cRPxYY on requests per min. Limit: 3 / min. Please try again in 20s. Contact us through our help center at help.openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.
+2023-10-23T20:47:28.964Z [info]: Server is running on port 3000
+2023-10-23T20:47:32.934Z [info]: Connected to MongoDB Atlas
+2023-10-23T20:50:31.137Z [info]: Server is running on port 3000
+2023-10-23T20:50:34.173Z [info]: Connected to MongoDB Atlas
+2023-10-23T20:50:54.869Z [error]: Error in generateOpenAIResponse: 429 Rate limit reached for * in organization org-HmOwy4EZavdJNLUCr1cRPxYY on requests per min. Limit: 3 / min. Please try again in 20s. Contact us through our help center at help.openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.
+2023-10-23T20:50:54.871Z [error]: 429 Rate limit reached for * in organization org-HmOwy4EZavdJNLUCr1cRPxYY on requests per min. Limit: 3 / min. Please try again in 20s. Contact us through our help center at help.openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.
+2023-10-23T20:53:07.393Z [info]: Server is running on port 3000
+2023-10-23T20:53:11.088Z [info]: Connected to MongoDB Atlas
+2023-10-23T20:53:16.659Z [error]: Error in generateOpenAIResponse: 400 5 is greater than the maximum of 2 - 'temperature'
+2023-10-23T20:53:16.665Z [error]: 400 5 is greater than the maximum of 2 - 'temperature'
+2023-10-23T20:53:33.737Z [info]: Server is running on port 3000
+2023-10-23T20:53:36.167Z [info]: Connected to MongoDB Atlas
+2023-10-23T20:55:06.039Z [info]: Server is running on port 3000
+2023-10-23T20:55:09.032Z [info]: Connected to MongoDB Atlas
+2023-10-23T20:58:46.685Z [info]: Server is running on port 3000
+2023-10-23T20:58:51.017Z [info]: Connected to MongoDB Atlas
+2023-10-23T20:59:45.013Z [info]: Server is running on port 3000
+2023-10-23T20:59:47.212Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:00:38.910Z [error]: Error in generateOpenAIResponse: 429 Rate limit reached for * in organization org-HmOwy4EZavdJNLUCr1cRPxYY on requests per min. Limit: 3 / min. Please try again in 20s. Contact us through our help center at help.openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.
+2023-10-23T21:00:38.917Z [error]: 429 Rate limit reached for * in organization org-HmOwy4EZavdJNLUCr1cRPxYY on requests per min. Limit: 3 / min. Please try again in 20s. Contact us through our help center at help.openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.
+2023-10-23T21:01:40.336Z [info]: Server is running on port 3000
+2023-10-23T21:01:44.370Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:04:09.262Z [info]: Server is running on port 3000
+2023-10-23T21:04:12.903Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:05:40.527Z [info]: Server is running on port 3000
+2023-10-23T21:05:45.380Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:08:26.107Z [info]: Server is running on port 3000
+2023-10-23T21:08:29.621Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:08:56.911Z [info]: Server is running on port 3000
+2023-10-23T21:08:59.174Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:10:10.415Z [info]: Server is running on port 3000
+2023-10-23T21:10:14.472Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:12:34.397Z [info]: Server is running on port 3000
+2023-10-23T21:12:37.822Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:12:42.442Z [error]: Error in generateOpenAIResponse: 400 you must provide a model parameter
+2023-10-23T21:12:42.449Z [error]: 400 you must provide a model parameter
+2023-10-23T21:12:45.992Z [error]: Error in generateOpenAIResponse: 400 you must provide a model parameter
+2023-10-23T21:12:45.994Z [error]: 400 you must provide a model parameter
+2023-10-23T21:13:32.301Z [info]: Server is running on port 3000
+2023-10-23T21:13:34.556Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:13:40.836Z [error]: Error in generateOpenAIResponse: 400 Unrecognized request argument supplied: engine
+2023-10-23T21:13:40.840Z [error]: 400 Unrecognized request argument supplied: engine
+2023-10-23T21:14:03.847Z [info]: Server is running on port 3000
+2023-10-23T21:14:06.596Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:16:28.605Z [error]: Error in generateOpenAIResponse: 429 Rate limit reached for * in organization org-HmOwy4EZavdJNLUCr1cRPxYY on requests per min. Limit: 3 / min. Please try again in 20s. Contact us through our help center at help.openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.
+2023-10-23T21:16:28.610Z [error]: 429 Rate limit reached for * in organization org-HmOwy4EZavdJNLUCr1cRPxYY on requests per min. Limit: 3 / min. Please try again in 20s. Contact us through our help center at help.openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.
+2023-10-23T21:20:09.948Z [info]: Server is running on port 3000
+2023-10-23T21:20:13.165Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:20:26.717Z [error]: Error in generateOpenAIResponse: 400 you must provide a model parameter
+2023-10-23T21:20:26.725Z [error]: 400 you must provide a model parameter
+2023-10-23T21:20:54.549Z [info]: Server is running on port 3000
+2023-10-23T21:20:56.799Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:27:12.355Z [info]: Server is running on port 3000
+2023-10-23T21:27:15.644Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:27:25.315Z [error]: Error in generateOpenAIResponse: axios is not defined
+2023-10-23T21:27:25.319Z [error]: axios is not defined
+2023-10-23T21:27:30.380Z [error]: Error in generateOpenAIResponse: axios is not defined
+2023-10-23T21:27:30.383Z [error]: axios is not defined
+2023-10-23T21:29:38.494Z [info]: Server is running on port 3000
+2023-10-23T21:29:41.716Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:29:53.101Z [error]: Error in generateOpenAIResponse: 400 you must provide a model parameter
+2023-10-23T21:29:53.103Z [error]: 400 you must provide a model parameter
+2023-10-23T21:30:27.201Z [info]: Server is running on port 3000
+2023-10-23T21:30:29.534Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:30:34.447Z [error]: Error in generateOpenAIResponse: 400 Unrecognized request argument supplied: cancelToken
+2023-10-23T21:30:34.450Z [error]: 400 Unrecognized request argument supplied: cancelToken
+2023-10-23T21:32:13.143Z [info]: Server is running on port 3000
+2023-10-23T21:32:16.157Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:32:20.947Z [error]: 400 you must provide a model parameter
+2023-10-23T21:32:52.829Z [info]: Server is running on port 3000
+2023-10-23T21:32:55.112Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:35:04.360Z [info]: Server is running on port 3000
+2023-10-23T21:35:07.739Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:35:12.850Z [error]: 400 This model's maximum context length is 4097 tokens, however you requested 5354 tokens (4354 in your prompt; 1000 for the completion). Please reduce your prompt; or completion length.
+2023-10-23T21:35:56.822Z [info]: Server is running on port 3000
+2023-10-23T21:35:59.121Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:36:05.154Z [error]: 400 This model's maximum context length is 4097 tokens, however you requested 5354 tokens (4354 in your prompt; 1000 for the completion). Please reduce your prompt; or completion length.
+2023-10-23T21:36:28.070Z [info]: Server is running on port 3000
+2023-10-23T21:36:30.784Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:36:35.798Z [error]: 400 This model's maximum context length is 4097 tokens, however you requested 5354 tokens (4354 in your prompt; 1000 for the completion). Please reduce your prompt; or completion length.
+2023-10-23T21:36:57.251Z [info]: Server is running on port 3000
+2023-10-23T21:36:59.476Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:37:04.642Z [error]: 400 This model's maximum context length is 4097 tokens, however you requested 5354 tokens (4354 in your prompt; 1000 for the completion). Please reduce your prompt; or completion length.
+2023-10-23T21:39:17.909Z [info]: Server is running on port 3000
+2023-10-23T21:39:21.963Z [info]: Connected to MongoDB Atlas
+2023-10-23T21:39:35.039Z [error]: 400 This model's maximum context length is 4097 tokens, however you requested 5354 tokens (4354 in your prompt; 1000 for the completion). Please reduce your prompt; or completion length.
+2023-10-23T21:41:24.142Z [info]: Server is running on port 3000
+2023-10-23T21:41:27.733Z [info]: Connected to MongoDB Atlas
+2023-10-24T08:59:47.441Z [info]: Server is running on port 3000
+2023-10-24T08:59:47.603Z [error]: Error connecting to MariaDB: (conn=13, no: 1049, SQLState: 42000) Unknown database 'post'
+2023-10-24T09:02:01.177Z [info]: Server is running on port 3000
+2023-10-24T09:02:01.306Z [info]: Connected to MariaDB
+2023-10-24T09:02:01.311Z [info]: Connected to MariaDB
+2023-10-24T09:02:05.232Z [info]: Connected to MongoDB Atlas
+2023-10-24T09:07:30.737Z [error]: (conn=21, no: 1406, SQLState: 22001) Data too long for column 'content' at row 1
+sql: INSERT INTO `EducationPosts` (`id`,`content`,`timestamp`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?); - parameters:['
+
+"From polar ice caps to tropical rainforests, learning about different climates can open our eyes to the incredible diversity of ou...]
+2023-10-24T09:07:45.417Z [error]: (conn=22, no: 1406, SQLState: 22001) Data too long for column 'content' at row 1
+sql: INSERT INTO `EducationPosts` (`id`,`content`,`timestamp`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?); - parameters:['
+
+"From polar vortexes to droughts, learning about different climates can give us a deeper understanding of our planet and inspire us...]
+2023-10-24T11:09:45.754Z [info]: Server is running on port 3000
+2023-10-24T11:09:45.824Z [error]: Error connecting to MongoDB: querySrv ESERVFAIL _mongodb._tcp.cluster0.nel0lco.mongodb.net
+2023-10-24T11:09:45.958Z [info]: Connected to MariaDB
+2023-10-24T11:09:45.961Z [info]: Connected to MariaDB
+2023-10-24T11:23:45.998Z [info]: Server is running on port 3000
+2023-10-24T11:23:46.151Z [info]: Connected to MariaDB
+2023-10-24T11:23:46.152Z [info]: Connected to MariaDB
+2023-10-24T11:23:50.107Z [info]: Connected to MongoDB Atlas
+2023-10-24T11:32:05.218Z [info]: Server is running on port 3000
+2023-10-24T11:32:05.361Z [info]: Connected to MariaDB
+2023-10-24T11:32:05.363Z [info]: Connected to MariaDB
+2023-10-24T11:32:08.454Z [info]: Connected to MongoDB Atlas
+2023-10-24T11:48:23.957Z [info]: Server is running on port 3000
+2023-10-24T11:48:24.055Z [info]: Connected to MariaDB
+2023-10-24T11:48:24.079Z [info]: Connected to MariaDB
+2023-10-24T11:48:27.645Z [info]: Connected to MongoDB Atlas
+2023-10-24T11:53:16.845Z [info]: Server is running on port 3000
+2023-10-24T11:53:16.957Z [info]: Connected to MariaDB
+2023-10-24T11:53:17.000Z [info]: Connected to MariaDB
+2023-10-24T11:53:20.591Z [info]: Connected to MongoDB Atlas
+2023-10-24T12:01:31.543Z [info]: Server is running on port 3000
+2023-10-24T12:01:31.686Z [info]: Connected to MariaDB
+2023-10-24T12:01:31.689Z [info]: Connected to MariaDB
+2023-10-24T12:01:35.266Z [info]: Connected to MongoDB Atlas
+2023-10-24T12:15:57.376Z [info]: Server is running on port 3000
+2023-10-24T12:15:57.504Z [info]: Connected to MariaDB
+2023-10-24T12:15:57.508Z [info]: Connected to MariaDB
+2023-10-24T12:16:00.645Z [info]: Connected to MongoDB Atlas
+2023-10-24T12:18:39.794Z [info]: Server is running on port 3000
+2023-10-24T12:18:39.910Z [info]: Connected to MariaDB
+2023-10-24T12:18:39.913Z [info]: Connected to MariaDB
+2023-10-24T12:18:44.489Z [info]: Connected to MongoDB Atlas
+2023-10-24T12:38:37.447Z [error]: (conn=54, no: 1406, SQLState: 22001) Data too long for column 'content' at row 1
+sql: INSERT INTO `EducationPosts` (`id`,`content`,`timestamp`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?); - parameters:['
+
+"Understanding the science behind climate change is crucial in taking action to combat its effects. Let's educate ourselves and eac...]
+2023-10-24T12:38:42.336Z [error]: (conn=54, no: 1406, SQLState: 22001) Data too long for column 'content' at row 1
+sql: INSERT INTO `EducationPosts` (`id`,`content`,`timestamp`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?); - parameters:['
+
+"By educating ourselves and others about the impacts of climate change, we can work towards creating a more resilient and sustainab...]
+2023-10-24T12:53:15.366Z [info]: Server is running on port 3000
+2023-10-24T12:53:15.513Z [info]: Connected to MariaDB
+2023-10-24T12:53:15.516Z [info]: Connected to MariaDB
+2023-10-24T12:53:19.276Z [info]: Connected to MongoDB Atlas
+2023-10-24T13:06:12.058Z [info]: Server is running on port 3000
+2023-10-24T13:06:12.265Z [info]: Connected to MariaDB
+2023-10-24T13:06:12.268Z [info]: Connected to MariaDB
+2023-10-24T13:06:15.419Z [info]: Connected to MongoDB Atlas
+2023-10-24T13:07:21.146Z [error]: (conn=65, no: 1406, SQLState: 22001) Data too long for column 'content' at row 1
+sql: INSERT INTO `EducationPosts` (`id`,`content`,`timestamp`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?); - parameters:['
+"Did you know that our everyday actions, such as driving cars and using electricity, contribute to climate change? Let's all make sm...]
+2023-10-24T13:13:20.906Z [info]: Server is running on port 3000
+2023-10-24T13:13:21.039Z [info]: Connected to MariaDB
+2023-10-24T13:13:21.042Z [info]: Connected to MariaDB
+2023-10-24T13:13:24.172Z [info]: Connected to MongoDB Atlas
+2023-10-24T13:15:05.972Z [info]: Server is running on port 3000
+2023-10-24T13:15:06.092Z [info]: Connected to MariaDB
+2023-10-24T13:15:06.093Z [info]: Connected to MariaDB
+2023-10-24T13:15:09.365Z [info]: Connected to MongoDB Atlas
+2023-10-24T13:15:19.679Z [error]: (conn=75, no: 1406, SQLState: 22001) Data too long for column 'content' at row 1
+sql: INSERT INTO `EducationPosts` (`id`,`content`,`timestamp`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?); - parameters:['
+
+"Did you know that the intensity and frequency of hurricanes and typhoons are increasing due to climate change? Let's work towards ...]
+2023-10-24T13:15:38.643Z [error]: (conn=76, no: 1406, SQLState: 22001) Data too long for column 'content' at row 1
+sql: INSERT INTO `EducationPosts` (`id`,`content`,`timestamp`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?); - parameters:['
+
+"Did you know that climate change can also lead to more frequent and severe earthquakes? Let's work together to reduce our carbon e...]
+2023-10-24T13:16:06.270Z [error]: (conn=77, no: 1406, SQLState: 22001) Data too long for column 'content' at row 1
+sql: INSERT INTO `EducationPosts` (`id`,`content`,`timestamp`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?); - parameters:['
+
+"Climate change is causing more frequent and severe natural disasters like hurricanes, wildfires, and floods. Let's educate ourselv...]
+2023-10-24T17:55:49.385Z [info]: Server is running on port 3000
+2023-10-24T17:55:49.430Z [error]: Error connecting to MongoDB: querySrv ESERVFAIL _mongodb._tcp.cluster0.nel0lco.mongodb.net
+2023-10-24T17:55:49.571Z [info]: Connected to MariaDB
+2023-10-24T17:55:49.582Z [info]: Connected to MariaDB
+2023-10-24T17:56:42.820Z [info]: Server is running on port 3000
+2023-10-24T17:56:42.963Z [info]: Connected to MariaDB
+2023-10-24T17:56:42.965Z [info]: Connected to MariaDB
+2023-10-24T17:56:51.328Z [info]: Connected to MongoDB Atlas
+2023-10-27T17:54:58.025Z [info]: Server is running on port 3000
+2023-10-27T17:54:58.176Z [info]: Connected to MariaDB
+2023-10-27T17:54:58.185Z [info]: Connected to MariaDB
+2023-10-27T17:55:00.733Z [info]: Connected to MongoDB Atlas
+2023-10-28T08:03:14.918Z [info]: Server is running on port 3000
+2023-10-28T08:03:15.961Z [error]: Error connecting to MariaDB: (conn=107, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1008ms
+2023-10-28T08:03:16.011Z [error]: Error connecting to MariaDB: (conn=106, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1016ms
+2023-10-28T08:03:19.182Z [info]: Connected to MongoDB Atlas
+2023-10-28T08:04:02.899Z [info]: Server is running on port 3000
+2023-10-28T08:04:04.202Z [info]: Connected to MariaDB
+2023-10-28T08:04:04.204Z [info]: Connected to MariaDB
+2023-10-28T08:04:05.244Z [info]: Connected to MongoDB Atlas
+2023-10-28T08:27:06.921Z [info]: Server is running on port 3000
+2023-10-28T08:27:07.962Z [error]: Error connecting to MariaDB: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1001ms
+2023-10-28T08:27:07.968Z [error]: Error connecting to MariaDB: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1009ms
+2023-10-28T08:27:10.826Z [info]: Connected to MongoDB Atlas
+2023-10-28T08:27:19.509Z [info]: Server is running on port 3000
+2023-10-28T08:27:20.524Z [error]: Error connecting to MariaDB: (conn=114, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1001ms
+2023-10-28T08:27:20.529Z [error]: Error connecting to MariaDB: (conn=115, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1003ms
+2023-10-28T08:27:21.754Z [info]: Connected to MongoDB Atlas
+2023-10-28T08:28:34.476Z [info]: Server is running on port 3000
+2023-10-28T08:28:35.118Z [info]: Connected to MariaDB
+2023-10-28T08:28:35.120Z [info]: Connected to MariaDB
+2023-10-28T08:28:37.206Z [info]: Connected to MongoDB Atlas
+2023-10-28T08:30:37.294Z [error]: kafkaHandler.sendMessageToKafkaTopic is not a function
+2023-10-28T08:31:21.182Z [error]: kafkaHandler.sendMessageToKafkaTopic is not a function
+2023-10-28T08:37:28.747Z [info]: Server is running on port 3000
+2023-10-28T08:37:29.125Z [info]: Connected to MariaDB
+2023-10-28T08:37:29.417Z [info]: Connected to MariaDB
+2023-10-28T08:37:31.436Z [info]: Connected to MongoDB Atlas
+2023-10-28T08:38:12.205Z [error]: kafkaHandler.sendMessageToKafkaTopic is not a function
+2023-10-28T08:48:08.695Z [info]: Server is running on port 3000
+2023-10-28T08:48:09.194Z [info]: Connected to MariaDB
+2023-10-28T08:48:09.228Z [info]: Connected to MariaDB
+2023-10-28T08:48:16.295Z [info]: Connected to MongoDB Atlas
+2023-10-28T08:48:31.162Z [error]: kafkaHandler.createKafkaProducer.sendMessageToKafkaTopic is not a function
+2023-10-28T08:52:48.183Z [info]: Server is running on port 3000
+2023-10-28T08:52:48.714Z [info]: Connected to MariaDB
+2023-10-28T08:52:48.750Z [info]: Connected to MariaDB
+2023-10-28T08:52:51.054Z [info]: Connected to MongoDB Atlas
+2023-10-28T10:05:19.365Z [info]: Server is running on port 3000
+2023-10-28T10:05:20.395Z [error]: Error connecting to MariaDB: (conn=132, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1009ms
+2023-10-28T10:05:20.407Z [error]: Error connecting to MariaDB: (conn=133, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1000ms
+2023-10-28T10:05:22.676Z [info]: Connected to MongoDB Atlas
+2023-10-28T10:05:34.237Z [info]: Server is running on port 3000
+2023-10-28T10:05:34.710Z [info]: Connected to MariaDB
+2023-10-28T10:05:34.714Z [info]: Connected to MariaDB
+2023-10-28T10:05:36.593Z [info]: Connected to MongoDB Atlas
+2023-10-28T10:11:45.804Z [error]: Cannot read properties of undefined (reading 'latitude')
+2023-10-28T10:12:16.074Z [info]: Server is running on port 3000
+2023-10-28T10:12:16.694Z [info]: Connected to MariaDB
+2023-10-28T10:12:16.707Z [info]: Connected to MariaDB
+2023-10-28T10:12:19.009Z [info]: Connected to MongoDB Atlas
+2023-10-28T10:12:47.121Z [error]: kafkaProducer.sendMessageToKafkaTopic is not a function
+2023-10-28T10:12:47.456Z [error]: Cannot set headers after they are sent to the client
+2023-10-28T10:14:58.291Z [info]: Server is running on port 3000
+2023-10-28T10:14:59.312Z [error]: Error connecting to MariaDB: (conn=142, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1001ms
+2023-10-28T10:14:59.320Z [error]: Error connecting to MariaDB: (conn=143, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1001ms
+2023-10-28T10:15:01.409Z [info]: Connected to MongoDB Atlas
+2023-10-28T10:15:20.231Z [info]: Server is running on port 3000
+2023-10-28T10:15:21.297Z [error]: Error connecting to MariaDB: (conn=144, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1001ms
+2023-10-28T10:15:21.343Z [error]: Error connecting to MariaDB: (conn=145, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1012ms
+2023-10-28T10:15:22.852Z [info]: Connected to MongoDB Atlas
+2023-10-28T10:22:43.837Z [info]: Server is running on port 3000
+2023-10-28T10:22:44.758Z [info]: Connected to MariaDB
+2023-10-28T10:22:44.760Z [info]: Connected to MariaDB
+2023-10-28T10:22:47.656Z [info]: Connected to MongoDB Atlas
+2023-10-28T10:27:11.150Z [info]: Server is running on port 3000
+2023-10-28T10:27:12.108Z [info]: Connected to MariaDB
+2023-10-28T10:27:12.115Z [info]: Connected to MariaDB
+2023-10-28T10:27:13.843Z [info]: Connected to MongoDB Atlas
+2023-10-28T10:46:03.329Z [info]: Server is running on port 3000
+2023-10-28T10:46:05.181Z [error]: Error connecting to MariaDB: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1833ms
+2023-10-28T10:46:05.196Z [error]: Error connecting to MariaDB: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1843ms
+2023-10-28T10:46:07.770Z [info]: Connected to MongoDB Atlas
+2023-10-28T10:46:16.472Z [info]: Server is running on port 3000
+2023-10-28T10:46:17.468Z [info]: Connected to MariaDB
+2023-10-28T10:46:17.473Z [info]: Connected to MariaDB
+2023-10-28T10:46:18.867Z [info]: Connected to MongoDB Atlas
+2023-10-28T10:50:39.095Z [info]: Server is running on port 3000
+2023-10-28T10:50:39.589Z [info]: Connected to MariaDB
+2023-10-28T10:50:39.606Z [info]: Connected to MariaDB
+2023-10-28T10:50:41.828Z [info]: Connected to MongoDB Atlas
+2023-10-28T13:40:02.475Z [info]: Server is running on port 3000
+2023-10-28T13:40:03.490Z [error]: Error connecting to MariaDB: (conn=165, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1001ms
+2023-10-28T13:40:03.493Z [error]: Error connecting to MariaDB: (conn=164, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1006ms
+2023-10-28T13:40:05.513Z [info]: Connected to MongoDB Atlas
+2023-10-28T13:41:18.876Z [info]: Server is running on port 3000
+2023-10-28T13:41:19.969Z [info]: Connected to MariaDB
+2023-10-28T13:41:19.972Z [info]: Connected to MariaDB
+2023-10-28T13:41:21.940Z [info]: Connected to MongoDB Atlas
+2023-10-28T17:02:06.011Z [info]: Server is running on port 3000
+2023-10-28T17:02:06.071Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T17:02:06.084Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T17:02:15.210Z [info]: Server is running on port 3000
+2023-10-28T17:02:15.239Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T17:02:15.256Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T17:02:17.740Z [info]: Connected to MongoDB Atlas
+2023-10-28T17:07:57.493Z [info]: Server is running on port 3000
+2023-10-28T17:07:57.626Z [info]: Connected to MariaDB
+2023-10-28T17:07:57.637Z [info]: Connected to MariaDB
+2023-10-28T17:08:00.276Z [info]: Connected to MongoDB Atlas
+2023-10-28T17:08:38.693Z [error]: (conn=13, no: 1054, SQLState: 42S22) Unknown column 'categoryId' in 'field list'
+sql: SELECT `id`, `content`, `timestamp`, `categoryId`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-28T17:08:56.008Z [info]: Server is running on port 3000
+2023-10-28T17:08:56.196Z [info]: Connected to MariaDB
+2023-10-28T17:08:56.206Z [info]: Connected to MariaDB
+2023-10-28T17:08:58.312Z [info]: Connected to MongoDB Atlas
+2023-10-28T17:09:01.378Z [error]: (conn=16, no: 1054, SQLState: 42S22) Unknown column 'categoryId' in 'field list'
+sql: SELECT `id`, `content`, `timestamp`, `categoryId`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-28T17:09:02.095Z [error]: (conn=16, no: 1054, SQLState: 42S22) Unknown column 'categoryId' in 'field list'
+sql: SELECT `id`, `content`, `timestamp`, `categoryId`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-28T17:09:21.288Z [error]: (conn=18, no: 1054, SQLState: 42S22) Unknown column 'categoryId' in 'field list'
+sql: SELECT `id`, `content`, `timestamp`, `categoryId`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-28T17:09:45.720Z [info]: Server is running on port 3000
+2023-10-28T17:09:45.836Z [info]: Connected to MariaDB
+2023-10-28T17:09:45.845Z [info]: Connected to MariaDB
+2023-10-28T17:09:48.669Z [info]: Connected to MongoDB Atlas
+2023-10-28T17:09:52.159Z [error]: (conn=21, no: 1054, SQLState: 42S22) Unknown column 'categoryId' in 'field list'
+sql: SELECT `id`, `content`, `timestamp`, `categoryId`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-28T17:22:43.694Z [info]: Server is running on port 3000
+2023-10-28T17:22:43.807Z [info]: Connected to MariaDB
+2023-10-28T17:22:43.815Z [info]: Connected to MariaDB
+2023-10-28T17:22:46.969Z [info]: Connected to MongoDB Atlas
+2023-10-28T17:23:00.649Z [error]: (conn=28, no: 1364, SQLState: HY000) Field 'category' doesn't have a default value
+sql: INSERT INTO `EducationPosts` (`id`,`content`,`timestamp`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?); - parameters:['
+
+"Did you know that climate change can increase the frequency and intensity of natural disasters like earthquakes and flooding? Let'...]
+2023-10-28T17:23:27.425Z [error]: (conn=29, no: 1364, SQLState: HY000) Field 'category' doesn't have a default value
+sql: INSERT INTO `EducationPosts` (`id`,`content`,`timestamp`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?); - parameters:['
+
+"Did you know that climate change can increase the frequency and intensity of natural disasters like floods, earthquakes and hurric...]
+2023-10-28T17:27:07.647Z [info]: Server is running on port 3000
+2023-10-28T17:27:07.806Z [info]: Connected to MariaDB
+2023-10-28T17:27:07.819Z [info]: Connected to MariaDB
+2023-10-28T17:27:11.113Z [info]: Connected to MongoDB Atlas
+2023-10-28T17:27:18.491Z [error]: notNull Violation: EducationPost.category cannot be null
+2023-10-28T17:40:15.842Z [info]: Server is running on port 3000
+2023-10-28T17:40:16.469Z [info]: Connected to MariaDB
+2023-10-28T17:40:16.615Z [info]: Connected to MariaDB
+2023-10-28T17:40:18.715Z [info]: Connected to MongoDB Atlas
+2023-10-28T21:28:04.637Z [info]: Server is running on port 3000
+2023-10-28T21:28:04.715Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T21:28:04.759Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T21:28:08.459Z [info]: Connected to MongoDB Atlas
+2023-10-28T21:29:53.178Z [info]: Server is running on port 3000
+2023-10-28T21:29:53.287Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T21:29:53.326Z [error]: Error connecting to MariaDB: connect ECONNREFUSED 127.0.0.1:3306
+2023-10-28T21:29:56.166Z [info]: Connected to MongoDB Atlas
+2023-10-29T06:12:22.224Z [info]: Server is running on port 3000
+2023-10-29T06:12:22.868Z [info]: Connected to MariaDB
+2023-10-29T06:12:22.870Z [info]: Connected to MariaDB
+2023-10-29T06:12:24.964Z [info]: Connected to MongoDB Atlas
+2023-10-29T06:28:45.836Z [info]: Server is running on port 3000
+2023-10-29T06:28:45.927Z [info]: Connected to MariaDB
+2023-10-29T06:28:49.035Z [info]: Connected to MongoDB Atlas
+2023-10-29T06:34:08.190Z [info]: Server is running on port 3000
+2023-10-29T06:34:08.287Z [info]: Connected to MariaDB
+2023-10-29T06:34:11.142Z [info]: Connected to MongoDB Atlas
+2023-10-29T06:38:55.161Z [info]: Server is running on port 3000
+2023-10-29T06:38:55.261Z [info]: Connected to MariaDB
+2023-10-29T06:39:02.608Z [info]: Connected to MongoDB Atlas
+2023-10-29T06:40:36.057Z [info]: Server is running on port 3000
+2023-10-29T06:40:36.130Z [info]: Connected to MariaDB
+2023-10-29T06:40:38.868Z [info]: Connected to MongoDB Atlas
+2023-10-29T06:44:55.104Z [info]: Server is running on port 3000
+2023-10-29T06:44:55.277Z [info]: Connected to MariaDB
+2023-10-29T06:44:58.347Z [info]: Connected to MongoDB Atlas
+2023-10-29T06:48:17.599Z [info]: Server is running on port 3000
+2023-10-29T06:48:17.735Z [info]: Connected to MariaDB
+2023-10-29T06:48:17.746Z [info]: Connected to MariaDB
+2023-10-29T06:48:20.185Z [info]: Connected to MongoDB Atlas
+2023-10-29T06:48:22.924Z [error]: (conn=19, no: 1146, SQLState: 42S02) Table 'post.EducationPosts' doesn't exist
+sql: SELECT `id`, `content`, `timestamp`, `category`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-29T06:48:26.281Z [error]: (conn=19, no: 1146, SQLState: 42S02) Table 'post.EducationPosts' doesn't exist
+sql: SELECT `id`, `content`, `timestamp`, `category`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-29T06:48:57.421Z [info]: Server is running on port 3000
+2023-10-29T06:48:57.610Z [info]: Connected to MariaDB
+2023-10-29T06:48:57.619Z [info]: Connected to MariaDB
+2023-10-29T06:48:59.731Z [info]: Connected to MongoDB Atlas
+2023-10-29T06:49:05.050Z [error]: (conn=23, no: 1146, SQLState: 42S02) Table 'post.EducationPosts' doesn't exist
+sql: SELECT `id`, `content`, `timestamp`, `category`, `createdAt`, `updatedAt` FROM `EducationPosts` AS `EducationPost` ORDER BY `EducationPost`.`timestamp` DESC LIMIT 3; - parameters:[]
+2023-10-29T06:52:08.561Z [info]: Server is running on port 3000
+2023-10-29T06:52:08.683Z [info]: Connected to MariaDB
+2023-10-29T06:52:08.695Z [info]: Connected to MariaDB
+2023-10-29T06:52:11.238Z [info]: Connected to MongoDB Atlas
+2023-10-29T06:52:21.239Z [error]: (conn=11, no: 1406, SQLState: 22001) Data too long for column 'content' at row 1
+sql: INSERT INTO `EducationPosts` (`id`,`content`,`timestamp`,`category`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?); - parameters:['
+
+"Let's not forget the impact of climate change on our communities and economies. Rising sea levels and extreme weather...]
+2023-10-29T06:54:26.702Z [info]: Server is running on port 3000
+2023-10-29T06:54:26.832Z [info]: Connected to MariaDB
+2023-10-29T06:54:26.837Z [info]: Connected to MariaDB
+2023-10-29T06:55:03.951Z [info]: Server is running on port 3000
+2023-10-29T06:55:04.063Z [info]: Connected to MariaDB
+2023-10-29T06:55:04.070Z [info]: Connected to MariaDB
+2023-10-29T06:55:11.519Z [info]: Connected to MongoDB Atlas
+2023-10-29T07:47:42.697Z [info]: Server is running on port 3000
+2023-10-29T07:47:45.381Z [info]: Connected to MongoDB Atlas
+2023-10-29T07:52:19.038Z [info]: Server is running on port 3000
+2023-10-29T07:52:22.761Z [info]: Connected to MongoDB Atlas
+2023-10-29T07:52:41.594Z [error]: isGreeting is not defined
+2023-10-29T07:54:17.163Z [info]: Server is running on port 3000
+2023-10-29T07:54:19.736Z [info]: Connected to MongoDB Atlas
+2023-10-29T07:56:03.022Z [info]: Server is running on port 3000
+2023-10-29T07:56:06.587Z [info]: Connected to MongoDB Atlas
+2023-10-29T07:59:23.175Z [info]: Server is running on port 3000
+2023-10-29T07:59:29.250Z [info]: Connected to MongoDB Atlas
+2023-10-29T08:01:20.039Z [info]: Server is running on port 3000
+2023-10-29T08:01:23.557Z [info]: Connected to MongoDB Atlas
+2023-10-29T09:38:34.106Z [info]: Server is running on port 3000
+2023-10-29T09:38:36.823Z [info]: Connected to MongoDB Atlas
+2023-11-01T15:31:42.372Z [info]: Server is running on port 3000
+2023-11-01T15:31:45.700Z [info]: Connected to MongoDB Atlas
+2023-11-01T15:47:56.280Z [info]: Server is running on port 3000
+2023-11-01T15:47:59.583Z [info]: Connected to MongoDB Atlas
+2023-11-01T21:54:30.257Z [info]: Server is running on port 3000
+2023-11-01T21:54:33.363Z [info]: Connected to MongoDB Atlas
+2023-11-01T22:07:55.266Z [info]: Server is running on port 3000
+2023-11-01T22:07:58.077Z [info]: Connected to MongoDB Atlas
+2023-11-01T22:12:22.796Z [info]: Server is running on port 3000
+2023-11-01T22:12:25.534Z [info]: Connected to MongoDB Atlas
+2023-11-03T08:22:06.383Z [info]: Server is running on port 3000
+2023-11-03T08:22:10.160Z [info]: Server is running on port 3000
+2023-11-03T08:22:12.799Z [info]: Connected to MongoDB Atlas
+2023-11-03T08:24:42.609Z [info]: Server is running on port 3000
+2023-11-03T08:24:43.444Z [info]: Connected to MariaDB
+2023-11-03T08:24:45.639Z [info]: Connected to MongoDB Atlas
+2023-11-03T08:31:12.552Z [info]: Server is running on port 3000
+2023-11-03T08:31:12.658Z [info]: Connected to MariaDB
+2023-11-03T08:31:15.861Z [info]: Connected to MongoDB Atlas
+2023-11-03T08:33:20.157Z [info]: Server is running on port 3000
+2023-11-03T08:33:20.263Z [info]: Connected to MariaDB
+2023-11-03T08:33:23.140Z [info]: Connected to MongoDB Atlas
+2023-11-03T08:36:59.097Z [info]: Server is running on port 3000
+2023-11-03T08:36:59.198Z [info]: Connected to MariaDB
+2023-11-03T08:37:02.209Z [info]: Connected to MongoDB Atlas
+2023-11-03T08:38:17.606Z [info]: Server is running on port 3000
+2023-11-03T08:38:17.657Z [info]: Connected to MariaDB
+2023-11-03T08:38:25.311Z [info]: Connected to MongoDB Atlas
+2023-11-03T08:45:52.352Z [info]: Server is running on port 3000
+2023-11-03T08:45:52.465Z [info]: Connected to MariaDB
+2023-11-03T08:45:55.609Z [info]: Connected to MongoDB Atlas
+2023-11-03T09:39:19.786Z [info]: Server is running on port 3000
+2023-11-03T09:39:19.809Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-03T09:39:22.848Z [info]: Connected to MongoDB Atlas
+2023-11-03T09:56:38.188Z [info]: Server is running on port 3000
+2023-11-03T09:56:38.227Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-03T09:56:41.757Z [info]: Connected to MongoDB Atlas
+2023-11-03T10:13:17.263Z [info]: Server is running on port 3000
+2023-11-03T10:13:17.405Z [info]: Connected to MariaDB
+2023-11-03T12:36:45.569Z [info]: Server is running on port 3000
+2023-11-03T12:36:45.625Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-03T12:36:48.951Z [info]: Connected to MongoDB Atlas
+2023-11-04T07:06:12.196Z [info]: Server is running on port 3000
+2023-11-04T07:06:12.227Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:06:15.372Z [info]: Connected to MongoDB Atlas
+2023-11-04T07:47:29.223Z [info]: Server is running on port 3000
+2023-11-04T07:47:29.243Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:47:31.913Z [info]: Connected to MongoDB Atlas
+2023-11-04T07:48:07.760Z [info]: Server is running on port 3000
+2023-11-04T07:48:07.783Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:48:10.029Z [info]: Connected to MongoDB Atlas
+2023-11-04T07:51:20.007Z [info]: Server is running on port 3000
+2023-11-04T07:51:20.025Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:51:23.276Z [info]: Connected to MongoDB Atlas
+2023-11-04T07:55:13.056Z [info]: Server is running on port 3000
+2023-11-04T07:55:13.075Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:55:15.711Z [info]: Connected to MongoDB Atlas
+2023-11-04T07:56:05.540Z [info]: Server is running on port 3000
+2023-11-04T07:56:05.566Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:56:07.844Z [info]: Connected to MongoDB Atlas
+2023-11-04T07:56:37.864Z [info]: Server is running on port 3000
+2023-11-04T07:56:37.899Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:56:40.410Z [info]: Connected to MongoDB Atlas
+2023-11-04T07:57:37.965Z [info]: Server is running on port 3000
+2023-11-04T07:57:37.986Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:57:41.762Z [info]: Connected to MongoDB Atlas
+2023-11-04T07:58:41.718Z [info]: Server is running on port 3000
+2023-11-04T07:58:41.757Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:58:44.306Z [info]: Connected to MongoDB Atlas
+2023-11-04T07:59:04.974Z [info]: Server is running on port 3000
+2023-11-04T07:59:04.996Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T07:59:07.334Z [info]: Connected to MongoDB Atlas
+2023-11-04T08:02:25.129Z [info]: Server is running on port 3000
+2023-11-04T08:02:25.151Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T08:02:27.855Z [info]: Connected to MongoDB Atlas
+2023-11-04T09:09:04.623Z [info]: Server is running on port 3000
+2023-11-04T09:09:04.653Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T09:09:08.579Z [info]: Connected to MongoDB Atlas
+2023-11-04T09:10:23.562Z [info]: Server is running on port 3000
+2023-11-04T09:10:23.582Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T09:10:26.932Z [info]: Connected to MongoDB Atlas
+2023-11-04T10:12:31.042Z [info]: Server is running on port 3000
+2023-11-04T10:12:31.062Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T10:12:33.856Z [info]: Connected to MongoDB Atlas
+2023-11-04T10:13:23.046Z [info]: Server is running on port 3000
+2023-11-04T10:13:23.065Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-04T10:13:25.438Z [info]: Connected to MongoDB Atlas
+2023-11-06T14:55:25.129Z [info]: Server is running on port 3000
+2023-11-06T14:55:28.095Z [info]: Connected to MongoDB Atlas
+2023-11-06T14:56:41.983Z [info]: Server is running on port 3000
+2023-11-06T14:56:42.000Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers_db
+2023-11-06T14:56:45.621Z [info]: Connected to MongoDB Atlas
+2023-11-06T15:53:16.364Z [info]: Server is running on port 3000
+2023-11-06T15:53:16.385Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN loclhost
+2023-11-06T15:53:19.491Z [info]: Connected to MongoDB Atlas
+2023-11-06T15:53:32.554Z [info]: Server is running on port 3000
+2023-11-06T15:53:32.720Z [info]: Connected to MariaDB
+2023-11-06T15:53:34.958Z [info]: Connected to MongoDB Atlas
+2023-11-11T17:37:42.046Z [info]: Server is running on port 3000
+2023-11-11T17:37:42.069Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers-mariadb
+2023-11-11T17:44:41.660Z [info]: Server is running on port 3000
+2023-11-11T17:44:41.681Z [error]: Error connecting to MariaDB: getaddrinfo EAI_AGAIN climatewavers-mariadb

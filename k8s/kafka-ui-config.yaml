@@ -1,0 +1,15 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: kafka-ui-configmap
+data:
+  config.yml: |-
+    kafka:
+      clusters:
+        - name: yaml
+          bootstrapServers: zkless-kafka-bootstrap:9092
+  auth: type:disabled
+management:
+  health:
+    ldap:
+      enabled: false

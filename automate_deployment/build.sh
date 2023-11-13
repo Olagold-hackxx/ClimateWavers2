@@ -5,7 +5,7 @@ echo "Login to your quay repository"
 docker login quay.io
 echo "Building image"
 # Build your image
-docker build -t quay.io/olagoldhackxx/waverx-nlp:v1 .
+docker build -t quay.io/olagoldhacxx/chatbot:v1 .
 echo "Pushing image"
 # Push image to repo
-docker push quay.io/olagoldhackxx/waverx-nlp:v1
+docker push quay.io/olagoldhacxx/chatbot:v1

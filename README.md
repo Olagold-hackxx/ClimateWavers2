@@ -1,70 +1,57 @@
-
-# WaverX-NLP Microservice for Climate Wavers
+# waverX
 
 ## Overview
 
-The `waverX-NLP` microservice is a part of the Climate Wavers disaster response application. It is responsible for processing user reports using a fine-tuned BERT model, developed with Hugging Face, to classify posts into different disaster labels. The model covers a range of disaster categories, including Earthquake, Drought, Damaged Infrastructure, Human Damage, Human, Land Slide, Non-Damage Buildings and Street, Non-Damage Wildlife Forest, Sea, Urban Fire, Wild Fire, Water Disaster, and Humanitarian Aid. The microservice is built on the OpenShift Data Science platform, utilizing the Intel oneAPI toolkit in a Jupyter Notebook environment. The model is optimized with Intel PyTorch extensions and served using Flask.
+The ChatBot application is a Node.js-based microservice that utilizes various technologies to interact with users through AI-powered responses. It handles messaging via Kafka, stores conversations in MongoDB, and employs OpenAI for generating responses.
 
-## Features
+## Technologies
 
-- **Natural Language Processing (NLP):** Utilizes a fine-tuned BERT model from Hugging Face for classifying user reports into various disaster labels.
-- **Disaster Labels:** Classifies posts into specific disaster categories, aiding in efficient disaster response.
-- **Intel Optimization:** The model is optimized using the Intel oneAPI toolkit and PyTorch extensions for enhanced performance.
-- **Flask API:** The model is served through a Flask API for seamless integration with other microservices.
+- Node.js
+- Express
+- MongoDB (Atlas)
+- MariaDB/MySQL
+- Kafka
+- OpenAI
+- Axios
+- Others...
 
-## Technologies Used
+## Getting Started
 
-- BERT Model (Hugging Face)
-- PyTorch
-- Intel oneAPI Toolkit
-- Intel PyTorch Extension
-- Flask
-- OpenShift Data Science
-- Jupyter Notebook
-
-## Setup
-
-### Prerequisites
-
-- Python installed
-- PyTorch and Hugging Face transformers library installed
-- Intel oneAPI toolkit installed
-- Flask installed
-
-### Installation
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/yourusername/your-repo.git
-cd your-repo
-```
-
-2. Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Configure environment variables:
-
-   - Set up necessary configurations for the BERT model and Flask API.
-
-4. Start the microservice:
-
-```bash
-python app.py
-```
+1. **Installation:** Run `npm install` to install all dependencies.
+2. **Environment Setup:** Create a `.env` file and add these environment variables.
+OPENAI_API_KEY, MYSQL_USER MYSQL_PASSWORD, MYSQL_ROOT_PASSWORD, MYSQL_DATABASE, MYSQL_HOST, MYSQL_DIALECT
+3. **Running the Application:** Execute `npm start` or `node app.js` in the project directory to launch the application.
 
 ## Usage
 
-Describe how users can interact with the microservice, including API endpoints, request and response formats, and any other relevant details.
+The application communicates using kafka and handles messages for user queries related to climate and disaster-related topics.
 
-## Model Training
+## File Structure
 
-Include information on how the BERT model was fine-tuned, mentioning the Jupyter Notebook environment, Intel oneAPI toolkit, and PyTorch optimizations.
+The project follows a standard MVC architecture, separating models, views, and controllers. Significant files include:
+- `app.js`: Main application file
+- `controllers/chatBotController.js`: Controller handling incoming messages
+- ...
+
+## Database Setup
+
+- **MongoDB (Atlas):** Connect to your MongoDB instance using the provided connection string.
+- **MariaDB/MySQL:** Configure the Sequelize connection to your database.
+
+## Kafka Event Handling
+
+The application utilizes Kafka for messaging and handles incoming and outgoing messages via Kafka topics.
+
+## Contributing
+
+Contributions are welcome! Please follow the code standards outlined in CONTRIBUTING.md and submit pull requests.
+
+## Error Handling
+
+Errors are handled and logged using the integrated logger. The application provides graceful error responses.
 
 ## Deployment
+
 We provide three different methods for deploying this microservice to openshift clusters.
 ### Import Git Repositoy (Recommended)
 Use the import git repository feature on openshift console.
@@ -94,7 +81,17 @@ Deploy with tekton with the pipeline deployment script in `automated_deployment`
    automate_deployment/./pipeline.sh
    ```
 
+### Kafka Deployment
+Refer to the provided docs to deploy kafka on openshift sandbox. [ Kafka doc](https://github.com/ClimateWavers/waverX-chat/blob/db192ec17102a50e9c6984355c5e1aa057935cb6/strimzi-in-devsandbox.pdf)
+
+## Known Issues
+
+Currently, there are no known major issues. Please report any problems in the 'Issues' section.
+
 ## License
 
-This microservice is licensed under the [MIT License](LICENSE).
+This project is shared under the [MIT License](#).
 
+## Contact Information
+
+For support or queries, reach out to me on climatewaver@gmail.com
