@@ -47,8 +47,8 @@ const redhatSS0 = async (req, res) => {
       return res.status(201).json({ accessToken: token, user });
     }
     refreshToken = token.refresh_token;
-    attachCookiesToResponse({ res, user: user, refreshToken });
-    return res.status(201).json({ accessToken: token, user });
+    attachCookiesToResponse({ res, user: user, accessToken: token, refreshToken });
+    return res.redirect(process.env.HOMEPAGE)
   } catch (err) {
     return res.status(500).send(err);
   }
