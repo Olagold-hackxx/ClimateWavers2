@@ -121,8 +121,6 @@ class Post(models.Model):
     # Users who saved the post
     savers = models.ManyToManyField(User, related_name='saved_posts', blank=True)
 
-    # Count of comments on the post
-    comment_count = models.PositiveIntegerField(default=0)
 
     # Post category with choices: 'community', 'education', 'reports' (default: 'community')
     category = models.CharField(max_length=20, choices=[('community', 'Community'), ('education', 'Education'), ('reports', 'Reports')], default='community')

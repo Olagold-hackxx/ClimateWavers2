@@ -13,10 +13,10 @@ class TokenVerificationMiddleware:
         path = request.path
 
         # List of endpoints where the middleware should be applied
-        unprotected_endpoints = ['/api/v1/backend/register', '/api/v1/backend/login']
+        unprotected_endpoints = [ '/api/v1/backend/register', '/api/v1/backend/login']
 
         # Check if the request path matches any protected endpoint
-        if path not in unprotected_endpoints and 'confirm' not in path and 'verify' not in path:
+        if path not in unprotected_endpoints and 'confirm' not in path and 'verify' not in path and '/media' not in path:
             # Get access and refresh tokens from the request headers or cookies
             try:
                 access_token = request.headers.get('Authorization').split(" ")[1]

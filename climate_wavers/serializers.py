@@ -15,6 +15,9 @@ class UserSerializer(serializers.ModelSerializer):
                   "is_linkedin_user",
                   "is_facebook_user",
                   "is_active",
+                  "bio",
+                  "cover",
+                  "profile_pic",
                   "created_at",
                   "updated_at")  # Serialize all fields of the User model
 
@@ -23,6 +26,8 @@ class UserSerializer(serializers.ModelSerializer):
 
 class PostSerializer(serializers.ModelSerializer):
     comments_count = serializers.SerializerMethodField()
+    likers_count = serializers.SerializerMethodField()
+    savers_count = serializers.SerializerMethodField()
 
     class Meta:
         model = Post
@@ -31,12 +36,23 @@ class PostSerializer(serializers.ModelSerializer):
     def get_comments_count(self, obj):
         # Calculate and return the comments count for the specific post object
         return obj.comments.count()
+    def get_likers_count(self, obj):
+        # Calculate and return the comments count for the specific post object
+        return obj.likers.count()
+    def get_savers_count(self, obj):
+        # Calculate and return the comments count for the specific post object
+        return obj.savers.count()
 
 
 class CommentSerializer(serializers.ModelSerializer):
+    subcomments_count = serializers.SerializerMethodField()
     class Meta:
         model = Comment
         fields = '__all__'  # Serialize all fields of the Comment model
+    def get_subcomments_count(self, obj):
+        # Calculate and return the comments count for the specific post object
+        return obj.subcomments.count()
+
 
 # Serializer for the Follower model
 

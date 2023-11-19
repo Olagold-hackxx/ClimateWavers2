@@ -13,6 +13,8 @@ urlpatterns = [
     path("education", views.education, name="education"),
     # Display happening now category posts
     path("happening", views.happening, name="happening_now"),
+    # Display model posts
+    path("waverx", views.ai_tweet, name="ai_posts"),
     # Display community category posts
     path("community", views.community, name="community"),
     # Users
@@ -62,9 +64,9 @@ urlpatterns = [
     # Edit a post
     path("posts/<str:post_id>/edit", views.edit_post, name="edit_post"),
     # Follow a user
-    path("<str:username>/follow", views.follow, name="follow_user"),
+    path("<str:user_id>/follow", views.follow, name="follow_user"),
     # Unfollow a user
-    path("<str:username>/unfollow", views.unfollow, name="unfollow_user"),
+    path("<str:user_id>/unfollow", views.unfollow, name="unfollow_user"),
     # Change Password
     path('change_password', change_password, name='change_password'),
     # Reset Password
@@ -74,9 +76,9 @@ urlpatterns = [
     # New access token
     path('access_token/refresh', views.refresh_token, name="refresh_access_token"),
     # Users' followers
-    path("<str:username>/followers", views.followers, name="followers"),
+    path("<str:user_id>/followers", views.followers, name="followers"),
     # Users' following
-    path("<str:username>/followings", views.followings, name="following"),
+    path("<str:user_id>/followings", views.followings, name="following"),
     # Current user's followers
     path("followers", views.my_followers, name="my_follower"),
     # Current user's following
@@ -85,5 +87,5 @@ urlpatterns = [
 ]
 
 # Serve media files
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# if settings.DEBUG:
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
