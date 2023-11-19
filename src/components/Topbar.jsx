@@ -1,9 +1,6 @@
-import React, { useState } from 'react'
-import Padder from './Padder'
-import { useParams } from 'react-router-dom'
+import { useState } from 'react'
 import {HiOutlineMenuAlt1} from "react-icons/hi"
 import {AiOutlineSearch} from "react-icons/ai"
-import Menu from './Menu'
 import Mobilemenu from './Mobilemenu'
 
 const Topbar = () => {
@@ -24,7 +21,7 @@ const Topbar = () => {
         }
         {/* Logo */}
         <div className=' justify-self-center md:justify-self-start '>
-            <img src='../../public/logo.png'/>
+            <img src='../../Logo.png'/>
         </div>
         {/* Search btn */}
         {/* <div className='  w-[60%] justify-self-end '> */}

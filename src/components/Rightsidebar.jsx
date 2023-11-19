@@ -1,5 +1,3 @@
-import React from 'react'
-import Menu from './Menu'
 import Communityselector from './Communityselector'
 import Popularaccounts from './Popularaccounts'
 

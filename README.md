@@ -2,7 +2,7 @@
 
 ## Overview
 
-The ClimateWavers Frontend Microservice is the user interface of the ClimateWavers application. It is built using React, Redux, React Query, Hook Form, and styled with Tailwind CSS. The microservice is responsible for providing an engaging and user-friendly experience to the end-users while interacting with the ClimateWavers platform.
+The ClimateWavers Frontend Microservice is the user interface of the ClimateWavers application. It is built using React, Redux, React Query, Hook Form, and styled with Tailwind CSS. The microservice is responsible for providing an engaging and user-friendly experience to the end-users while interacting with the ClimateWavers platform. Due to the time constraint the frontend isn't able to consume the APIs to display the app functionality. Pls refer to each microservices to test their features
 
 ## Technologies Used
 

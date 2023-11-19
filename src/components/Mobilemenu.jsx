@@ -1,8 +1,7 @@
-import React from 'react'
-import Menu from './Menu'
-import Rightsidebar from './Rightsidebar'
-import Communityselector from './Communityselector'
-import Popularaccounts from './Popularaccounts'
+import Menu from './Menu';
+import Communityselector from './Communityselector';
+import PropTypes from "prop-types";
+
 
 const Mobilemenu = ({setIsOpen}) => {
   return (
@@ -21,4 +20,7 @@ const Mobilemenu = ({setIsOpen}) => {
   )
 }
 
+Mobilemenu.propTypes = {
+	setIsOpen: PropTypes.bool,
+  };
 export default Mobilemenu
